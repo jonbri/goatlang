@@ -1,0 +1,17 @@
+{
+  "name": "goatlang",
+  "version": "0.0.1",
+  "description": "Playing around with Golang",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonbri/goatlang.git"
+  },
+  "scripts": {
+    "run": "./bin/run.sh",
+    "release": "./bin/release.sh"
+  },
+  "license": "MIT",
+  "bin": {
+    "goatlang": "index.js"
+  }
+}
