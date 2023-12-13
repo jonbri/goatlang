@@ -1,7 +1,10 @@
 #!/bin/bash
 
-GOTAGGER_EXE_PATH="$HOME/march/gotagger/build/linux/gotagger"
-VERSION=`$GOTAGGER_EXE_PATH`
-git commit --allow-empty -m "release: $VERSION"
-$GOTAGGER_EXE_PATH -release -push
+GOTAGGER="./bin/gotagger"
+
+GOATLANG_VERSION=`$GOTAGGER`
+
+git commit --allow-empty -m "release: $GOATLANG_VERSION"
+
+$GOTAGGER -release -push
 

@@ -1,3 +1,4 @@
 #!/bin/bash
 
-go run hello-world.go
+go run app/hello-world.go
+
