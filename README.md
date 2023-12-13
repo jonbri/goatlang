@@ -25,16 +25,24 @@ tar xvf gotagger_0.9.0_linux_386.tar.gz
 
 ## Usage
 
-## Go app
+## Golang app
 
-```
+```sh
 # hello-world in golang
 ./run.sh
 ```
 
 ## NPM
 
+Local:
 ```sh
-npm install --global goatlang
+yarn install
+yarn start
+```
+
+Consumer:
+```sh
+sudo npm install --global goatlang
 goatlang
 ```
+

@@ -28,9 +28,11 @@ jobs:
           wget https://github.com/sassoftware/gotagger/releases/download/v0.9.0/gotagger_0.9.0_linux_386.tar.gz
           tar xvf gotagger_0.9.0_linux_386.tar.gz
           ./gotagger --version
-      - name: yarn install
-        run: yarn install
       - name: go:start
         run: yarn go:start
       - name: go:version
         run: yarn go:version
+      - name: Run Node
+        run: |
+          yarn install
+          yarn start
