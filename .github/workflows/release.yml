@@ -1,0 +1,33 @@
+name: Release
+on:
+  workflow_dispatch:
+jobs:
+  Release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "lts/*"
+      - name: Install Golang
+        run: |
+          curl -OL https://golang.org/dl/go1.16.7.linux-amd64.tar.gz
+          tar -C /usr/local -xvf go1.16.7.linux-amd64.tar.gz
+          export PATH=/usr/local/go/bin:$PATH
+          go version
+      - name: Install gotagger
+        run: |
+          wget https://github.com/sassoftware/gotagger/releases/download/v0.9.0/gotagger_0.9.0_linux_386.tar.gz
+          tar xvf gotagger_0.9.0_linux_386.tar.gz
+          ./gotagger --version
+      - name: yarn install
+        run: yarn install
+      - name: go:start
+        run: yarn go:start
+      - name: go:version
+        run: yarn go:version

@@ -12,6 +12,7 @@ Install Golang:
 curl -OL https://golang.org/dl/go1.16.7.linux-amd64.tar.gz
 sudo tar -C /usr/local -xvf go1.16.7.linux-amd64.tar.gz
 export PATH=/usr/local/go/bin:$PATH
+go version
 ```
 
 Install [gotagger](https://github.com/sassoftware/gotagger):
@@ -27,6 +28,7 @@ tar xvf gotagger_0.9.0_linux_386.tar.gz
 ## Go app
 
 ```
+# hello-world in golang
 ./run.sh
 ```
 
