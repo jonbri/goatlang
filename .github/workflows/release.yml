@@ -22,8 +22,6 @@ jobs:
           go version
       - name: Install gotagger
         run: |
-          # wget https://github.com/sassoftware/gotagger/releases/download/v0.9.0/gotagger_0.9.0_linux_386.tar.gz
-          # tar xvf gotagger_0.9.0_linux_386.tar.gz
           ./bin/gotagger --version
       - name: go:start
         run: yarn go:start
