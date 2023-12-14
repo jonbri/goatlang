@@ -8,6 +8,7 @@
   },
   "scripts": {
     "start": "node index.js",
+    "changelog": "node ./bin/changelog.js",
     "go:start": "./bin/run.sh",
     "go:version": "./bin/version.sh",
     "go:release": "./bin/release.sh"
@@ -15,5 +16,8 @@
   "license": "MIT",
   "bin": {
     "goatlang": "index.js"
+  },
+  "devDependencies": {
+    "conventional-changelog": "^5.1.0"
   }
 }
