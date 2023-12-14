@@ -36,3 +36,5 @@ jobs:
         run: |
           yarn install
           yarn start
+      - name: gotagger
+        run: ./gotagger
