@@ -3,7 +3,7 @@
 
 ### Bug Fixes
 
-* changelog ([51de3c2](https://github.com/jonbri/goatlang/commit/51de3c27b5a9b7f31c368a6338e60a61c0be7689))
+* changelog ([df53968](https://github.com/jonbri/goatlang/commit/df53968bc5183489ae1ab04536e6a43e07641ce9))
 * ci ([f164dc1](https://github.com/jonbri/goatlang/commit/f164dc14e7e040aae06abea3ea3e767e794235e5))
 * ci ([3210645](https://github.com/jonbri/goatlang/commit/321064547398f91f8ece727a53f3c96fddfe8159))
 * ci on push ([94b6478](https://github.com/jonbri/goatlang/commit/94b64785fa3af8bb70954956900f56baffc0c6c0))
