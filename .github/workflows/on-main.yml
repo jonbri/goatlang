@@ -1,9 +1,12 @@
-name: Release
+name: OnMain
 on:
+  push:
+    branches:
+      - 'main'
   workflow_dispatch:
 jobs:
-  Release:
-    name: Release
+  OnMain:
+    name: OnMain
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -33,8 +36,6 @@ jobs:
         run: |
           yarn install
           yarn start
-      - name: gotagger
-        run: yarn run go:release
-      - name: PR
-        uses: peter-evans/create-pull-request@v5
+      # - name: gotagger
+        # run: yarn run go:release
 
