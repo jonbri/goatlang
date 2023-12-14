@@ -32,7 +32,10 @@ jobs:
           yarn install
           yarn start
       - name: gotagger
-        run: yarn run go:release
+        run: |
+          git config --global user.name 'jonbri'
+          git config --global user.email 'jonbri@users.noreply.github.com'
+          yarn run go:release
       - name: PR
         uses: peter-evans/create-pull-request@v5
 
