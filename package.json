@@ -9,7 +9,8 @@
   "scripts": {
     "start": "node index.js",
     "go:start": "go run app/hello-world.go",
-    "test": "go version; ./bin/gotagger --version; ./bin/gotagger",
+    "test": "go version; ./bin/gotagger --version; yarn next",
+    "next": "./bin/gotagger",
     "changelog": "node ./bin/changelog.js"
   },
   "license": "MIT",
