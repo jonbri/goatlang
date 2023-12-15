@@ -1,0 +1,12 @@
+{
+  "name": "goatlang",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonbri/goatlang.git"
+  },
+  "license": "MIT",
+  "bin": {
+    "goatlang": "index.js"
+  }
+}

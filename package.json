@@ -1,7 +1,6 @@
 {
   "name": "goatlang",
   "version": "0.0.1",
-  "description": "Playing around with Golang",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jonbri/goatlang.git"
@@ -10,6 +9,7 @@
     "start": "node index.js",
     "go:start": "go run app/hello-world.go",
     "test": "go version; ./bin/gotagger --version; yarn next",
+    "build": "cp index.js build",
     "next": "./bin/gotagger",
     "next:release": "./bin/gotagger -release",
     "changelog": "node ./bin/changelog.js"
