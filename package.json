@@ -8,10 +8,9 @@
   },
   "scripts": {
     "start": "node index.js",
-    "changelog": "node ./bin/changelog.js",
     "go:start": "go run app/hello-world.go",
-    "go:version": "./bin/version.sh",
-    "go:release": "./bin/release.sh"
+    "test": "go version; ./bin/gotagger --version; ./bin/gotagger",
+    "changelog": "node ./bin/changelog.js"
   },
   "license": "MIT",
   "bin": {
