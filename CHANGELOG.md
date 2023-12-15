@@ -1,4 +1,4 @@
-## [0.0.1](https://github.com/jonbri/goatlang/compare/v0.1.1...v0.0.1) (2023-12-15)
+# [0.2.0](https://github.com/jonbri/goatlang/compare/v0.1.1...v0.2.0) (2023-12-15)
 
 
 ### Bug Fixes
@@ -12,6 +12,7 @@
 * install go in /tmp ([98282b3](https://github.com/jonbri/goatlang/commit/98282b36a532026fe188c5f088906f2f84379c5e))
 * on-main -> review ([e9c3048](https://github.com/jonbri/goatlang/commit/e9c304895a6c911d682f60612a5e0dcc4bfc02d8))
 * refactor ([2e94289](https://github.com/jonbri/goatlang/commit/2e94289e4e82c61204e5416a1ccee1b34c734e8b))
+* remove character ([76b1261](https://github.com/jonbri/goatlang/commit/76b12617c8d84e46738fa658df9650ab6a23fb2f))
 * run with node ([585a426](https://github.com/jonbri/goatlang/commit/585a42620d747a48d792f1a2fd8e37f081a3d2fe))
 * sudo tar ([5fd9c83](https://github.com/jonbri/goatlang/commit/5fd9c837849e138e69234026db8e23d8795c8e81))
 * wip ([913307f](https://github.com/jonbri/goatlang/commit/913307f05a57b61e639481f745d44f8d711e91a2))
