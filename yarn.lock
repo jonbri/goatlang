@@ -172,7 +172,7 @@ conventional-changelog-writer@^7.0.0:
     semver "^7.5.2"
     split2 "^4.0.0"
 
-conventional-changelog@^5.1.0:
+conventional-changelog@5.1.0:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/conventional-changelog/-/conventional-changelog-5.1.0.tgz#04b36a5ad0518e0323e9d629e3b86e34f7abb7eb"
   integrity sha512-aWyE/P39wGYRPllcCEZDxTVEmhyLzTc9XA6z6rVfkuCD2UBnhV/sgSOKbQrEG5z9mEZJjnopjgQooTKxEg8mAg==

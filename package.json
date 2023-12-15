@@ -11,7 +11,6 @@
     "test": "go version; ./bin/gotagger --version; yarn next",
     "build": "cp index.js build",
     "next": "./bin/gotagger",
-    "next:release": "./bin/gotagger -release",
     "changelog": "node ./bin/changelog.js"
   },
   "license": "MIT",
@@ -19,6 +18,6 @@
     "goatlang": "index.js"
   },
   "devDependencies": {
-    "conventional-changelog": "^5.1.0"
+    "conventional-changelog": "5.1.0"
   }
 }

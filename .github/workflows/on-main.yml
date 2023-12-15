@@ -25,6 +25,8 @@ jobs:
         run: yarn install && yarn start
       - name: Run go
         run: yarn go:start
-      # - name: Publish
-      #   run: npm publish ./build
+      - name: Publish
+        run: |
+          ./bin/prerelease.sh
+          # npm publish ./build
 
