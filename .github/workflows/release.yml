@@ -31,7 +31,7 @@ jobs:
           git add CHANGELOG.md
 
           NEXT_VERSION=`./bin/gotagger`
-          git commit --allow-empty -m "release: v$NEXT_VERSION"
+          git commit --allow-empty -m "release: $NEXT_VERSION"
 
           ./bin/gotagger -release -push
       - name: PR
