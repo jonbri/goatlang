@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node index.js",
     "changelog": "node ./bin/changelog.js",
-    "go:start": "./bin/run.sh",
+    "go:start": "go run app/hello-world.go",
     "go:version": "./bin/version.sh",
     "go:release": "./bin/release.sh"
   },

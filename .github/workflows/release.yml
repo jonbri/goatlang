@@ -23,7 +23,7 @@ jobs:
       - name: Install gotagger
         run: |
           ./bin/gotagger --version
-      - name: go:start
+      - name: go hello world
         run: yarn go:start
       - name: go:version
         run: yarn go:version
