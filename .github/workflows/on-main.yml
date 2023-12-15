@@ -28,9 +28,16 @@ jobs:
       - name: Publish
         run: |
           # if head commit is release
+          if [[ `git log -1 --pretty=%B` == release* ]]; then
+            echo "starting release..."
+          else
+            echo "starting prerelease..."
+            previous_version=`git describe --tags --abbrev=0`
+            echo $previous_version
+            new_version=`./node_modules/.bin/semver $previous_version --increment prerelease --preid beta`
+            echo $new_version
+            npm version $new_version --commit-hooks false --git-tag-version false
+          fi
 
-          # if a pre-release commit
-
-          ./bin/prerelease.sh
           # npm publish ./build
 
