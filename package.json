@@ -11,6 +11,7 @@
     "go:start": "go run app/hello-world.go",
     "test": "go version; ./bin/gotagger --version; yarn next",
     "next": "./bin/gotagger",
+    "next:release": "./bin/gotagger -release",
     "changelog": "node ./bin/changelog.js"
   },
   "license": "MIT",
