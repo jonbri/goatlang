@@ -24,18 +24,24 @@ jobs:
       - name: Run node
         run: yarn install && yarn start
       - name: Run go
-        run: yarn go:start
+        run: yarn start:go
       - name: Publish
         run: |
           # if head commit is release
           if [[ `git log -1 --pretty=%B` == release* ]]; then
             echo "starting release..."
+            git tag $new_version
+            git push origin $new_version
+
+            npm publish ./build
           else
             echo "starting prerelease..."
             previous_version=`git describe --tags --abbrev=0`
             echo "previous_version: ${previous_version}"
             new_version=`./node_modules/.bin/semver $previous_version --increment prerelease --preid beta`
             echo "new_version: ${new_version}"
+
+            # do I actually need to do this?
             cd build
             npm version $new_version --commit-hooks false --git-tag-version false
             cat package.json
@@ -44,7 +50,7 @@ jobs:
             git tag $new_version
             git push origin $new_version
 
-            # npm publish ./build
+            npm publish ./build
           fi
 
 

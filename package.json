@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "node index.js",
-    "go:start": "go run app/hello-world.go",
+    "start:go": "go run app/hello-world.go",
     "test": "go version; ./bin/gotagger --version; yarn next",
     "build": "cp index.js build",
     "next": "./bin/gotagger",

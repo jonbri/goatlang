@@ -21,7 +21,7 @@ jobs:
       - name: Run node
         run: yarn install && yarn start
       - name: Run go
-        run: yarn go:start
+        run: yarn start:go
       - name: release
         run: |
           git config --global user.name 'goatlang'
@@ -33,7 +33,7 @@ jobs:
           NEXT_VERSION=`./bin/gotagger`
           git commit --allow-empty -m "release: $NEXT_VERSION"
 
-          ./bin/gotagger -release -push
+          # ./bin/gotagger -release -push
       - name: PR
         uses: peter-evans/create-pull-request@v5
 
