@@ -1,3 +1,44 @@
+## [0.0.1](https://github.com/jonbri/goatlang/compare/0.2.1-beta.7...0.0.1) (2023-12-16)
+
+
+
+## [0.2.1-beta.7](https://github.com/jonbri/goatlang/compare/0.2.1-beta.6...0.2.1-beta.7) (2023-12-16)
+
+
+
+## [0.2.1-beta.6](https://github.com/jonbri/goatlang/compare/0.2.1-beta.5...0.2.1-beta.6) (2023-12-16)
+
+
+
+## [0.2.1-beta.5](https://github.com/jonbri/goatlang/compare/0.2.1-beta.4...0.2.1-beta.5) (2023-12-16)
+
+
+
+## [0.2.1-beta.4](https://github.com/jonbri/goatlang/compare/0.2.1-beta.3...0.2.1-beta.4) (2023-12-16)
+
+
+
+## [0.2.1-beta.3](https://github.com/jonbri/goatlang/compare/0.2.1-beta.2...0.2.1-beta.3) (2023-12-16)
+
+
+
+## [0.2.1-beta.2](https://github.com/jonbri/goatlang/compare/0.2.1-beta.1...0.2.1-beta.2) (2023-12-16)
+
+
+
+## [0.2.1-beta.1](https://github.com/jonbri/goatlang/compare/0.2.1-beta.0...0.2.1-beta.1) (2023-12-16)
+
+
+
+## [0.2.1-beta.0](https://github.com/jonbri/goatlang/compare/v0.2.0...0.2.1-beta.0) (2023-12-16)
+
+
+### Bug Fixes
+
+* transform ([3c6cc33](https://github.com/jonbri/goatlang/commit/3c6cc33d20506cf3b4d6da812d121529b5ebc39f))
+
+
+
 # [0.2.0](https://github.com/jonbri/goatlang/compare/v0.1.1...v0.2.0) (2023-12-15)
 
 
