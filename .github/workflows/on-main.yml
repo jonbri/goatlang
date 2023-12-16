@@ -19,6 +19,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: "lts/*"
+          registry-url: 'https://registry.npmjs.org'
       - name: Check
         run: yarn test
       - name: Run node
