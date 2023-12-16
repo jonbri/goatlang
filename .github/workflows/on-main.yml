@@ -1,12 +1,12 @@
-name: Review
+name: OnMain
 on:
   push:
     branches:
       - 'main'
   workflow_dispatch:
 jobs:
-  Review:
-    name: Review
+  OnMain:
+    name: OnMain
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -37,7 +37,8 @@ jobs:
             new_version=`./node_modules/.bin/semver $previous_version --increment prerelease --preid beta`
             echo $new_version
             npm version $new_version --commit-hooks false --git-tag-version false
+            ls -l
+            # npm publish ./build
           fi
 
-          # npm publish ./build
 
