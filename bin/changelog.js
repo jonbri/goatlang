@@ -15,13 +15,13 @@ async function main() {
   const stream = ConventionalChangelog({
     preset: 'angular',
     releaseCount: 0,
-    pkg: {
-      path: './build/package.json',
-      // transform(pkg) {
-      //   pkg.version = '3.2.1'; // TODO
-      //   return pkg;
-      // }
-    }
+    // pkg: {
+    //   path: './build/package.json',
+    //   // transform(pkg) {
+    //   //   pkg.version = '3.2.1'; // TODO
+    //   //   return pkg;
+    //   // }
+    // }
   });
 
   const markdown = await streamToString(stream);
