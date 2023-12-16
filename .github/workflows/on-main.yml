@@ -33,14 +33,18 @@ jobs:
           else
             echo "starting prerelease..."
             previous_version=`git describe --tags --abbrev=0`
-            echo $previous_version
+            echo "previous_version: ${previous_version}"
             new_version=`./node_modules/.bin/semver $previous_version --increment prerelease --preid beta`
-            echo $new_version
+            echo "new_version: ${new_version}"
             cd build
             npm version $new_version --commit-hooks false --git-tag-version false
-            ls -l
             cat package.json
-            # npm publish
+            cd ..
+
+            git tag $new_version
+            git push origin $new_version
+
+            # npm publish ./build
           fi
 
 
