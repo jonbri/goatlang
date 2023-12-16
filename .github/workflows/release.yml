@@ -39,5 +39,5 @@ jobs:
       - name: PR
         uses: peter-evans/create-pull-request@v5
         with:
-          commit-message: release: ${new_version}
+          commit-message: "release: ${new_version}"
 
