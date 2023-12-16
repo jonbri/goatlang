@@ -28,6 +28,8 @@ jobs:
           git config --global user.email 'goatlang@users.noreply.github.com'
 
           new_version=`./bin/gotagger`
+          echo "new_version: ${new_version}";
+          cat package.json
 
           npm version $new_version --commit-hooks false --git-tag-version false
           cat package.json
