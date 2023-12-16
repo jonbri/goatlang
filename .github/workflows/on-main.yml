@@ -38,9 +38,9 @@ jobs:
             echo $new_version
             cd build
             npm version $new_version --commit-hooks false --git-tag-version false
-            ls -l ./build
+            ls -l
             cat build/package.json
-            # npm publish ./build
+            # npm publish
           fi
 
 
