@@ -39,7 +39,7 @@ jobs:
             cd build
             npm version $new_version --commit-hooks false --git-tag-version false
             ls -l
-            cat build/package.json
+            cat package.json
             # npm publish
           fi
 
