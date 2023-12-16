@@ -28,6 +28,7 @@ jobs:
       - name: Publish
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           # if head commit is release
           if [[ `git log -1 --pretty=%B` == release* ]]; then
