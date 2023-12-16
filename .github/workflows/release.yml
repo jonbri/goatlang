@@ -27,13 +27,15 @@ jobs:
           git config --global user.name 'goatlang'
           git config --global user.email 'goatlang@users.noreply.github.com'
 
+          new_version=`./bin/gotagger`
+
+          npm version $new_version --commit-hooks false --git-tag-version false
+          cat package.json
+
           yarn changelog
           git add CHANGELOG.md
 
-          NEXT_VERSION=`./bin/gotagger`
-          git commit --allow-empty -m "release: $NEXT_VERSION"
-
-          # ./bin/gotagger -release -push
+          git commit --allow-empty -m "release: $new_version"
       - name: PR
         uses: peter-evans/create-pull-request@v5
 

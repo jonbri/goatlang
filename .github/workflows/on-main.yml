@@ -33,10 +33,14 @@ jobs:
           # if head commit is release
           if [[ `git log -1 --pretty=%B` == release* ]]; then
             echo "starting release..."
-            git tag $new_version
-            git push origin $new_version
 
-            npm publish ./build
+            # get version
+            parsed_version=`git show -s --format=%B HEAD | sed -e '2d' | awk -e '{ print $2 }'`
+            echo $parsed_version
+
+            # git tag $new_version
+            # git push origin $new_version
+            # npm publish ./build
           else
             echo "starting prerelease..."
             previous_version=`git describe --tags --abbrev=0`
