@@ -36,6 +36,7 @@ jobs:
             echo $previous_version
             new_version=`./node_modules/.bin/semver $previous_version --increment prerelease --preid beta`
             echo $new_version
+            cd build
             npm version $new_version --commit-hooks false --git-tag-version false
             ls -l ./build
             cat build/package.json
