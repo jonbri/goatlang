@@ -38,4 +38,6 @@ jobs:
           git commit --allow-empty -m "release: $new_version"
       - name: PR
         uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: release: ${new_version}
 
