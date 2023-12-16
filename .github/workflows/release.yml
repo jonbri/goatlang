@@ -32,7 +32,6 @@ jobs:
           cat package.json
 
           npm version $new_version --commit-hooks false --git-tag-version false
-          cat package.json
 
           yarn changelog
           git add CHANGELOG.md
