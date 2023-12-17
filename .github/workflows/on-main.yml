@@ -49,10 +49,10 @@ jobs:
             echo "new_version: ${new_version}"
 
             # do I actually need to do this?
-            cd build
-            npm version $new_version --commit-hooks false --git-tag-version false
-            cat package.json
-            cd ..
+            # cd build
+            # npm version $new_version --commit-hooks false --git-tag-version false
+            # cat package.json
+            # cd ..
 
             git tag $new_version
             git push origin $new_version
