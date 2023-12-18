@@ -8,7 +8,8 @@
   "scripts": {
     "start": "node index.js",
     "start:go": "go run app/hello-world.go",
-    "test": "go version; ./bin/gotagger --version; yarn next",
+    "test": "prettier --check \"**/*.{js,md}\" && go version && ./bin/gotagger --version && yarn next",
+    "format": "prettier --write \"**/*.{js,md}\"",
     "build": "cp index.js build",
     "next": "./bin/gotagger",
     "changelog": "node ./bin/changelog.js"
@@ -18,6 +19,7 @@
     "goatlang": "index.js"
   },
   "devDependencies": {
-    "conventional-changelog": "5.1.0"
+    "conventional-changelog": "5.1.0",
+    "prettier": "^2.8.4"
   }
 }
