@@ -40,33 +40,14 @@ jobs:
           cat package.json
 
           yarn changelog
-          # git add CHANGELOG.md
 
           npm version 0.0.0 --commit-hooks false --git-tag-version false
           echo "back to 0.0.0"
           cat package.json
 
-          # git commit --allow-empty -m "release: $new_version"
-
           branch_name="release-${new_version}"
           echo "NEW_VERSION=$new_version" >> $GITHUB_OUTPUT
           echo "BRANCH_NAME=$branch_name" >> $GITHUB_OUTPUT
-
-          cat $GITHUB_OUTPUT
-
-          # git checkout -b $branch_name
-          # git push origin $branch_name
-
-      - name: Variables
-        env:
-          NEW_VERSION: ${{ steps.release.outputs.NEW_VERSION }}
-        run: |
-          echo "start: $NEW_VERSION"
-          echo "one: ${new_version}";
-          echo "two: ${NEW_VERSION}"
-          echo "three: ${{ steps.release.outputs.new_version }}"
-          echo "four: ${{ steps.release.outputs.NEW_VERSION }}"
-          echo "end"
       - name: PR
         env:
           NEW_VERSION: ${{ steps.release.outputs.NEW_VERSION }}
@@ -76,11 +57,5 @@ jobs:
             release: ${{ steps.release.outputs.NEW_VERSION }}
           title: >-
             release: ${{ steps.release.outputs.NEW_VERSION }}
-          body: |
-            - item 0
-            - item 1
-            - ${{ steps.release.outputs.NEW_VERSION }}
-
-            And a footer
-          # branch: ${{ steps.release.outputs.branch_name }}
+          branch: ${{ steps.release.outputs.BRANCH_NAME }}
 
