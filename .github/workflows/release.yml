@@ -52,6 +52,13 @@ jobs:
           # git checkout -b $branch_name
           # git push origin $branch_name
 
+      - name: Variables
+        run: |
+          echo "one"
+          echo $new_version
+          echo "two"
+          echo "${{ steps.release.outputs.new_version }}"
+          echo "three"
       - name: PR
         uses: peter-evans/create-pull-request@v5
         with:
