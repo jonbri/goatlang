@@ -13,8 +13,8 @@ cat package.json
 yarn changelog
 git add CHANGELOG.md
 
-npm version 0.0.1 --commit-hooks false --git-tag-version false
-echo "back to 0.0.1"
+npm version 0.0.0 --commit-hooks false --git-tag-version false
+echo "back to 0.0.0"
 cat package.json
 
 # git commit --allow-empty -m "release: $new_version"
