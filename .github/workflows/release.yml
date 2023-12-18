@@ -24,6 +24,7 @@ jobs:
       - name: Run go
         run: yarn start:go
       - name: release
+        id: release
         run: |
           git config --global user.name 'goatlang'
           git config --global user.email 'goatlang@users.noreply.github.com'
@@ -60,13 +61,15 @@ jobs:
         env:
           NEW_VERSION: ${{ steps.release.outputs.NEW_VERSION }}
         run: |
-          echo "start"
+          echo "start: $NEW_VERSION"
           echo "one: ${new_version}";
           echo "two: ${NEW_VERSION}"
           echo "three: ${{ steps.release.outputs.new_version }}"
           echo "four: ${{ steps.release.outputs.NEW_VERSION }}"
           echo "end"
       - name: PR
+        env:
+          NEW_VERSION: ${{ steps.release.outputs.NEW_VERSION }}
         uses: peter-evans/create-pull-request@v5
         with:
           commit-message: >-
