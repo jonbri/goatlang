@@ -48,7 +48,7 @@ jobs:
           git commit --allow-empty -m "release: $new_version"
 
           branch_name="release-${new_version}"
-          git checkout --branch $branch_name
+          git checkout -b $branch_name
           git push origin $branch_name
 
       # - name: PR
