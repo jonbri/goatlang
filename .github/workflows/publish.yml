@@ -1,21 +1,17 @@
-name: OnMain
+name: Publish
 on:
   push:
     branches:
       - 'main'
   workflow_dispatch:
 jobs:
-  OnMain:
-    name: OnMain
+  Tag_And_Publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-
-      # - name: Install Golang
-      #   run: ./bin/install-go.sh
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -50,9 +46,8 @@ jobs:
           GOTAGGER_VERSION=`./bin/gotagger`
           echo "GOTAGGER_VERSION: ${GOTAGGER_VERSION}"
 
-      - name: Publish
+      - name: package.json
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NEW_VERSION: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
         run: |
           cd build
@@ -60,7 +55,16 @@ jobs:
           head package.json
           cd ..
 
+      - name: Tag
+        env:
+          NEW_VERSION: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
+        run: |
           git tag $NEW_VERSION
           git push origin $NEW_VERSION
+
+      - name: Publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
           npm publish ./build
 

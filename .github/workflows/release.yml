@@ -33,19 +33,23 @@ jobs:
           NEW_VERSION=`./bin/gotagger`
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
+
       - name: changelog
-        id: changelog
+        run: |
+          yarn changelog
+
+      - name: git_user
         run: |
           git config --global user.name 'goatlang'
           git config --global user.email 'goatlang@users.noreply.github.com'
-          yarn changelog
+
       - name: PR
         env:
           NEW_VERSION: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
         uses: peter-evans/create-pull-request@v5
         with:
           commit-message: >-
-            release: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
+            release: ${NEW_VERSION}
           title: >-
-            release: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
+            release: ${NEW_VERSION}
 
