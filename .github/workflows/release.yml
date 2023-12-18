@@ -41,24 +41,29 @@ jobs:
           yarn changelog
           # git add CHANGELOG.md
 
-          npm version 0.0.1 --commit-hooks false --git-tag-version false
-          echo "back to 0.0.1"
+          npm version 0.0.0 --commit-hooks false --git-tag-version false
+          echo "back to 0.0.0"
           cat package.json
 
           # git commit --allow-empty -m "release: $new_version"
 
           branch_name="release-${new_version}"
+          echo "new_version=$new_version" >> $GITHUB_OUTPUT
 
           # git checkout -b $branch_name
           # git push origin $branch_name
 
       - name: Variables
+        env:
+          NEW_VERSION: ${{ steps.release.outputs.new_version }}
         run: |
           echo "one"
           echo $new_version
           echo "two"
-          echo "${{ steps.release.outputs.new_version }}"
+          echo "${NEW_VERSION}"
           echo "three"
+          echo "${{ steps.release.outputs.new_version }}"
+          echo "four"
       - name: PR
         uses: peter-evans/create-pull-request@v5
         with:
