@@ -1,6 +1,6 @@
 # goatlang
 
-Playing around with Golang
+Playing around with Golang.
 
 [NPM](https://www.npmjs.com/package/goatlang)
 
