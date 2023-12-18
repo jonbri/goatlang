@@ -1,4 +1,13 @@
-## [0.2.4](https://github.com/jonbri/goatlang/compare/0.2.4-beta.1...0.2.4) (2023-12-18)
+## [0.2.4](https://github.com/jonbri/goatlang/compare/0.2.4-beta.2...0.2.4) (2023-12-18)
+
+
+
+## [0.2.4-beta.2](https://github.com/jonbri/goatlang/compare/0.2.4-beta.1...0.2.4-beta.2) (2023-12-18)
+
+
+### Bug Fixes
+
+* head ([0f288cc](https://github.com/jonbri/goatlang/commit/0f288cc69915ec2530c9898a42da13f522e85b1a))
 
 
 
