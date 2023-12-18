@@ -48,18 +48,19 @@ jobs:
           git commit --allow-empty -m "release: $new_version"
 
           branch_name="release-${new_version}"
-          git checkout -b $branch_name
+
+          # git checkout -b $branch_name
           git push origin $branch_name
 
       - name: PR
         uses: peter-evans/create-pull-request@v5
         with:
-          commit-message: "release: ${new_version}"
-          title: "release: ${steps.release.outputs.new_version}"
+          commit-message: release: ${{ steps.release.outputs.new_version }}
+          title: release: ${{ steps.release.outputs.new_version }}
           body: |
             - item 0
             - item 1
 
             And a footer
-          branch: "${steps.release.outputs.new_version}"
+          branch: ${{ steps.release.outputs.new_version }}
 
