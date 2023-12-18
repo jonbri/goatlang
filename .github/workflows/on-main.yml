@@ -21,6 +21,8 @@ jobs:
           node-version: "lts/*"
           registry-url: 'https://registry.npmjs.org'
       - name: Check
+        run: yarn install && yarn test
+      - name: Check
         run: yarn test
       - name: Run node
         run: yarn install && yarn start
