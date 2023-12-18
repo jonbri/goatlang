@@ -1,4 +1,17 @@
-## [0.2.5](https://github.com/jonbri/goatlang/compare/0.2.5-beta.12...0.2.5) (2023-12-18)
+## [0.2.6](https://github.com/jonbri/goatlang/compare/0.2.6-beta.0...0.2.6) (2023-12-18)
+
+
+
+## [0.2.6-beta.0](https://github.com/jonbri/goatlang/compare/v0.2.5...0.2.6-beta.0) (2023-12-18)
+
+
+### Bug Fixes
+
+* cleanup ([7476616](https://github.com/jonbri/goatlang/commit/747661624fd698d0518ad886911d946a8d04115e))
+
+
+
+## [0.2.5](https://github.com/jonbri/goatlang/compare/0.2.5-beta.12...v0.2.5) (2023-12-18)
 
 
 
