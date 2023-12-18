@@ -39,18 +39,18 @@ jobs:
           cat package.json
 
           yarn changelog
-          git add CHANGELOG.md
+          # git add CHANGELOG.md
 
           npm version 0.0.1 --commit-hooks false --git-tag-version false
           echo "back to 0.0.1"
           cat package.json
 
-          git commit --allow-empty -m "release: $new_version"
+          # git commit --allow-empty -m "release: $new_version"
 
           branch_name="release-${new_version}"
 
           # git checkout -b $branch_name
-          git push origin $branch_name
+          # git push origin $branch_name
 
       - name: PR
         uses: peter-evans/create-pull-request@v5
@@ -62,5 +62,5 @@ jobs:
             - item 1
 
             And a footer
-          branch: ${{ steps.release.outputs.new_version }}
+          branch: ${{ steps.release.outputs.branch_name }}
 
