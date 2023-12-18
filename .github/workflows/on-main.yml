@@ -13,19 +13,22 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
       - name: Install Golang
         run: ./bin/install-go.sh
+
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "lts/*"
           registry-url: 'https://registry.npmjs.org'
+
       - name: Check
         run: |
-          yarn install && yarn test
+          yarn install
+          yarn build
           yarn test
           yarn start
-          yarn start:go
 
       - name: Determine next version
         id: determine_next_version
@@ -56,5 +59,4 @@ jobs:
           git tag $NEW_VERSION
           git push origin $NEW_VERSION
           npm publish ./build
-
 

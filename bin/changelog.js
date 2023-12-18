@@ -1,6 +1,6 @@
+const { execSync } = require("child_process");
 const fs = require("fs");
 const ConventionalChangelog = require("conventional-changelog");
-const { execSync } = require("child_process");
 
 // https://stackoverflow.com/a/49428486/2295034
 function streamToString(stream) {
