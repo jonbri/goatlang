@@ -51,8 +51,10 @@ jobs:
           git checkout -b $branch_name
           git push origin $branch_name
 
-      # - name: PR
-      #   uses: peter-evans/create-pull-request@v5
-      #   with:
-      #     commit-message: "release: ${new_version}"
+      - name: PR
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: "release: ${new_version}"
+          title: "release: ${new_version}"
+          body: "this is the body"
 

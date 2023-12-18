@@ -42,8 +42,7 @@ jobs:
             echo $new_version
             echo "end"
 
-            # do I actually need to do this?
-            # yes, or it won't publish with the right version
+            # update version in package.json
             cd build
             npm version $new_version --commit-hooks false --git-tag-version false
             cat package.json
@@ -55,13 +54,14 @@ jobs:
             npm publish ./build
           else
             echo "starting prerelease..."
+
             previous_version=`git describe --tags --abbrev=0`
             echo "previous_version: ${previous_version}"
+
             new_version=`./node_modules/.bin/semver $previous_version --increment prerelease --preid beta`
             echo "new_version: ${new_version}"
 
-            # do I actually need to do this?
-            # yes, or it won't publish with the right version
+            # update version in package.json
             cd build
             npm version $new_version --commit-hooks false --git-tag-version false
             cat package.json
