@@ -1,6 +1,6 @@
 const fs = require("fs");
 const ConventionalChangelog = require("conventional-changelog");
-const { execSync } = require('child_process');
+const { execSync } = require("child_process");
 
 // https://stackoverflow.com/a/49428486/2295034
 function streamToString(stream) {
@@ -13,7 +13,10 @@ function streamToString(stream) {
 }
 
 async function main() {
-  const version = execSync('./bin/gotagger').toString().trim().replace(/^v/, '');
+  const version = execSync("./bin/gotagger")
+    .toString()
+    .trim()
+    .replace(/^v/, "");
 
   const stream = ConventionalChangelog({
     preset: "angular",
@@ -22,8 +25,8 @@ async function main() {
       transform(pkg) {
         pkg.version = version;
         return pkg;
-      }
-    }
+      },
+    },
   });
 
   const markdown = await streamToString(stream);
