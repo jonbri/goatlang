@@ -48,22 +48,23 @@ jobs:
           # git commit --allow-empty -m "release: $new_version"
 
           branch_name="release-${new_version}"
-          echo "new_version=$new_version" >> $GITHUB_OUTPUT
+          echo "NEW_VERSION=$new_version" >> $GITHUB_OUTPUT
+          echo "BRANCH_NAME=$branch_name" >> $GITHUB_OUTPUT
+
+          cat $GITHUB_OUTPUT
 
           # git checkout -b $branch_name
           # git push origin $branch_name
 
       - name: Variables
         env:
-          NEW_VERSION: ${{ steps.release.outputs.new_version }}
+          NEW_VERSION: ${{ steps.release.outputs.NEW_VERSION }}
         run: |
-          echo "one"
-          echo $new_version
-          echo "two"
-          echo "${NEW_VERSION}"
-          echo "three"
-          echo "${{ steps.release.outputs.new_version }}"
-          echo "four"
+          echo "start"
+          echo "one: ${new_version}";
+          echo "two: ${NEW_VERSION}"
+          echo "three: ${{ steps.release.outputs.new_version }}"
+          echo "end"
       - name: PR
         uses: peter-evans/create-pull-request@v5
         with:
