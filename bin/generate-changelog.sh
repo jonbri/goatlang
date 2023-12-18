@@ -5,6 +5,6 @@ echo "new_version: ${new_version}";
 
 # npm version $new_version --commit-hooks false --git-tag-version false
 
-yarn changelog
+node ./bin/changelog.js
 
 # npm version 0.0.0 --commit-hooks false --git-tag-version false

@@ -15,6 +15,12 @@ async function main() {
   const stream = ConventionalChangelog({
     preset: "angular",
     releaseCount: 0,
+    pkg: {
+      transform(pkg) {
+        pkg.version = "8.0.0";
+        return pkg;
+      }
+    }
   });
 
   const markdown = await streamToString(stream);
