@@ -37,7 +37,7 @@ jobs:
             echo "starting release..."
 
             # get version
-            new_version=`git show -s --format=%B HEAD | sed -e '2d' | awk -e '{ print $2 }'`
+            new_version=`git show -s --format=%B HEAD | head -n 1 | awk -e '{ print $2 }'`
             echo "new version"
             echo $new_version
             echo "end"
