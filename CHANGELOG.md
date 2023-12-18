@@ -1,4 +1,47 @@
-## [0.2.8](https://github.com/jonbri/goatlang/compare/0.2.8-beta.0...0.2.8) (2023-12-18)
+## [0.2.9](https://github.com/jonbri/goatlang/compare/0.2.9-beta.5...0.2.9) (2023-12-18)
+
+
+
+## [0.2.9-beta.5](https://github.com/jonbri/goatlang/compare/0.2.9-beta.4...0.2.9-beta.5) (2023-12-18)
+
+
+
+## [0.2.9-beta.4](https://github.com/jonbri/goatlang/compare/0.2.9-beta.3...0.2.9-beta.4) (2023-12-18)
+
+
+
+## [0.2.9-beta.3](https://github.com/jonbri/goatlang/compare/0.2.9-beta.2...0.2.9-beta.3) (2023-12-18)
+
+
+
+## [0.2.9-beta.2](https://github.com/jonbri/goatlang/compare/0.2.9-beta.1...0.2.9-beta.2) (2023-12-18)
+
+
+### Bug Fixes
+
+* will gotagger still work? ([a9f8c46](https://github.com/jonbri/goatlang/commit/a9f8c46211f6feca5dbedfb11f3ef3a85b7335ee))
+
+
+
+## [0.2.9-beta.1](https://github.com/jonbri/goatlang/compare/0.2.9-beta.0...0.2.9-beta.1) (2023-12-18)
+
+
+### Bug Fixes
+
+* on-main no go ([ca02cf1](https://github.com/jonbri/goatlang/commit/ca02cf153e29af9c59b3bbbffa4376aafb36dbc2))
+
+
+
+## [0.2.9-beta.0](https://github.com/jonbri/goatlang/compare/v0.2.8...0.2.9-beta.0) (2023-12-18)
+
+
+### Bug Fixes
+
+* cleanup ([8f60f11](https://github.com/jonbri/goatlang/commit/8f60f11ce87641a5207b5b1bc646e528ed72df89))
+
+
+
+## [0.2.8](https://github.com/jonbri/goatlang/compare/0.2.8-beta.0...v0.2.8) (2023-12-18)
 
 
 
