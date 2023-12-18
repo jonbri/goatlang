@@ -12,7 +12,7 @@
     "format": "prettier --write \"**/*.{js,md}\"",
     "build": "cp index.js build",
     "next": "./bin/gotagger",
-    "changelog": "./bin/generate-changelog.sh"
+    "changelog": "./bin/changelog.sh"
   },
   "license": "MIT",
   "bin": {

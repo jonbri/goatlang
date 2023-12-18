@@ -35,15 +35,7 @@ jobs:
           new_version=`./bin/gotagger`
           echo "new_version: ${new_version}";
 
-          npm version $new_version --commit-hooks false --git-tag-version false
-          echo "after"
-          cat package.json
-
           yarn changelog
-
-          npm version 0.0.0 --commit-hooks false --git-tag-version false
-          echo "back to 0.0.0"
-          cat package.json
 
           branch_name="release-${new_version}"
           echo "NEW_VERSION=$new_version" >> $GITHUB_OUTPUT
