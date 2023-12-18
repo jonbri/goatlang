@@ -21,56 +21,40 @@ jobs:
           node-version: "lts/*"
           registry-url: 'https://registry.npmjs.org'
       - name: Check
-        run: yarn install && yarn test
-      - name: Check
-        run: yarn test
-      - name: Run node
-        run: yarn install && yarn start
-      - name: Run go
-        run: yarn start:go
+        run: |
+          yarn install && yarn test
+          yarn test
+          yarn start
+          yarn start:go
+
+      - name: Determine next version
+        id: determine_next_version
+        run: |
+          if [[ `git log -1 --pretty=%B` == release* ]]; then
+            echo "Detected release..."
+            NEW_VERSION=`git show -s --format=%B HEAD | head -n 1 | awk -e '{ print $2 }'`
+          else
+            echo "Detected prerelease..."
+            PREVIOUS_VERSION=`git describe --tags --abbrev=0`
+            echo "PREVIOUS_VERSION: ${PREVIOUS_VERSION}"
+            NEW_VERSION=`./node_modules/.bin/semver $previous_version --increment prerelease --preid beta`
+          fi
+
+          echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
+          cat $GITHUB_OUTPUT
+
       - name: Publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NEW_VERSION: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
         run: |
-          # if head commit is release
-          if [[ `git log -1 --pretty=%B` == release* ]]; then
-            echo "starting release..."
+          cd build
+          npm version $NEW_VERSION --commit-hooks false --git-tag-version false
+          head package.json
+          cd ..
 
-            # get version
-            new_version=`git show -s --format=%B HEAD | head -n 1 | awk -e '{ print $2 }'`
-            echo "new version"
-            echo $new_version
-            echo "end"
-
-            # update version in package.json
-            cd build
-            npm version $new_version --commit-hooks false --git-tag-version false
-            cat package.json
-            cd ..
-
-            git tag $new_version
-            git push origin $new_version
-
-            npm publish ./build
-          else
-            echo "starting prerelease..."
-
-            previous_version=`git describe --tags --abbrev=0`
-            echo "previous_version: ${previous_version}"
-
-            new_version=`./node_modules/.bin/semver $previous_version --increment prerelease --preid beta`
-            echo "new_version: ${new_version}"
-
-            # update version in package.json
-            cd build
-            npm version $new_version --commit-hooks false --git-tag-version false
-            cat package.json
-            cd ..
-
-            git tag $new_version
-            git push origin $new_version
-
-            npm publish ./build
-          fi
+          git tag $NEW_VERSION
+          git push origin $NEW_VERSION
+          npm publish ./build
 
 

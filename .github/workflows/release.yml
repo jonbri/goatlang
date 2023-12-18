@@ -31,10 +31,11 @@ jobs:
 
           yarn changelog
 
-          new_version=`./bin/gotagger`
-          branch_name="release-${new_version}"
+          NEW_VERSION=`./bin/gotagger`
+          branch_name="release-${NEW_VERSION}"
 
-          echo "NEW_VERSION=$new_version" >> $GITHUB_OUTPUT
+          echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
+          # TODO: does the branch actually matter?
           echo "BRANCH_NAME=$branch_name" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
       - name: PR
@@ -46,5 +47,6 @@ jobs:
             release: ${{ steps.release.outputs.NEW_VERSION }}
           title: >-
             release: ${{ steps.release.outputs.NEW_VERSION }}
-          branch: ${{ steps.release.outputs.BRANCH_NAME }}
+
+# branch: ${{ steps.release.outputs.BRANCH_NAME }}
 
