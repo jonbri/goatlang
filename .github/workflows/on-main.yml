@@ -46,6 +46,7 @@ jobs:
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
 
+          # confirm that gotagger works w/o installing go
           GOTAGGER_VERSION=`./bin/gotagger`
           echo "GOTAGGER_VERSION: ${GOTAGGER_VERSION}"
 
