@@ -1,9 +1,8 @@
-name: Release
+name: Prepare
 on:
   workflow_dispatch:
 jobs:
-  Release:
-    name: Release
+  Create_Release_Commit:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -44,12 +43,10 @@ jobs:
           git config --global user.email 'goatlang@users.noreply.github.com'
 
       - name: PR
-        env:
-          NEW_VERSION: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
         uses: peter-evans/create-pull-request@v5
         with:
           commit-message: >-
-            release: ${NEW_VERSION}
+            release: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
           title: >-
-            release: ${NEW_VERSION}
+            release: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
 
