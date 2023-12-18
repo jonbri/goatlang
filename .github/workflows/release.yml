@@ -29,17 +29,14 @@ jobs:
           git config --global user.name 'goatlang'
           git config --global user.email 'goatlang@users.noreply.github.com'
 
-          echo "before"
-          cat package.json
-
-          new_version=`./bin/gotagger`
-          echo "new_version: ${new_version}";
-
           yarn changelog
 
+          new_version=`./bin/gotagger`
           branch_name="release-${new_version}"
+
           echo "NEW_VERSION=$new_version" >> $GITHUB_OUTPUT
           echo "BRANCH_NAME=$branch_name" >> $GITHUB_OUTPUT
+          cat $GITHUB_OUTPUT
       - name: PR
         env:
           NEW_VERSION: ${{ steps.release.outputs.NEW_VERSION }}
