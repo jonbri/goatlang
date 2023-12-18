@@ -64,17 +64,19 @@ jobs:
           echo "one: ${new_version}";
           echo "two: ${NEW_VERSION}"
           echo "three: ${{ steps.release.outputs.new_version }}"
+          echo "four: ${{ steps.release.outputs.NEW_VERSION }}"
           echo "end"
       - name: PR
         uses: peter-evans/create-pull-request@v5
         with:
           commit-message: >-
-            release: ${{ steps.release.outputs.new_version }}
+            release: ${{ steps.release.outputs.NEW_VERSION }}
           title: >-
-            release: ${{ steps.release.outputs.new_version }}
+            release: ${{ steps.release.outputs.NEW_VERSION }}
           body: |
             - item 0
             - item 1
+            - ${{ steps.release.outputs.NEW_VERSION }}
 
             And a footer
           # branch: ${{ steps.release.outputs.branch_name }}
