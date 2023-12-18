@@ -37,12 +37,22 @@ jobs:
             echo "starting release..."
 
             # get version
-            parsed_version=`git show -s --format=%B HEAD | sed -e '2d' | awk -e '{ print $2 }'`
-            echo $parsed_version
+            new_version=`git show -s --format=%B HEAD | sed -e '2d' | awk -e '{ print $2 }'`
+            echo "new version"
+            echo $new_version
+            echo "end"
 
-            # git tag $new_version
-            # git push origin $new_version
-            # npm publish ./build
+            # do I actually need to do this?
+            # yes, or it won't publish with the right version
+            cd build
+            npm version $new_version --commit-hooks false --git-tag-version false
+            cat package.json
+            cd ..
+
+            git tag $new_version
+            git push origin $new_version
+
+            npm publish ./build
           else
             echo "starting prerelease..."
             previous_version=`git describe --tags --abbrev=0`
