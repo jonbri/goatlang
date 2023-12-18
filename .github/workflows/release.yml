@@ -62,5 +62,5 @@ jobs:
             - item 1
 
             And a footer
-          branch: ${{ steps.release.outputs.branch_name }}
+          # branch: ${{ steps.release.outputs.branch_name }}
 
