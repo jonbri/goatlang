@@ -30,10 +30,10 @@ jobs:
         id: determine_next_version
         run: |
           if [[ `git log -1 --pretty=%B` == release* ]]; then
-            echo "Detected release..."
+            echo "Detected release"
             NEW_VERSION=`git show -s --format=%B HEAD | head -n 1 | awk -e '{ print $2 }'`
           else
-            echo "Detected prerelease..."
+            echo "Detected prerelease"
             NEW_VERSION=`./bin/gotagger`
           fi
 
