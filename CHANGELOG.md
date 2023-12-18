@@ -1,4 +1,76 @@
-## [0.2.4](https://github.com/jonbri/goatlang/compare/0.2.4-beta.2...0.2.4) (2023-12-18)
+## [0.2.5](https://github.com/jonbri/goatlang/compare/0.2.5-beta.7...0.2.5) (2023-12-18)
+
+
+
+## [0.2.5-beta.7](https://github.com/jonbri/goatlang/compare/0.2.5-beta.6...0.2.5-beta.7) (2023-12-18)
+
+
+### Bug Fixes
+
+* colon ([591bad9](https://github.com/jonbri/goatlang/commit/591bad9dc47bdae6f124a419c8adbac80eb97d16))
+
+
+
+## [0.2.5-beta.6](https://github.com/jonbri/goatlang/compare/0.2.5-beta.5...0.2.5-beta.6) (2023-12-18)
+
+
+### Bug Fixes
+
+* no branch ([ebe4f1a](https://github.com/jonbri/goatlang/commit/ebe4f1aeffd8d59aca82b92c1d6b7d3cacb59242))
+* variables ([1d890da](https://github.com/jonbri/goatlang/commit/1d890daa4560e7ff24a6381d7f39794dbaf67ca0))
+
+
+
+## [0.2.5-beta.5](https://github.com/jonbri/goatlang/compare/0.2.5-beta.4...0.2.5-beta.5) (2023-12-18)
+
+
+### Bug Fixes
+
+* release tweak ([bd126d2](https://github.com/jonbri/goatlang/commit/bd126d299b6d2400c695ea2a3a70fc8cadb850bf))
+
+
+
+## [0.2.5-beta.4](https://github.com/jonbri/goatlang/compare/0.2.5-beta.3...0.2.5-beta.4) (2023-12-18)
+
+
+### Bug Fixes
+
+* string ([9ca66dc](https://github.com/jonbri/goatlang/commit/9ca66dc8ccf715ae552ec57d522b6e5c2f79f41c))
+
+
+
+## [0.2.5-beta.3](https://github.com/jonbri/goatlang/compare/0.2.5-beta.2...0.2.5-beta.3) (2023-12-18)
+
+
+### Bug Fixes
+
+* syntax ([a9808ac](https://github.com/jonbri/goatlang/commit/a9808ac0e3b2cfaebd81d177e435ccabdeff72b0))
+
+
+
+## [0.2.5-beta.2](https://github.com/jonbri/goatlang/compare/0.2.5-beta.1...0.2.5-beta.2) (2023-12-18)
+
+
+### Bug Fixes
+
+* outputs ([5c55651](https://github.com/jonbri/goatlang/commit/5c55651a8b3c1b13f69d648021c79a5b6128c374))
+
+
+
+## [0.2.5-beta.1](https://github.com/jonbri/goatlang/compare/0.2.5-beta.0...0.2.5-beta.1) (2023-12-18)
+
+
+
+## [0.2.5-beta.0](https://github.com/jonbri/goatlang/compare/v0.2.4...0.2.5-beta.0) (2023-12-18)
+
+
+### Bug Fixes
+
+* tweaks ([79ea84f](https://github.com/jonbri/goatlang/commit/79ea84fa43f717017ce91564b0e3530e6f7239a7))
+
+
+
+## [0.2.4](https://github.com/jonbri/goatlang/compare/0.2.4-beta.2...v0.2.4) (2023-12-18)
 
 
 
