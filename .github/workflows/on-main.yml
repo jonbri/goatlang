@@ -46,6 +46,9 @@ jobs:
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
 
+          GOTAGGER_VERSION=`./bin/gotagger`
+          echo "GOTAGGER_VERSION: ${GOTAGGER_VERSION}"
+
       - name: Publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
