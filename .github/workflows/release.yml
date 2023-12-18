@@ -55,8 +55,8 @@ jobs:
       - name: PR
         uses: peter-evans/create-pull-request@v5
         with:
-          commit-message: release: ${{ steps.release.outputs.new_version }}
-          title: release: ${{ steps.release.outputs.new_version }}
+          commit-message: "release: ${{ steps.release.outputs.new_version }}"
+          title: "release: ${{ steps.release.outputs.new_version }}"
           body: |
             - item 0
             - item 1
