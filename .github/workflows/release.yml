@@ -56,5 +56,10 @@ jobs:
         with:
           commit-message: "release: ${new_version}"
           title: "release: ${new_version}"
-          body: "this is the body"
+          body: |
+            - item 0
+            - item 1
+
+            And a footer
+          branch: "${branch_name}"
 
