@@ -14,8 +14,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install Golang
-        run: ./bin/install-go.sh
+      # - name: Install Golang
+      #   run: ./bin/install-go.sh
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -27,8 +27,8 @@ jobs:
         run: |
           yarn install
           yarn build
-          yarn test
-          yarn start
+          yarn test:node
+          yarn start:node
 
       - name: Determine next version
         id: determine_next_version
