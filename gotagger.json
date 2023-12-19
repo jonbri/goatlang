@@ -2,7 +2,7 @@
   "defaultIncrement": "patch",
   "excludeModules": null,
   "ignoreModules": true,
-  "incrementPreReleaseMinor": true,
+  "incrementPreReleaseMinor": false,
   "incrementDirtyWorktree": "patch",
   "incrementMappings": {
     "feat": "minor"
