@@ -9,13 +9,13 @@ async function determinePrereleaseVersion() {
   const gotaggerResult = shell("./bin/gotagger");
   if (debug) console.log(`gotaggerResult: ${gotaggerResult}`);
 
-  const tagList = shell(`git tag --list ${gotaggerResult}-*`);
-  if (debug) console.log(`tagList: ${tagList}`);
+  const matchingTags = shell(`git tag --list ${gotaggerResult}-*`);
+  if (debug) console.log(`matchingTags: ${matchingTags}`);
 
-  const versionExists = tagList.length > 0;
+  const versionExists = matchingTags.length > 0;
   if (debug) console.log(`version exists: ${versionExists}`);
 
-  const latestPrerelease = tagList
+  const latestPrerelease = matchingTags
     .split("\n")
     .map((tag) => parseInt(tag.split(".").reverse()[0]))
     .sort(sortDesc)[0];
