@@ -19,6 +19,11 @@ jobs:
           node-version: "lts/*"
           registry-url: 'https://registry.npmjs.org'
 
+      - name: git_user
+        run: |
+          git config --global user.name 'goatlang'
+          git config --global user.email 'goatlang@users.noreply.github.com'
+
       - name: Check
         run: |
           yarn install
@@ -26,21 +31,19 @@ jobs:
           yarn test
           yarn start
 
-      - name: Determine next version
-        id: determine_next_version
-        run: |
-          NEW_VERSION=`./bin/gotagger`
-          echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
-          cat $GITHUB_OUTPUT
-
       - name: changelog
         run: |
           yarn changelog
 
-      - name: git_user
+      - name: Determine next version
+        id: determine_next_version
         run: |
-          git config --global user.name 'goatlang'
-          git config --global user.email 'goatlang@users.noreply.github.com'
+          git add CHANGELOG.md
+          git commit -m 'release: '
+          NEW_VERSION=`./bin/gotagger`
+          git reset HEAD~
+          echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
+          cat $GITHUB_OUTPUT
 
       - name: PR
         uses: peter-evans/create-pull-request@v5
