@@ -23,13 +23,13 @@ async function determineNextPrereleaseVersion() {
     .sort((a, b) => b - a)[0];
   if (debug) console.log(`latestPrerelease: ${latestPrerelease}`);
 
+  const incremented = semverInc(
+    `${gotaggerResult}-beta.${latestPrerelease}`,
+    "prerelease",
+    "beta"
+  );
   const nextVersion = versionExists
-    ? "v" +
-      semverInc(
-        `${gotaggerResult}-beta.${latestPrerelease}`,
-        "prerelease",
-        "beta"
-      )
+    ? `v${incremented}`
     : `${gotaggerResult}-beta.0`;
   return `${nextVersion}`;
 }
