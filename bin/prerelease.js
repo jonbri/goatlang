@@ -12,9 +12,6 @@ async function determinePrereleaseVersion() {
   const matchingTags = shell(`git tag --list ${gotaggerResult}-*`);
   if (debug) console.log(`matchingTags: ${matchingTags}`);
 
-  const versionExists = matchingTags.length > 0;
-  if (debug) console.log(`version exists: ${versionExists}`);
-
   const latestPrerelease = matchingTags
     .split("\n")
     .map((tag) => parseInt(tag.split(".").reverse()[0]))
@@ -28,10 +25,15 @@ async function determinePrereleaseVersion() {
   );
   if (debug) console.log(`incremented: ${incremented}`);
 
-  const nextVersion = versionExists
-    ? `v${incremented}`
-    : `${gotaggerResult}-beta.0`;
-  return nextVersion;
+  const nextPrerelease = `v${incremented}`;
+  if (debug) console.log(`nextPrerelease: ${nextPrerelease}`);
+  const newPrerelease = `${gotaggerResult}-beta.0`;
+  if (debug) console.log(`newPrerelease: ${newPrerelease}`);
+
+  const versionExists = matchingTags.length > 0;
+  if (debug) console.log(`version exists: ${versionExists}`);
+
+  return versionExists ? nextPrerelease : newPrerelease;
 }
 
 async function main() {
