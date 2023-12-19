@@ -38,11 +38,11 @@ jobs:
           cat $GITHUB_OUTPUT
 
       - name: Conditional Release
-        if: ${{ steps.determine_type_of_release.outputs.NEW_VERSION == "release" }}
+        if: ${{ steps.determine_type_of_release.outputs.RELEASE_TYPE == 'release' }}
         run: echo "detected release"
 
       - name: Conditional PreRelease
-        if: ${{ steps.determine_type_of_release.outputs.NEW_VERSION == "prerelease" }}
+        if: ${{ steps.determine_type_of_release.outputs.RELEASE_TYPE == 'prerelease' }}
         run: echo "detected prerelease"
 
       - name: Determine next version
