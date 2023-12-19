@@ -12,8 +12,8 @@ async function main() {
 
   const gotaggerResult = execSync("./bin/gotagger").toString().trim();
 
-  console.log("previousVersion", previousVersion);
-  console.log("gotaggerResult", gotaggerResult);
+  // console.log("previousVersion", previousVersion);
+  // console.log("gotaggerResult", gotaggerResult);
 
   // if there exists a prerelease tag on previousVersion
   // then echo "true"
@@ -22,7 +22,7 @@ async function main() {
     execSync(`git tag --list ${previousVersion}-*`).toString().trim().length >
     0;
 
-  console.log("does prerelease exist:" + isPrerelease);
+  // console.log("does prerelease exist:" + isPrerelease);
 
   let newVersion;
   if (isPrerelease) {
@@ -38,6 +38,7 @@ async function main() {
   console.log("newVersion", newVersion);
 
   /*
+
   const headCommitInfo = execSync(
     "git show -s --format=%B | head -n 1 | ./node_modules/.bin/conventional-commits-parser"
   ).toString();
