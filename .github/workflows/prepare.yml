@@ -44,11 +44,19 @@ jobs:
         run: |
           yarn changelog $NEW_VERSION
 
+      - name: Generate commit message
+        env:
+          NEW_VERSION: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
+        run: |
+          COMMIT_MESSAGE=`release: ${NEW_VERSION}`
+          echo "COMMIT_MESSAGE=$COMMIT_MESSAGE" >> $GITHUB_OUTPUT
+          cat $GITHUB_OUTPUT
+
       - name: PR
         uses: peter-evans/create-pull-request@v5
         with:
           commit-message: >-
-            release: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
+            release: ${{ steps.commit_message.outputs.COMMIT_MESSAGE }}
           title: >-
-            release: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
+            release: ${{ steps.commit_message.outputs.COMMIT_MESSAGE }}
 
