@@ -27,6 +27,8 @@ async function determineNextPrereleaseVersion() {
     "prerelease",
     "beta"
   );
+  if (debug) console.log(`incremented: ${incremented}`);
+
   const nextVersion = versionExists
     ? `v${incremented}`
     : `${gotaggerResult}-beta.0`;
