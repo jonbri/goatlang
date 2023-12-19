@@ -5,6 +5,7 @@ const debug = process.argv[2] === "debug";
 const sortDesc = (a, b) => b - a;
 const shell = (cmd) => execSync(cmd).toString().trim();
 
+//
 async function determinePrereleaseVersion() {
   const gotaggerResult = shell("./bin/gotagger");
   if (debug) console.log(`gotaggerResult: ${gotaggerResult}`);
