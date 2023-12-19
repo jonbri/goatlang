@@ -30,7 +30,7 @@ async function determineNextPrereleaseVersion() {
   const nextVersion = versionExists
     ? `v${incremented}`
     : `${gotaggerResult}-beta.0`;
-  return `${nextVersion}`;
+  return nextVersion;
 }
 
 async function main() {
