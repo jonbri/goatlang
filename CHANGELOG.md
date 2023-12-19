@@ -1,4 +1,35 @@
-# [v0.6.0](https://github.com/jonbri/goatlang/compare/v0.6.0-beta.7...v0.6.0) (2023-12-19)
+## [v0.6.1](https://github.com/jonbri/goatlang/compare/v0.6.1-beta.2...v0.6.1) (2023-12-19)
+
+
+
+## [0.6.1-beta.2](https://github.com/jonbri/goatlang/compare/v0.6.1-beta.1...v0.6.1-beta.2) (2023-12-19)
+
+
+### Bug Fixes
+
+* id ([a6fcbff](https://github.com/jonbri/goatlang/commit/a6fcbffd760f01a4eff15896964b7c9a78c6701e))
+
+
+
+## [0.6.1-beta.1](https://github.com/jonbri/goatlang/compare/v0.6.1-beta.0...v0.6.1-beta.1) (2023-12-19)
+
+
+### Bug Fixes
+
+* synxtax ([04b31e8](https://github.com/jonbri/goatlang/commit/04b31e8da734f8908b9686bc504c8c8ec44d8cc9))
+
+
+
+## [0.6.1-beta.0](https://github.com/jonbri/goatlang/compare/v0.6.0...v0.6.1-beta.0) (2023-12-19)
+
+
+### Bug Fixes
+
+* commit message ([6e39881](https://github.com/jonbri/goatlang/commit/6e39881ead5662afd0d1cd99657b38752629edfc))
+
+
+
+# [0.6.0](https://github.com/jonbri/goatlang/compare/v0.6.0-beta.7...v0.6.0) (2023-12-19)
 
 
 
