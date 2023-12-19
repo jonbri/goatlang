@@ -15,6 +15,12 @@ export PATH=/usr/local/go/bin:$PATH
 go version
 ```
 
+Check installation:
+
+```
+go version
+```
+
 Install [gotagger](https://github.com/sassoftware/gotagger):
 
 ```sh
