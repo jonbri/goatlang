@@ -25,9 +25,6 @@ jobs:
           yarn test:node
           yarn start:node
 
-      - name: Conditional
-        run: echo "this is a test step"
-
       - name: Determine type of release
         id: determine_type_of_release
         run: |
@@ -39,6 +36,12 @@ jobs:
 
           echo "RELEASE_TYPE=$RELEASE_TYPE" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
+
+      - name: Conditional: Release
+        run: echo "this step should only run on release types"
+
+      - name: Conditional: PreRelease
+        run: echo "this step should only run on pre-release types"
 
       - name: Determine next version
         id: determine_next_version
