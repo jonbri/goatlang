@@ -6,5 +6,6 @@
   "incrementDirtyWorktree": "patch",
   "incrementMappings": {
     "feat": "minor"
-  }
+  },
+  "versionPrefix": "v"
 }
