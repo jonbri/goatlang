@@ -37,10 +37,10 @@ jobs:
           echo "RELEASE_TYPE=$RELEASE_TYPE" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
 
-      - name: Conditional: Release
+      - name: Conditional Release
         run: echo "this step should only run on release types"
 
-      - name: Conditional: PreRelease
+      - name: Conditional PreRelease
         run: echo "this step should only run on pre-release types"
 
       - name: Determine next version
