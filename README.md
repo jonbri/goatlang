@@ -1,7 +1,5 @@
 # goatlang
 
-Playing around with Golang
-
 [NPM](https://www.npmjs.com/package/goatlang)
 
 ## Installation
@@ -17,7 +15,7 @@ go version
 
 Check installation:
 
-```
+```sh
 go version
 ```
 
