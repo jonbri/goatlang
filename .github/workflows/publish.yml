@@ -25,6 +25,9 @@ jobs:
           yarn test:node
           yarn start:node
 
+      - name: Conditional
+        run: echo "this is a test step"
+
       - name: Determine type of release
         id: determine_type_of_release
         run: |
