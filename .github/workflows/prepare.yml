@@ -45,6 +45,7 @@ jobs:
           yarn changelog $NEW_VERSION
 
       - name: Generate commit message
+        id: commit_message
         env:
           NEW_VERSION: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
         run: |
