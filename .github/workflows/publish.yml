@@ -25,14 +25,26 @@ jobs:
           yarn test:node
           yarn start:node
 
-      - name: Determine next version
-        id: determine_next_version
+      - name: Determine type of release
+        id: determine_type_of_release
         run: |
           if [[ `git log -1 --pretty=%B` == release* ]]; then
-            echo "Detected release"
+            RELEASE_TYPE="release"
+          else
+            RELEASE_TYPE="prerelease"
+          fi
+
+          echo "RELEASE_TYPE=$RELEASE_TYPE" >> $GITHUB_OUTPUT
+          cat $GITHUB_OUTPUT
+
+      - name: Determine next version
+        id: determine_next_version
+        env:
+          RELEASE_TYPE: ${{ steps.determine_type_of_release.outputs.RELEASE_TYPE }}
+        run: |
+          if [ "$RELEASE_TYPE" = "release" ]; then
             NEW_VERSION=`git show -s --format=%B HEAD | head -n 1 | awk -e '{ print $2 }'`
           else
-            echo "Detected prerelease"
             NEW_VERSION=`node ./bin/prerelease.js`
           fi
 
