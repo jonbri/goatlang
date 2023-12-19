@@ -38,10 +38,12 @@ jobs:
           cat $GITHUB_OUTPUT
 
       - name: Conditional Release
-        run: echo "this step should only run on release types"
+        if: ${{ steps.determine_type_of_release.outputs.NEW_VERSION == "release" }}
+        run: echo "detected release"
 
       - name: Conditional PreRelease
-        run: echo "this step should only run on pre-release types"
+        if: ${{ steps.determine_type_of_release.outputs.NEW_VERSION == "prerelease" }}
+        run: echo "detected prerelease"
 
       - name: Determine next version
         id: determine_next_version
