@@ -16,15 +16,12 @@ async function main() {
   // console.log("gotaggerResult", gotaggerResult);
 
   // if there exists a prerelease tag on previousVersion
-  // then echo "true"
-  // otherwise echo "false"
   const isPrerelease =
     execSync(`git tag --list ${previousVersion}-*`).toString().trim().length >
     0;
 
-  // console.log("does prerelease exist:" + isPrerelease);
-
   let newVersion;
+  // TODO: could use semver api to do this
   if (isPrerelease) {
     newVersion = execSync(
       `./node_modules/.bin/semver ${GOTAGGER_RESULT} --increment prerelease --preid beta`
