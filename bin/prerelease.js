@@ -24,13 +24,14 @@ async function determineNextPrereleaseVersion() {
   if (debug) console.log(`latestPrerelease: ${latestPrerelease}`);
 
   const nextVersion = versionExists
-    ? semverInc(
+    ? "v" +
+      semverInc(
         `${gotaggerResult}-beta.${latestPrerelease}`,
         "prerelease",
         "beta"
       )
     : `${gotaggerResult}-beta.0`;
-  return `v${nextVersion}`;
+  return `${nextVersion}`;
 }
 
 async function main() {
