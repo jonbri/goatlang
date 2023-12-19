@@ -2,6 +2,8 @@ const { execSync } = require("child_process");
 const fs = require("fs");
 const ConventionalChangelog = require("conventional-changelog");
 
+const shell = (cmd) => execSync(cmd).toString().trim();
+
 // https://stackoverflow.com/a/49428486/2295034
 function streamToString(stream) {
   const chunks = [];
@@ -13,10 +15,7 @@ function streamToString(stream) {
 }
 
 async function main() {
-  const version = execSync("./bin/gotagger")
-    .toString()
-    .trim()
-    .replace(/^v/, "");
+  const version = shell("./bin/gotagger").replace(/^v/, "");
 
   const stream = ConventionalChangelog({
     preset: "angular",
