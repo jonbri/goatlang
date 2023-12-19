@@ -3,6 +3,7 @@ const fs = require("fs");
 const ConventionalChangelog = require("conventional-changelog");
 
 const shell = (cmd) => execSync(cmd).toString().trim();
+const tag = process.argv[2];
 
 // https://stackoverflow.com/a/49428486/2295034
 function streamToString(stream) {
@@ -15,7 +16,8 @@ function streamToString(stream) {
 }
 
 async function main() {
-  const version = shell("./bin/gotagger").replace(/^v/, "");
+  const version = tag ? tag : shell("./bin/gotagger").replace(/^v/, "");
+  console.log(`version: ${version}`);
 
   const stream = ConventionalChangelog({
     preset: "angular",

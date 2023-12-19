@@ -31,19 +31,20 @@ jobs:
           yarn test
           yarn start
 
-      - name: changelog
-        run: |
-          yarn changelog
-
       - name: Determine next version
         id: determine_next_version
         run: |
-          git add CHANGELOG.md
-          git commit -m 'release: '
+          git commit --allow-empty -m 'release: '
           NEW_VERSION=`./bin/gotagger`
           git reset HEAD~
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
+
+      - name: changelog
+        env:
+          NEW_VERSION: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
+        run: |
+          yarn changelog $NEW_VERSION
 
       - name: PR
         uses: peter-evans/create-pull-request@v5
