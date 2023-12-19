@@ -1,5 +1,5 @@
-const { execSync } = require("child_process");
 const fs = require("fs");
+const { execSync } = require("child_process");
 const ConventionalChangelog = require("conventional-changelog");
 
 const shell = (cmd) => execSync(cmd).toString().trim();
