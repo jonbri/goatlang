@@ -17,8 +17,7 @@ async function determineNextPrereleaseVersion() {
 
   const latestPrerelease = tagList
     .split("\n")
-    .map((tag) => tag.split(".").reverse()[0])
-    .map((tag) => parseInt(tag))
+    .map((tag) => parseInt(tag.split(".").reverse()[0]))
     .sort((a, b) => b - a)[0];
   if (debug) console.log(`latestPrerelease: ${latestPrerelease}`);
 
