@@ -2,6 +2,7 @@ const { execSync } = require("child_process");
 const semverInc = require("semver/functions/inc");
 
 const debug = false;
+const sortDesc = (a, b) => b - a;
 
 async function determineNextPrereleaseVersion() {
   const gotaggerResult = execSync("./bin/gotagger").toString().trim();
@@ -18,7 +19,7 @@ async function determineNextPrereleaseVersion() {
   const latestPrerelease = tagList
     .split("\n")
     .map((tag) => parseInt(tag.split(".").reverse()[0]))
-    .sort((a, b) => b - a)[0];
+    .sort(sortDesc)[0];
   if (debug) console.log(`latestPrerelease: ${latestPrerelease}`);
 
   const incremented = semverInc(
