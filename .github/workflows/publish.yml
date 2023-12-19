@@ -31,10 +31,13 @@ jobs:
         run: |
           if [[ `git log -1 --pretty=%B` == release* ]]; then
             echo "Detected release"
+            # TODO: use conventional-commits-parser?
             NEW_VERSION=`git show -s --format=%B HEAD | head -n 1 | awk -e '{ print $2 }'`
           else
             echo "Detected prerelease"
-            NEW_VERSION=`./bin/gotagger`
+            GOTAGGER_RESULT=`./bin/gotagger`
+            echo "GOTAGGER_RESULT: ${GOTAGGER_RESULT}"
+            NEW_VERSION=`./node_modules/.bin/semver $GOTAGGER_RESULT --increment prerelease --preid beta`
           fi
 
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
