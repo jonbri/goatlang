@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - 'main'
-  workflow_dispatch:
 jobs:
   Tag_And_Publish:
     runs-on: ubuntu-latest
@@ -31,7 +30,6 @@ jobs:
         run: |
           if [[ `git log -1 --pretty=%B` == release* ]]; then
             echo "Detected release"
-            # TODO: use conventional-commits-parser?
             NEW_VERSION=`git show -s --format=%B HEAD | head -n 1 | awk -e '{ print $2 }'`
           else
             echo "Detected prerelease"
@@ -54,12 +52,12 @@ jobs:
         env:
           NEW_VERSION: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
         run: |
-          # git tag $NEW_VERSION
-          # git push origin $NEW_VERSION
+          git tag $NEW_VERSION
+          git push origin $NEW_VERSION
 
       - name: Publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          # npm publish ./build
+          npm publish ./build
 
