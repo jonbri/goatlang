@@ -39,7 +39,7 @@ jobs:
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
 
-      - name: package.json
+      - name: Update build/package.json
         env:
           NEW_VERSION: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
         run: |

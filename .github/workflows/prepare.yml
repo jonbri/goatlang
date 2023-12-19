@@ -38,7 +38,7 @@ jobs:
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
 
-      - name: changelog
+      - name: Changelog
         env:
           NEW_VERSION: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
         run: |
