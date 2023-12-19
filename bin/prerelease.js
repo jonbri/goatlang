@@ -1,23 +1,61 @@
 const { execSync } = require("child_process");
+const semverCompare = require("semver/functions/compare");
+const semverCompareLoose = require("semver/functions/compare-loose");
 
 async function main() {
-  const version = execSync("git show -s --format=%B | head -n 1 | ./node_modules/.bin/conventional-commits-parser")
-    .toString();
+  // console.log(semverCompareLoose('1.0.0', '1.0.0-beta.1'));
+  // process.exit(0);
 
-  const versionJSON = JSON.parse(version);
+  const previousVersion = execSync("git describe --tags --abbrev=0")
+    .toString()
+    .trim();
+
+  const gotaggerResult = execSync("./bin/gotagger").toString().trim();
+
+  console.log("previousVersion", previousVersion);
+  console.log("gotaggerResult", gotaggerResult);
+
+  // if there exists a prerelease tag on previousVersion
+  // then echo "true"
+  // otherwise echo "false"
+  const isPrerelease =
+    execSync(`git tag --list ${previousVersion}-*`).toString().trim().length >
+    0;
+
+  console.log("does prerelease exist:" + isPrerelease);
+
+  let newVersion;
+  if (isPrerelease) {
+    newVersion = execSync(
+      `./node_modules/.bin/semver ${GOTAGGER_RESULT} --increment prerelease --preid beta`
+    )
+      .toString()
+      .trim();
+  } else {
+    newVersion = gotaggerResult + "-beta.0";
+  }
+
+  console.log("newVersion", newVersion);
+
+  /*
+  const headCommitInfo = execSync(
+    "git show -s --format=%B | head -n 1 | ./node_modules/.bin/conventional-commits-parser"
+  ).toString();
+  const versionJSON = JSON.parse(headCommitInfo);
   const object = versionJSON[0];
 
   console.log("type", object.type);
   console.log("scope", object.scope);
-  console.log("subject", object.subject);
-  console.log("merge", object.merge);
-  console.log("header", object.header);
-  console.log("body", object.body);
-  console.log("footer", object.footer);
-  console.log("notes", object.notes);
-  console.log("references", object.references);
-  console.log("mentions", object.mentions);
-  console.log("revert", object.revert);
+  // console.log("subject", object.subject);
+  // console.log("merge", object.merge);
+  // console.log("header", object.header);
+  // console.log("body", object.body);
+  // console.log("footer", object.footer);
+  // console.log("notes", object.notes);
+  // console.log("references", object.references);
+  // console.log("mentions", object.mentions);
+  // console.log("revert", object.revert);
+  */
 }
 
 main();
