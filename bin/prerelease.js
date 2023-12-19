@@ -3,10 +3,9 @@ const semverInc = require("semver/functions/inc");
 
 const debug = false;
 const sortDesc = (a, b) => b - a;
-
 const shell = (cmd) => execSync(cmd).toString().trim();
 
-async function determineNextPrereleaseVersion() {
+async function determinePrereleaseVersion() {
   const gotaggerResult = shell("./bin/gotagger");
   if (debug) console.log(`gotaggerResult: ${gotaggerResult}`);
 
@@ -36,7 +35,7 @@ async function determineNextPrereleaseVersion() {
 }
 
 async function main() {
-  const version = await determineNextPrereleaseVersion();
+  const version = await determinePrereleaseVersion();
   console.log(version);
 }
 main();
