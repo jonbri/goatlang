@@ -1,7 +1,7 @@
 const { execSync } = require("child_process");
 const semverInc = require("semver/functions/inc");
 
-const debug = process.argv[2] === 'debug';
+const debug = process.argv[2] === "debug";
 const sortDesc = (a, b) => b - a;
 const shell = (cmd) => execSync(cmd).toString().trim();
 
