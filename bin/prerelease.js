@@ -3,7 +3,6 @@ const semverInc = require("semver/functions/inc");
 
 const debug = false;
 
-//
 async function determineNextPrereleaseVersion() {
   const gotaggerResult = execSync("./bin/gotagger").toString().trim();
   if (debug) console.log(`gotaggerResult: ${gotaggerResult}`);
