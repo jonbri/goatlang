@@ -39,5 +39,4 @@ async function main() {
   const version = await determineNextPrereleaseVersion();
   console.log(version);
 }
-
 main();
