@@ -4,13 +4,13 @@ const semverInc = require("semver/functions/inc");
 const debug = false;
 const sortDesc = (a, b) => b - a;
 
+const shell = (cmd) => execSync(cmd).toString().trim();
+
 async function determineNextPrereleaseVersion() {
-  const gotaggerResult = execSync("./bin/gotagger").toString().trim();
+  const gotaggerResult = shell("./bin/gotagger");
   if (debug) console.log(`gotaggerResult: ${gotaggerResult}`);
 
-  const tagList = execSync(`git tag --list ${gotaggerResult}-*`)
-    .toString()
-    .trim();
+  const tagList = shell(`git tag --list ${gotaggerResult}-*`);
   if (debug) console.log(`tagList: ${tagList}`);
 
   const versionExists = tagList.length > 0;
