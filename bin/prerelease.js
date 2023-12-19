@@ -2,17 +2,27 @@ const { execSync } = require("child_process");
 const semverInc = require("semver/functions/inc");
 
 async function main() {
-  const lastTag = execSync("git describe --tags --abbrev=0").toString().trim();
   const gotaggerResult = execSync("./bin/gotagger").toString().trim();
-  const alreadyPrerelease =
-    execSync(`git tag --list ${lastTag}-*`).toString().trim().length > 0;
+  const tagList = execSync(`git tag --list ${gotaggerResult}-*`)
+    .toString()
+    .trim();
+  const versionExists = tagList.length > 0;
 
-  let newVersion = `${gotaggerResult}-beta.0`;
-  if (alreadyPrerelease) {
-    newVersion = semverInc(gotaggerResult, "prerelease", "beta");
-  }
+  const latestPrerelease = tagList
+    .split("\n")
+    .map((tag) => tag.split(".").reverse()[0])
+    .map((tag) => parseInt(tag))
+    .sort((a, b) => b - a)[0];
 
-  console.log(newVersion);
+  console.log(
+    versionExists
+      ? semverInc(
+          `${gotaggerResult}-beta.${latestPrerelease}`,
+          "prerelease",
+          "beta"
+        )
+      : `${gotaggerResult}-beta.0`
+  );
 }
 
 main();
