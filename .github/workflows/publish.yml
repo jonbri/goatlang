@@ -37,14 +37,6 @@ jobs:
           echo "RELEASE_TYPE=$RELEASE_TYPE" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
 
-      - name: Conditional Release
-        if: ${{ steps.determine_type_of_release.outputs.RELEASE_TYPE == 'release' }}
-        run: echo "detected release"
-
-      - name: Conditional PreRelease
-        if: ${{ steps.determine_type_of_release.outputs.RELEASE_TYPE == 'prerelease' }}
-        run: echo "detected prerelease"
-
       - name: Determine next version
         id: determine_next_version
         env:
