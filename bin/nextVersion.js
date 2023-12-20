@@ -80,8 +80,6 @@ async function determineNextVersion(releaseMode) {
 async function main() {
   const releaseMode = process.argv[2];
   const nextVersion = await determineNextVersion(releaseMode);
-  if (releaseMode) {
-    console.log(nextVersion);
-  }
+  if (releaseMode) console.log(nextVersion);
 }
 main();
