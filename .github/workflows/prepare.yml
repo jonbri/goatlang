@@ -25,6 +25,8 @@ jobs:
         run: |
           yarn install
           yarn build
+          yarn test:node
+          yarn start:node
 
       - name: Determine next version
         id: determine_next_version
