@@ -8,9 +8,8 @@ const TagRegex = /^v[0-9]+\.[0-9]+\.[0-9]+.*/;
 
 async function determineNextVersion(releaseMode) {
   const debug = !releaseMode;
-  if (!releaseMode) {
-    releaseMode = "prerelease";
-  }
+  if (!releaseMode) releaseMode = "prerelease";
+
   let baseVersion;
   let highestBump = "patch"; // values: major, minor, patch
   for (const commit of shell("git rev-list HEAD").split("\n")) {
@@ -27,7 +26,7 @@ async function determineNextVersion(releaseMode) {
     let bumpType = "patch";
     if (
       header.includes("!") ||
-      (footer && footer.includes("BREAKING CHANGE"))
+      (footer && footer.includes("BREAKING CHANGE:"))
     ) {
       bumpType = "major";
     } else if (type === "feat") {
