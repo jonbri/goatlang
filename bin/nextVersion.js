@@ -4,7 +4,7 @@ const ConventionalCommitsParser =
   "./node_modules/.bin/conventional-commits-parser";
 
 const shell = (cmd) => execSync(cmd).toString().trim();
-const TagRegex = /^v[0-9]\.[0-9]\.[0-9]*/;
+const TagRegex = /^v[0-9]+\.[0-9]+\.[0-9]+.*/;
 
 async function determineNextVersion(releaseMode) {
   const debug = !releaseMode;
