@@ -129,9 +129,7 @@ async function determineNextVersion() {
     console.log(`nextPrereleaseVersion: ${nextPrereleaseVersion}`);
     console.log(`releaseCommit: ${releaseCommit}`);
     console.log(`releaseTag: ${releaseTag}`);
-    console.log(
-      `releaseMode: ${releaseMode}, so the next version is: ${finalAnswer}`
-    );
+    console.log(`releaseMode: ${releaseMode}, next version: ${finalAnswer}`);
   }
 
   return `v${finalAnswer}`;
