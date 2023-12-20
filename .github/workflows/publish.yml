@@ -50,7 +50,7 @@ jobs:
         env:
           RELEASE_TYPE: ${{ steps.determine_type_of_release.outputs.RELEASE_TYPE }}
         run: |
-          NEW_VERSION=`node ./bin/prerelease.js ${RELEASE_TYPE}`
+          NEW_VERSION=`node ./bin/nextVersion.js ${RELEASE_TYPE}`
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
 
