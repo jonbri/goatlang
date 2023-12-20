@@ -108,7 +108,7 @@ async function determineNextVersion() {
 
       if (!headVersion) headVersion = version;
     } catch (e) {
-      // console.log(`${commit} has no tags`);
+      if (debug) console.log(`${commit} has no tags`);
     } // end of try
 
     if (releaseType === "release") {
@@ -134,7 +134,7 @@ async function determineNextVersion() {
     );
   }
 
-  return finalAnswer;
+  return `v${finalAnswer}`;
 }
 
 async function main() {
