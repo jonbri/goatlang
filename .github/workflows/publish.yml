@@ -50,12 +50,7 @@ jobs:
         env:
           RELEASE_TYPE: ${{ steps.determine_type_of_release.outputs.RELEASE_TYPE }}
         run: |
-          if [ "$RELEASE_TYPE" = "release" ]; then
-            NEW_VERSION=`git show -s --format=%B HEAD | head -n 1 | awk -e '{ print $2 }'`
-          else
-            NEW_VERSION=`node ./bin/prerelease.js`
-          fi
-
+          NEW_VERSION=`node ./bin/prerelease.js ${RELEASE_TYPE}`
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
 
