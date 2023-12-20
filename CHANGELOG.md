@@ -1,4 +1,26 @@
-# [v1.0.0](https://github.com/jonbri/goatlang/compare/v1.0.0-beta.0...v1.0.0) (2023-12-20)
+# [v1.1.0](https://github.com/jonbri/goatlang/compare/v1.1.0-beta.1...v1.1.0) (2023-12-20)
+
+
+
+# [1.1.0-beta.1](https://github.com/jonbri/goatlang/compare/v1.1.0-beta.0...v1.1.0-beta.1) (2023-12-20)
+
+
+### Bug Fixes
+
+* two publish types ([322ff1c](https://github.com/jonbri/goatlang/commit/322ff1cf1903e73cb8ec8805a835a948f1b94b94))
+
+
+
+# [1.1.0-beta.0](https://github.com/jonbri/goatlang/compare/v1.0.0...v1.1.0-beta.0) (2023-12-20)
+
+
+### Features
+
+* remove unused lines ([84c98b6](https://github.com/jonbri/goatlang/commit/84c98b633f5fbea9f5b0966e209e40825bfcffac))
+
+
+
+# [1.0.0](https://github.com/jonbri/goatlang/compare/v1.0.0-beta.0...v1.0.0) (2023-12-20)
 
 
 
