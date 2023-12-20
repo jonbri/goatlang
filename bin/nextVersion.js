@@ -6,9 +6,13 @@ const ConventionalCommitsParser =
 const shell = (cmd) => execSync(cmd).toString().trim();
 const TagRegex = /^v[0-9]\.[0-9]\.[0-9]*/;
 
-async function determineNextVersion(releaseMode, debug) {
-  let highestBump = "patch"; // major, minor, patch
+async function determineNextVersion(releaseMode) {
+  const debug = !releaseMode;
+  if (!releaseMode) {
+    releaseMode = "prerelease";
+  }
   let headVersion;
+  let highestBump = "patch"; // major, minor, patch
   for (const commit of shell("git rev-list HEAD").split("\n")) {
     const shortCommit = commit.slice(0, 7);
 
@@ -45,7 +49,11 @@ async function determineNextVersion(releaseMode, debug) {
   }
 
   const nextReleaseVersion = semverInc(headVersion, highestBump);
-  const nextPrereleaseVersion = semverInc(headVersion, "prerelease", "beta");
+  const nextPrereleaseVersion = semverInc(
+    nextReleaseVersion,
+    "prerelease",
+    "beta"
+  );
 
   const nextVersion = `v${
     releaseMode === "release" ? nextReleaseVersion : nextPrereleaseVersion
@@ -62,9 +70,10 @@ async function determineNextVersion(releaseMode, debug) {
 }
 
 async function main() {
-  const releaseMode = process.argv[2] === "release" ? "release" : "prerelease";
-  const debug = process.argv[3] === "true";
-  const nextVersion = await determineNextVersion(releaseMode, debug);
-  console.log(nextVersion);
+  const releaseMode = process.argv[2];
+  const nextVersion = await determineNextVersion(releaseMode);
+  if (releaseMode) {
+    console.log(nextVersion);
+  }
 }
 main();
