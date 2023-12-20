@@ -12,7 +12,7 @@ async function determineNextVersion(releaseMode) {
     releaseMode = "prerelease";
   }
   let baseVersion;
-  let highestBump = "patch"; // major, minor, patch
+  let highestBump = "patch"; // values: major, minor, patch
   for (const commit of shell("git rev-list HEAD").split("\n")) {
     const shortCommit = commit.slice(0, 7);
 
