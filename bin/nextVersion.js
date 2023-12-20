@@ -25,7 +25,10 @@ async function determineNextVersion(releaseMode) {
     )[0];
 
     let bumpType = "patch";
-    if (header.includes("!") && footer.includes("BREAKING CHANGE")) {
+    if (
+      header.includes("!") ||
+      (footer && footer.includes("BREAKING CHANGE"))
+    ) {
       bumpType = "major";
     } else if (type === "feat") {
       bumpType = "minor";
