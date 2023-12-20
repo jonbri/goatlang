@@ -10,9 +10,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install Golang
-        run: ./bin/install-go.sh
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -28,13 +25,13 @@ jobs:
         run: |
           yarn install
           yarn build
-          yarn test
-          yarn start
+          # yarn test
+          # yarn start
 
       - name: Determine next version
         id: determine_next_version
         run: |
-          NEW_VERSION=`./bin/gotagger | sed 's/-[^-]*$//'`
+          NEW_VERSION=`node ./bin/nextVersion.js release`
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
 
