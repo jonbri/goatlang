@@ -48,11 +48,7 @@ async function determineNextVersion(releaseMode) {
   }
 
   const nextReleaseVersion = semverInc(baseVersion, highestBump);
-  const basePrereleaseVersion = semverInc(
-    nextReleaseVersion,
-    "prerelease",
-    "beta"
-  );
+  const basePrereleaseVersion = `${nextReleaseVersion}-beta.0`;
   let nextPrereleaseVersion = basePrereleaseVersion;
   while (shell(`git tag -l v${nextPrereleaseVersion}`) !== "") {
     nextPrereleaseVersion = semverInc(
@@ -69,7 +65,9 @@ async function determineNextVersion(releaseMode) {
   if (debug) {
     console.log();
     console.log(`baseVersion: ${baseVersion}`);
+    console.log(`basePrereleaseVersion: ${basePrereleaseVersion}`);
     console.log(`highestBump: ${highestBump}`);
+    console.log();
     console.log(`nextReleaseVersion: ${nextReleaseVersion}`);
     console.log(`nextPrereleaseVersion: ${nextPrereleaseVersion}`);
   }
