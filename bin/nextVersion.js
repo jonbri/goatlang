@@ -11,7 +11,7 @@ async function determineNextVersion(releaseMode) {
   if (!releaseMode) {
     releaseMode = "prerelease";
   }
-  let headVersion;
+  let baseVersion;
   let highestBump = "patch"; // major, minor, patch
   for (const commit of shell("git rev-list HEAD").split("\n")) {
     const shortCommit = commit.slice(0, 7);
@@ -19,8 +19,6 @@ async function determineNextVersion(releaseMode) {
     const version = shell(`git tag --points-at ${commit}`)
       .split("\n")
       .filter((tag) => TagRegex.test(tag))[0];
-
-    if (!headVersion) headVersion = version;
 
     const { type, header, footer } = JSON.parse(
       shell(`git log --format=%B -n 1 ${commit} | ${ConventionalCommitsParser}`)
@@ -44,23 +42,33 @@ async function determineNextVersion(releaseMode) {
     }
 
     if (version && !version.includes("-")) {
+      baseVersion = version;
       break;
     }
   }
 
-  const nextReleaseVersion = semverInc(headVersion, highestBump);
-  const nextPrereleaseVersion = semverInc(
+  const nextReleaseVersion = semverInc(baseVersion, highestBump);
+  const basePrereleaseVersion = semverInc(
     nextReleaseVersion,
     "prerelease",
     "beta"
   );
+  let nextPrereleaseVersion = basePrereleaseVersion;
+  while (shell(`git tag -l v${nextPrereleaseVersion}`) !== "") {
+    nextPrereleaseVersion = semverInc(
+      nextPrereleaseVersion,
+      "prerelease",
+      "beta"
+    );
+  }
 
   const nextVersion = `v${
     releaseMode === "release" ? nextReleaseVersion : nextPrereleaseVersion
   }`;
 
   if (debug) {
-    console.log(`headVersion: ${headVersion}`);
+    console.log();
+    console.log(`baseVersion: ${baseVersion}`);
     console.log(`highestBump: ${highestBump}`);
     console.log(`nextReleaseVersion: ${nextReleaseVersion}`);
     console.log(`nextPrereleaseVersion: ${nextPrereleaseVersion}`);
