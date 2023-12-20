@@ -11,25 +11,12 @@ async function determineNextVersion(releaseMode, debug) {
   let headVersion;
   for (const commit of shell("git rev-list HEAD").split("\n")) {
     const shortCommit = commit.slice(0, 7);
-    let releaseType;
 
     const version = shell(`git tag --points-at ${commit}`)
       .split("\n")
       .filter((tag) => TagRegex.test(tag))[0];
 
-    if (!version) {
-      if (debug) console.log(`${shortCommit} has no version tag`);
-      continue;
-    }
-
     if (!headVersion) headVersion = version;
-
-    if (version.includes("-")) {
-      releaseType = "prerelease";
-    } else {
-      releaseType = "release";
-      break;
-    }
 
     const { type, header, footer } = JSON.parse(
       shell(`git log --format=%B -n 1 ${commit} | ${ConventionalCommitsParser}`)
@@ -49,7 +36,11 @@ async function determineNextVersion(releaseMode, debug) {
     }
 
     if (debug) {
-      console.log(`${shortCommit} | ${version} | ${releaseType} | ${bumpType}`);
+      console.log(`${shortCommit} | ${version} | ${bumpType}`);
+    }
+
+    if (version && !version.includes("-")) {
+      break;
     }
   }
 
