@@ -1,4 +1,12 @@
-# [v0.13.0](https://github.com/jonbri/goatlang/compare/v0.13.0-beta.2...v0.13.0) (2023-12-20)
+# [v1.0.0](https://github.com/jonbri/goatlang/compare/v1.0.0-beta.0...v1.0.0) (2023-12-20)
+
+
+
+# [1.0.0-beta.0](https://github.com/jonbri/goatlang/compare/v0.13.0...v1.0.0-beta.0) (2023-12-20)
+
+
+
+# [0.13.0](https://github.com/jonbri/goatlang/compare/v0.13.0-beta.2...v0.13.0) (2023-12-20)
 
 
 
