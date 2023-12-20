@@ -47,20 +47,19 @@ async function determineNextVersion(releaseMode) {
     }
   }
 
-  const nextReleaseVersion = semverInc(baseVersion, highestBump);
+  const nextReleaseVersion = `v${semverInc(baseVersion, highestBump)}`;
   const basePrereleaseVersion = `${nextReleaseVersion}-beta.0`;
   let nextPrereleaseVersion = basePrereleaseVersion;
-  while (shell(`git tag -l v${nextPrereleaseVersion}`) !== "") {
-    nextPrereleaseVersion = semverInc(
+  while (shell(`git tag -l ${nextPrereleaseVersion}`) !== "") {
+    nextPrereleaseVersion = `v${semverInc(
       nextPrereleaseVersion,
       "prerelease",
       "beta"
-    );
+    )}`;
   }
 
-  const nextVersion = `v${
-    releaseMode === "release" ? nextReleaseVersion : nextPrereleaseVersion
-  }`;
+  const nextVersion =
+    releaseMode === "release" ? nextReleaseVersion : nextPrereleaseVersion;
 
   if (debug) {
     console.log();
