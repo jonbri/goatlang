@@ -1,4 +1,17 @@
-# [v0.11.0](https://github.com/jonbri/goatlang/compare/v0.11.1-beta.1...v0.11.0) (2023-12-20)
+# [v0.12.0](https://github.com/jonbri/goatlang/compare/v0.12.1-beta.0...v0.12.0) (2023-12-20)
+
+
+
+## [0.12.1-beta.0](https://github.com/jonbri/goatlang/compare/v0.11.0...v0.12.1-beta.0) (2023-12-20)
+
+
+### Features
+
+* minor bump again ([bc87897](https://github.com/jonbri/goatlang/commit/bc8789744e272d6c155073a773f4a75882fb0245))
+
+
+
+# [0.11.0](https://github.com/jonbri/goatlang/compare/v0.11.1-beta.1...v0.11.0) (2023-12-20)
 
 
 
