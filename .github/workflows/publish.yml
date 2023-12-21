@@ -31,12 +31,10 @@ jobs:
         run: |
           if [[ `git log -1 --pretty=%B` == release* ]]; then
             RELEASE_TYPE="release"
+          elif [[ `git rev-parse --abbrev-ref HEAD` =~ ^[0-9]+[.][0-9]+[.]x$ ]]; then
+            RELEASE_TYPE="maintenance"
           else
             RELEASE_TYPE="prerelease"
-          fi
-
-          if [[ `git rev-parse --abbrev-ref HEAD` =~ ^[0-9]+[.][0-9]+[.]x$ ]]; then
-            RELEASE_TYPE="maintenance"
           fi
 
           echo "RELEASE_TYPE=$RELEASE_TYPE" >> $GITHUB_OUTPUT
