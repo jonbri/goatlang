@@ -50,6 +50,7 @@ async function determineNextVersion(releaseMode) {
   }
 
   const nextReleaseVersion = `v${semverInc(baseVersion, highestBump)}`;
+
   const basePrereleaseVersion = `${nextReleaseVersion}-beta.0`;
   let nextPrereleaseVersion = basePrereleaseVersion;
   while (shell(`git tag -l ${nextPrereleaseVersion}`) !== "") {
@@ -60,6 +61,16 @@ async function determineNextVersion(releaseMode) {
     )}`;
   }
 
+  const baseMaintenanceVersion = `${nextReleaseVersion}-maintenance.0`;
+  let nextMaintenanceVersion = baseMaintenanceVersion;
+  while (shell(`git tag -l ${nextMaintenanceVersion}`) !== "") {
+    nextMaintenanceVersion = `v${semverInc(
+      nextMaintenanceVersion,
+      "prerelease",
+      "maintenance"
+    )}`;
+  }
+
   const nextVersion =
     releaseMode === "release" ? nextReleaseVersion : nextPrereleaseVersion;
 
@@ -67,10 +78,12 @@ async function determineNextVersion(releaseMode) {
     console.log();
     console.log(`baseVersion: ${baseVersion}`);
     console.log(`basePrereleaseVersion: ${basePrereleaseVersion}`);
+    console.log(`baseMaintenanceVersion: ${baseMaintenanceVersion}`);
     console.log(`highestBump: ${highestBump}`);
     console.log();
     console.log(`nextReleaseVersion: ${nextReleaseVersion}`);
     console.log(`nextPrereleaseVersion: ${nextPrereleaseVersion}`);
+    console.log(`nextMaintenanceVersion: ${nextMaintenanceVersion}`);
   }
 
   return nextVersion;
@@ -78,11 +91,6 @@ async function determineNextVersion(releaseMode) {
 
 async function main() {
   const releaseMode = process.argv[2];
-  if (releaseMode === "maintenance") {
-    // maintenance TODO
-    console.log("v0.0.42");
-    process.exit(0);
-  }
   const nextVersion = await determineNextVersion(releaseMode);
   if (releaseMode) console.log(nextVersion);
 }
