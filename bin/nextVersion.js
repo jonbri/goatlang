@@ -63,8 +63,7 @@ async function determineNextVersion(releaseMode) {
 
   let baseMaintenanceVersion;
   let nextMaintenanceVersion;
-  // const branchName = shell("git rev-parse --abbrev-ref HEAD");
-  const branchName = "1.2.3";
+  const branchName = shell("git rev-parse --abbrev-ref HEAD");
   if (/^[0-9]+\.[0-9]+\.[0-9]+$/.test(branchName)) {
     baseMaintenanceVersion = `${nextReleaseVersion}-maintenance.0`;
     nextMaintenanceVersion = baseMaintenanceVersion;
@@ -76,8 +75,8 @@ async function determineNextVersion(releaseMode) {
       )}`;
     }
   } else {
-    baseMaintenanceVersion = 'n/a';
-    nextMaintenanceVersion = 'n/a';
+    baseMaintenanceVersion = "n/a";
+    nextMaintenanceVersion = "n/a";
   }
 
   const nextVersion =
