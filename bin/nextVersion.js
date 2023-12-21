@@ -61,14 +61,23 @@ async function determineNextVersion(releaseMode) {
     )}`;
   }
 
-  const baseMaintenanceVersion = `${nextReleaseVersion}-maintenance.0`;
-  let nextMaintenanceVersion = baseMaintenanceVersion;
-  while (shell(`git tag -l ${nextMaintenanceVersion}`) !== "") {
-    nextMaintenanceVersion = `v${semverInc(
-      nextMaintenanceVersion,
-      "prerelease",
-      "maintenance"
-    )}`;
+  let baseMaintenanceVersion;
+  let nextMaintenanceVersion;
+  // const branchName = shell("git rev-parse --abbrev-ref HEAD");
+  const branchName = "1.2.3";
+  if (/^[0-9]+\.[0-9]+\.[0-9]+$/.test(branchName)) {
+    baseMaintenanceVersion = `${nextReleaseVersion}-maintenance.0`;
+    nextMaintenanceVersion = baseMaintenanceVersion;
+    while (shell(`git tag -l ${nextMaintenanceVersion}`) !== "") {
+      nextMaintenanceVersion = `v${semverInc(
+        nextMaintenanceVersion,
+        "prerelease",
+        "maintenance"
+      )}`;
+    }
+  } else {
+    baseMaintenanceVersion = 'n/a';
+    nextMaintenanceVersion = 'n/a';
   }
 
   const nextVersion =
@@ -76,10 +85,10 @@ async function determineNextVersion(releaseMode) {
 
   if (debug) {
     console.log();
+    console.log(`highestBump: ${highestBump}`);
     console.log(`baseVersion: ${baseVersion}`);
     console.log(`basePrereleaseVersion: ${basePrereleaseVersion}`);
     console.log(`baseMaintenanceVersion: ${baseMaintenanceVersion}`);
-    console.log(`highestBump: ${highestBump}`);
     console.log();
     console.log(`nextReleaseVersion: ${nextReleaseVersion}`);
     console.log(`nextPrereleaseVersion: ${nextPrereleaseVersion}`);
