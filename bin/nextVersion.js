@@ -78,6 +78,11 @@ async function determineNextVersion(releaseMode) {
 
 async function main() {
   const releaseMode = process.argv[2];
+  if (releaseMode === 'maintenance') {
+    // maintenance TODO
+    console.log('v0.0.42');
+    process.exit(0);
+  }
   const nextVersion = await determineNextVersion(releaseMode);
   if (releaseMode) console.log(nextVersion);
 }
