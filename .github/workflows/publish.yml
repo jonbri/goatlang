@@ -62,15 +62,22 @@ jobs:
           git tag $NEW_VERSION
           git push origin $NEW_VERSION
 
-      - name: Publish release
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        if: ${{ steps.determine_type_of_release.outputs.RELEASE_TYPE == 'release' }}
-        run: npm publish ./build --tag=latest
+      # - name: Publish release
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      #   if: ${{ steps.determine_type_of_release.outputs.RELEASE_TYPE == 'release' }}
+      #   run: npm publish ./build --tag=latest
+      #
+      # - name: Publish prerelease
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      #   if: ${{ steps.determine_type_of_release.outputs.RELEASE_TYPE == 'prerelease' }}
+      #   run: npm publish ./build --tag=beta
 
-      - name: Publish prerelease
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        if: ${{ steps.determine_type_of_release.outputs.RELEASE_TYPE == 'prerelease' }}
-        run: npm publish ./build --tag=beta
-
+on:
+  push:
+    branches:
+      - 'foo'
+    steps:
+      - name: Echo
+        run: echo "hello, foo"
