@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - 'main'
-      - '[0-9+.x]'
+      - '[0-9]+.x'
 jobs:
   Tag_And_Publish:
     runs-on: ubuntu-latest
