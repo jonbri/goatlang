@@ -1,5 +1,4 @@
 name: Prepare
-id: prepare
 on:
   workflow_dispatch:
 jobs:
