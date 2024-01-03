@@ -28,6 +28,9 @@ jobs:
           yarn test:node
           yarn start:node
 
+      - name: Next version logic
+        run: node ./bin/nextVersion.js
+
       - name: Determine next version
         id: determine_next_version
         run: |
