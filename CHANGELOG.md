@@ -1,4 +1,17 @@
-## [v6.4.1](https://github.com/jonbri/goatlang/compare/v6.4.1-beta.0...v6.4.1) (2024-01-03)
+## [v6.4.2](https://github.com/jonbri/goatlang/compare/v6.4.2-beta.0...v6.4.2) (2024-01-03)
+
+
+
+## [6.4.2-beta.0](https://github.com/jonbri/goatlang/compare/v6.4.1...v6.4.2-beta.0) (2024-01-03)
+
+
+### Bug Fixes
+
+* maintenance dist tag ([b4b0f35](https://github.com/jonbri/goatlang/commit/b4b0f35210684a8f89770353ebf0767ccce0adba))
+
+
+
+## [6.4.1](https://github.com/jonbri/goatlang/compare/v6.4.1-beta.0...v6.4.1) (2024-01-03)
 
 
 
