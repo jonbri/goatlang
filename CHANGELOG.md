@@ -1,4 +1,17 @@
-# [v5.0.0](https://github.com/jonbri/goatlang/compare/v5.0.0-beta.0...v5.0.0) (2024-01-03)
+## [v5.0.1](https://github.com/jonbri/goatlang/compare/v5.0.1-beta.1...v5.0.1) (2024-01-03)
+
+
+
+## [5.0.1-beta.1](https://github.com/jonbri/goatlang/compare/v5.0.0...v5.0.1-beta.1) (2024-01-03)
+
+
+### Bug Fixes
+
+* fixes ([5142c4e](https://github.com/jonbri/goatlang/commit/5142c4e47fdb65a255c43a4da44857878163a197))
+
+
+
+# [5.0.0](https://github.com/jonbri/goatlang/compare/v5.0.0-beta.0...v5.0.0) (2024-01-03)
 
 
 
