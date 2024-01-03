@@ -85,15 +85,10 @@ async function determineNextVersion(releaseMode) {
   }
 
   if (debugMode) {
-    console.log();
     console.log(`highestBump: ${highestBump}`);
-    console.log(`baseVersion: ${baseVersion}`);
-    console.log(`basePrereleaseVersion: ${basePrereleaseVersion}`);
-    console.log(`baseMaintenanceVersion: ${baseMaintenanceVersion}`);
-    console.log();
-    console.log(`nextReleaseVersion: ${nextReleaseVersion}`);
-    console.log(`nextPrereleaseVersion: ${nextPrereleaseVersion}`);
-    console.log(`nextMaintenanceVersion: ${nextMaintenanceVersion}`);
+    console.log('(release, prerelease, maintenance)');
+    console.log(`Base: ${baseVersion}, ${basePrereleaseVersion}, ${baseMaintenanceVersion}`);
+    console.log(`Next: ${nextReleaseVersion}, ${nextPrereleaseVersion}, ${nextMaintenanceVersion}`);
   }
 
   return nextVersion;
