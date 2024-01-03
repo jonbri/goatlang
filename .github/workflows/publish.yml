@@ -31,7 +31,7 @@ jobs:
         run: |
           if [[ `git log -1 --pretty=%B` == release* ]]; then
             RELEASE_TYPE="release"
-          elif [[ `git rev-parse --abbrev-ref HEAD` =~ ^[0-9]+[.][0-9]+[.]x$ ]]; then
+          elif [[ `git rev-parse --abbrev-ref HEAD` =~ ^[0-9]+[.][0-9]+[.][0-9]+$ ]]; then
             RELEASE_TYPE="maintenance"
           else
             RELEASE_TYPE="prerelease"
@@ -76,4 +76,10 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         if: ${{ steps.determine_type_of_release.outputs.RELEASE_TYPE == 'prerelease' }}
         run: npm publish ./build --tag=beta
+
+      - name: Publish maintenance release
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        if: ${{ steps.determine_type_of_release.outputs.RELEASE_TYPE == 'maintenance' }}
+        run: npm publish ./build
 

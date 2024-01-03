@@ -39,9 +39,7 @@ async function determineNextVersion(releaseMode) {
       highestBump = "minor";
     }
 
-    if (debug) {
-      console.log(`${shortCommit} | ${version} | ${bumpType}`);
-    }
+    if (debug) console.log(`${shortCommit} | ${version} | ${bumpType}`);
 
     if (version && !version.includes("-")) {
       baseVersion = version;
