@@ -1,4 +1,17 @@
-# [v4.0.0](https://github.com/jonbri/goatlang/compare/v4.0.0-beta.0...v4.0.0) (2024-01-03)
+## [v4.0.1](https://github.com/jonbri/goatlang/compare/v4.0.1-beta.0...v4.0.1) (2024-01-03)
+
+
+
+## [4.0.1-beta.0](https://github.com/jonbri/goatlang/compare/v4.0.0...v4.0.1-beta.0) (2024-01-03)
+
+
+### Bug Fixes
+
+* minor bump ([3a47dce](https://github.com/jonbri/goatlang/commit/3a47dcee708dc2673a5cd207cb793452121f72fc))
+
+
+
+# [4.0.0](https://github.com/jonbri/goatlang/compare/v4.0.0-beta.0...v4.0.0) (2024-01-03)
 
 
 
