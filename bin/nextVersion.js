@@ -63,7 +63,7 @@ async function determineNextVersion(releaseMode) {
   let nextMaintenanceVersion;
   const branchName = shell("git rev-parse --abbrev-ref HEAD");
   if (/^[0-9]+\.[0-9]+\.[0-9]+$/.test(branchName)) {
-    baseMaintenanceVersion = `${nextReleaseVersion}-maintenance.0`;
+    baseMaintenanceVersion = `v${branchName}-maintenance.0`;
     nextMaintenanceVersion = baseMaintenanceVersion;
     while (shell(`git tag -l ${nextMaintenanceVersion}`) !== "") {
       nextMaintenanceVersion = `v${semverInc(
