@@ -7,7 +7,7 @@ const shell = (cmd) => execSync(cmd).toString().trim();
 const TagRegex = /^v[0-9]+\.[0-9]+\.[0-9]+.*/;
 
 async function determineNextVersion(releaseMode) {
-  const debug = !releaseMode;
+  const debugMode = !releaseMode;
   if (!releaseMode) releaseMode = "prerelease";
 
   let baseVersion;
@@ -39,7 +39,7 @@ async function determineNextVersion(releaseMode) {
       highestBump = "minor";
     }
 
-    if (debug) console.log(`${shortCommit} | ${version} | ${bumpType}`);
+    if (debugMode) console.log(`${shortCommit} | ${version} | ${bumpType}`);
 
     if (version && !version.includes("-")) {
       baseVersion = version;
@@ -84,7 +84,7 @@ async function determineNextVersion(releaseMode) {
     nextVersion = nextMaintenanceVersion;
   }
 
-  if (debug) {
+  if (debugMode) {
     console.log();
     console.log(`highestBump: ${highestBump}`);
     console.log(`baseVersion: ${baseVersion}`);
