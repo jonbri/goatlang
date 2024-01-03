@@ -4,7 +4,7 @@ const ConventionalCommitsParser =
   "./node_modules/.bin/conventional-commits-parser";
 
 const shell = (cmd) => execSync(cmd).toString().trim();
-const TagRegex = /^v[0-9]+\.[0-9]+\.[0-9]+.*/;
+const tagRegex = /^v[0-9]+\.[0-9]+\.[0-9]+.*/;
 
 async function determineNextVersion(releaseMode) {
   const debugMode = !releaseMode;
@@ -17,7 +17,7 @@ async function determineNextVersion(releaseMode) {
 
     const version = shell(`git tag --points-at ${commit}`)
       .split("\n")
-      .filter((tag) => TagRegex.test(tag))[0];
+      .filter((tag) => tagRegex.test(tag))[0];
 
     const { type, header, footer } = JSON.parse(
       shell(`git log --format=%B -n 1 ${commit} | ${ConventionalCommitsParser}`)
