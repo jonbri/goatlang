@@ -11,7 +11,7 @@ async function determineNextVersion(releaseMode) {
   if (!releaseMode) releaseMode = "prerelease";
 
   let baseVersion;
-  let highestBump = "patch"; // values: major, minor, patch
+  let highestBump = "none"; // values: major, minor, patch, none
   for (const commit of shell("git rev-list HEAD").split("\n")) {
     const shortCommit = commit.slice(0, 7);
 
@@ -23,7 +23,7 @@ async function determineNextVersion(releaseMode) {
       shell(`git log --format=%B -n 1 ${commit} | ${ConventionalCommitsParser}`)
     )[0];
 
-    let bumpType = "patch";
+    let bumpType = "none";
     if (
       header.includes("!") ||
       (footer && footer.includes("BREAKING CHANGE:"))
@@ -31,12 +31,20 @@ async function determineNextVersion(releaseMode) {
       bumpType = "major";
     } else if (type === "feat") {
       bumpType = "minor";
+    } else if (type === "fix") {
+      bumpType = "patch";
     }
 
     if (bumpType === "major") {
       highestBump = "major";
     } else if (bumpType === "minor" && highestBump !== "major") {
       highestBump = "minor";
+    } else if (
+      bumpType === "patch" &&
+      highestBump !== "major" &&
+      highestBump !== "minor"
+    ) {
+      highestBump = "patch";
     }
 
     if (debugMode) console.log(`${shortCommit} | ${version} | ${bumpType}`);
@@ -73,18 +81,21 @@ async function determineNextVersion(releaseMode) {
       )}`;
     }
   } else {
-    baseMaintenanceVersion = "n/a";
-    nextMaintenanceVersion = "n/a";
+    baseMaintenanceVersion = "null";
+    nextMaintenanceVersion = "null";
   }
 
   let nextVersion = nextPrereleaseVersion;
-  if (releaseMode === "release") {
+  if (highestBump === "null") {
+    nextVersion = "null";
+  } else if (releaseMode === "release") {
     nextVersion = nextReleaseVersion;
   } else if (releaseMode === "maintenance") {
     nextVersion = nextMaintenanceVersion;
   }
 
   if (debugMode) {
+    console.log("--");
     console.log(`highest bump: ${highestBump}`);
     console.log();
     console.log("(release, prerelease, maintenance)");
