@@ -13,7 +13,7 @@ export PATH=/usr/local/go/bin:$PATH
 go version
 ```
 
-Verify installation:
+Verify:
 
 ```sh
 go version
