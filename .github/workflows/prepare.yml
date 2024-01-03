@@ -38,8 +38,7 @@ jobs:
       - name: Changelog
         env:
           NEW_VERSION: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
-        run: |
-          yarn changelog $NEW_VERSION
+        run: yarn changelog $NEW_VERSION
 
       - name: Generate commit message
         id: commit_message
