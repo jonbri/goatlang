@@ -77,8 +77,12 @@ async function determineNextVersion(releaseMode) {
     nextMaintenanceVersion = "n/a";
   }
 
-  const nextVersion =
-    releaseMode === "release" ? nextReleaseVersion : nextPrereleaseVersion;
+  let nextVersion = nextPrereleaseVersion;
+  if (releaseMode === "release") {
+    nextVersion = nextReleaseVersion;
+  } else if (releaseMode === "maintenance") {
+    nextVersion = nextMaintenanceVersion;
+  }
 
   if (debug) {
     console.log();
