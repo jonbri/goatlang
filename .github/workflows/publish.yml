@@ -40,6 +40,9 @@ jobs:
           echo "RELEASE_TYPE=$RELEASE_TYPE" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
 
+      - name: Next version logic
+        run: node ./bin/nextVersion.js
+
       - name: Determine next version
         id: determine_next_version
         env:
