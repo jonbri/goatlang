@@ -82,7 +82,7 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         if: ${{ steps.determine_type_of_release.outputs.RELEASE_TYPE == 'maintenance' }}
-        run: npm publish ./build
+        run: npm publish ./build --tag="maintenance"
 
       - name: Push release tag
         env:
