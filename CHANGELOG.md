@@ -1,4 +1,40 @@
-# [v5.0.0](https://github.com/jonbri/goatlang/compare/v5.0.0-beta.0...v5.0.0) (2024-01-03)
+# [v6.0.0](https://github.com/jonbri/goatlang/compare/v6.0.0-beta.1...v6.0.0) (2024-01-03)
+
+
+
+# [6.0.0-beta.1](https://github.com/jonbri/goatlang/compare/v6.0.0-beta.0...v6.0.0-beta.1) (2024-01-03)
+
+
+### Bug Fixes
+
+* cleaner console output ([d0629cc](https://github.com/jonbri/goatlang/commit/d0629ccf832d265823d81494268db42b7a231598))
+* more cleanup ([d7ebc33](https://github.com/jonbri/goatlang/commit/d7ebc33face4cb3e32a6248ed2e6142c93ac1e9d))
+
+
+
+# [6.0.0-beta.0](https://github.com/jonbri/goatlang/compare/v5.0.1-beta.2...v6.0.0-beta.0) (2024-01-03)
+
+
+
+## [5.0.1-beta.2](https://github.com/jonbri/goatlang/compare/v5.0.1-beta.1...v5.0.1-beta.2) (2024-01-03)
+
+
+### Bug Fixes
+
+* slight tweak ([b45eeed](https://github.com/jonbri/goatlang/commit/b45eeed2efcc00864066178ab662b966b6d8b929))
+
+
+
+## [5.0.1-beta.1](https://github.com/jonbri/goatlang/compare/v5.0.0...v5.0.1-beta.1) (2024-01-03)
+
+
+### Bug Fixes
+
+* fixes ([5142c4e](https://github.com/jonbri/goatlang/commit/5142c4e47fdb65a255c43a4da44857878163a197))
+
+
+
+# [5.0.0](https://github.com/jonbri/goatlang/compare/v5.0.0-beta.0...v5.0.0) (2024-01-03)
 
 
 
