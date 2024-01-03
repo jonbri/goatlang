@@ -1,4 +1,17 @@
-# [v6.3.0](https://github.com/jonbri/goatlang/compare/v6.3.0-beta.0...v6.3.0) (2024-01-03)
+# [v6.4.0](https://github.com/jonbri/goatlang/compare/v6.4.0-beta.0...v6.4.0) (2024-01-03)
+
+
+
+# [6.4.0-beta.0](https://github.com/jonbri/goatlang/compare/v6.3.0...v6.4.0-beta.0) (2024-01-03)
+
+
+### Features
+
+* use branch name ([fff6ed5](https://github.com/jonbri/goatlang/commit/fff6ed591cffef2c6735f6c052194ffe15d44822))
+
+
+
+# [6.3.0](https://github.com/jonbri/goatlang/compare/v6.3.0-beta.0...v6.3.0) (2024-01-03)
 
 
 
