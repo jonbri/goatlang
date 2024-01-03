@@ -29,14 +29,7 @@ jobs:
       - name: Determine type of release
         id: determine_type_of_release
         run: |
-          if [[ `git log -1 --pretty=%B` == release* ]]; then
-            RELEASE_TYPE="release"
-          elif [[ `git rev-parse --abbrev-ref HEAD` =~ ^[0-9]+[.][0-9]+[.][0-9]+$ ]]; then
-            RELEASE_TYPE="maintenance"
-          else
-            RELEASE_TYPE="prerelease"
-          fi
-
+          RELEASE_TYPE=`./bin/release-type.sh`
           echo "RELEASE_TYPE=$RELEASE_TYPE" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
 
