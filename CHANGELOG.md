@@ -1,4 +1,17 @@
-## [v6.4.2](https://github.com/jonbri/goatlang/compare/v6.4.2-beta.0...v6.4.2) (2024-01-03)
+## [v6.4.3](https://github.com/jonbri/goatlang/compare/v6.4.3-beta.0...v6.4.3) (2024-01-03)
+
+
+
+## [6.4.3-beta.0](https://github.com/jonbri/goatlang/compare/v6.4.2...v6.4.3-beta.0) (2024-01-03)
+
+
+### Bug Fixes
+
+* release-type ([36f148a](https://github.com/jonbri/goatlang/commit/36f148a300dee19769966a6d254270873a20fd36))
+
+
+
+## [6.4.2](https://github.com/jonbri/goatlang/compare/v6.4.2-beta.0...v6.4.2) (2024-01-03)
 
 
 
