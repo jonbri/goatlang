@@ -87,7 +87,7 @@ async function determineNextVersion(releaseMode) {
 
   let nextVersion = nextPrereleaseVersion;
   if (highestBump === "null") {
-    if (debugMode) console.log("new version: null");
+    if (debugMode) console.log(`highest bump: ${highestBump}`);
     return "null";
   } else if (releaseMode === "release") {
     nextVersion = nextReleaseVersion;
