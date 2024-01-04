@@ -11,6 +11,8 @@ async function determineNextVersion(releaseMode) {
   if (!releaseMode) releaseMode = "prerelease";
 
   let baseVersion;
+  let count = 0;
+  let headBump = "null"; // values: major, minor, patch, null
   let highestBump = "null"; // values: major, minor, patch, null
   for (const commit of shell("git rev-list HEAD").split("\n")) {
     const shortCommit = commit.slice(0, 7);
@@ -49,10 +51,28 @@ async function determineNextVersion(releaseMode) {
 
     if (debugMode) console.log(`${shortCommit} | ${version} | ${bumpType}`);
 
+    if (count === 0) {
+      headBump = bumpType;
+    }
+    count++;
+
     if (version && !version.includes("-")) {
       baseVersion = version;
       break;
     }
+  }
+
+  if (debugMode) console.log(`HEAD: ${headBump}`);
+
+  // TODO: during the publish workflow, if the HEAD commit type is not publish-able, end early
+  const enforceNullHead = false;
+
+  if (enforceNullHead && headBump === "null") {
+    if (debugMode) console.log("nothing to bump");
+    return "null";
+  } else if (highestBump === "null") {
+    if (debugMode) console.log(`highest bump: ${highestBump}`);
+    return "null";
   }
 
   const nextReleaseVersion = `v${semverInc(baseVersion, highestBump)}`;
@@ -86,10 +106,7 @@ async function determineNextVersion(releaseMode) {
   }
 
   let nextVersion = nextPrereleaseVersion;
-  if (highestBump === "null") {
-    if (debugMode) console.log(`highest bump: ${highestBump}`);
-    return "null";
-  } else if (releaseMode === "release") {
+  if (releaseMode === "release") {
     nextVersion = nextReleaseVersion;
   } else if (releaseMode === "maintenance") {
     nextVersion = nextMaintenanceVersion;
