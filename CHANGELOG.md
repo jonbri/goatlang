@@ -1,4 +1,20 @@
-## [v6.4.3](https://github.com/jonbri/goatlang/compare/v6.4.3-beta.0...v6.4.3) (2024-01-03)
+# [v6.5.0](https://github.com/jonbri/goatlang/compare/v6.4.3...v6.5.0) (2024-01-04)
+
+
+### Bug Fixes
+
+* correct input ([11599d5](https://github.com/jonbri/goatlang/commit/11599d555df4407048cd337c88011c9ab5008868))
+* don't count chores ([27d9b3f](https://github.com/jonbri/goatlang/commit/27d9b3f4fb92b5d62e64243d177dcc64f3b0d9db))
+* formatting ([8f781c1](https://github.com/jonbri/goatlang/commit/8f781c13bec18339dcc18351b56a8fed719bfea4))
+
+
+### Features
+
+* major ([ea7b4f9](https://github.com/jonbri/goatlang/commit/ea7b4f9d368839a571dd81dcf430b01e469efbfe))
+
+
+
+## [6.4.3](https://github.com/jonbri/goatlang/compare/v6.4.3-beta.0...v6.4.3) (2024-01-03)
 
 
 
