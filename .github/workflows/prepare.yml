@@ -41,12 +41,14 @@ jobs:
       - name: Changelog
         env:
           NEW_VERSION: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
+        if: ${{ steps.determine_next_version.outputs.NEW_VERSION != 'null' }}
         run: yarn changelog $NEW_VERSION
 
       - name: Generate commit message
         id: commit_message
         env:
           NEW_VERSION: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
+        if: ${{ steps.determine_next_version.outputs.NEW_VERSION != 'null' }}
         run: |
           COMMIT_MESSAGE="release: ${NEW_VERSION}"
           echo "COMMIT_MESSAGE=$COMMIT_MESSAGE" >> $GITHUB_OUTPUT
@@ -54,6 +56,7 @@ jobs:
 
       - name: PR
         uses: peter-evans/create-pull-request@v5
+        if: ${{ steps.determine_next_version.outputs.NEW_VERSION != 'null' }}
         with:
           commit-message: ${{ steps.commit_message.outputs.COMMIT_MESSAGE }}
           title: ${{ steps.commit_message.outputs.COMMIT_MESSAGE }}
