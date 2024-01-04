@@ -1,4 +1,17 @@
-## [v6.6.1](https://github.com/jonbri/goatlang/compare/v6.6.1-beta.0...v6.6.1) (2024-01-04)
+# [v6.7.0](https://github.com/jonbri/goatlang/compare/v6.7.0-beta.1...v6.7.0) (2024-01-04)
+
+
+
+# [6.7.0-beta.1](https://github.com/jonbri/goatlang/compare/v6.6.1...v6.7.0-beta.1) (2024-01-04)
+
+
+### Performance Improvements
+
+* p bump ([167ae51](https://github.com/jonbri/goatlang/commit/167ae5101cdb614e2644d8bc1b5d677c5dc3b2eb))
+
+
+
+## [6.6.1](https://github.com/jonbri/goatlang/compare/v6.6.1-beta.0...v6.6.1) (2024-01-04)
 
 
 
