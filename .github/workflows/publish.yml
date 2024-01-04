@@ -48,7 +48,7 @@ jobs:
       - name: Update build/package.json
         env:
           NEW_VERSION: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
-        if: ${{ steps.determine_next_version.outputs.NEW_VERSION != "null" }}
+        if: ${{ steps.determine_next_version.outputs.NEW_VERSION != 'null' }}
         run: |
           cd build
           npm version $NEW_VERSION --commit-hooks false --git-tag-version false
@@ -58,35 +58,35 @@ jobs:
       - name: Create release tag
         env:
           NEW_VERSION: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
-        if: ${{ steps.determine_next_version.outputs.NEW_VERSION != "null" }}
+        if: ${{ steps.determine_next_version.outputs.NEW_VERSION != 'null' }}
         run: git tag $NEW_VERSION
 
       - name: Publish release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         if: |
-          ${{ steps.determine_next_version.outputs.NEW_VERSION != "null" }} &&
-          ${{ steps.determine_type_of_release.outputs.RELEASE_TYPE == "release" }}
+          ${{ steps.determine_next_version.outputs.NEW_VERSION != 'null' }} &&
+          ${{ steps.determine_type_of_release.outputs.RELEASE_TYPE == 'release' }}
         run: npm publish ./build --tag=latest
 
       - name: Publish prerelease
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         if: |
-          ${{ steps.determine_next_version.outputs.NEW_VERSION != "null" }} &&
-          ${{ steps.determine_type_of_release.outputs.RELEASE_TYPE == "prerelease" }}
+          ${{ steps.determine_next_version.outputs.NEW_VERSION != 'null' }} &&
+          ${{ steps.determine_type_of_release.outputs.RELEASE_TYPE == 'prerelease' }}
         run: npm publish ./build --tag=beta
 
       - name: Publish maintenance release
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         if: |
-          ${{ steps.determine_next_version.outputs.NEW_VERSION != "null" }} &&
-          ${{ steps.determine_type_of_release.outputs.RELEASE_TYPE == "maintenance" }}
+          ${{ steps.determine_next_version.outputs.NEW_VERSION != 'null' }} &&
+          ${{ steps.determine_type_of_release.outputs.RELEASE_TYPE == 'maintenance' }}
         run: npm publish ./build --tag=maintenance
 
       - name: Push release tag
         env:
           NEW_VERSION: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
-        if: ${{ steps.determine_next_version.outputs.NEW_VERSION != "null" }}
+        if: ${{ steps.determine_next_version.outputs.NEW_VERSION != 'null' }}
         run: git push origin $NEW_VERSION
