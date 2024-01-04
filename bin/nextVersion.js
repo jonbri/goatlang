@@ -112,7 +112,10 @@ async function determineNextVersion(releaseMode) {
 
 async function main() {
   const releaseMode = process.argv[2];
-  if (releaseMode && !["release", "prerelease", "maintenance"].includes(releaseMode)) {
+  if (
+    releaseMode &&
+    !["release", "prerelease", "maintenance"].includes(releaseMode)
+  ) {
     console.error("Invalid release mode");
     process.exit(1);
   }
