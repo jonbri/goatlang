@@ -1,4 +1,20 @@
-# [v6.5.0](https://github.com/jonbri/goatlang/compare/v6.4.3...v6.5.0) (2024-01-04)
+# [v6.6.0](https://github.com/jonbri/goatlang/compare/v6.5.0...v6.6.0) (2024-01-04)
+
+
+### Bug Fixes
+
+* double quotes ([9997ddb](https://github.com/jonbri/goatlang/commit/9997ddb3f09738367b0cedf60a51951579978b53))
+* single quote ([aeb2a78](https://github.com/jonbri/goatlang/commit/aeb2a78ceaa275bc7fa7b7182e6b78cf8e37f303))
+* use double quotes ([2bd23ec](https://github.com/jonbri/goatlang/commit/2bd23ecc77c7fe9003554d3b312ec484cd463faa))
+
+
+### Features
+
+* minor bump ([4fadecd](https://github.com/jonbri/goatlang/commit/4fadecd33dd1c1564a7951e58df81cc6db3f4715))
+
+
+
+# [6.5.0](https://github.com/jonbri/goatlang/compare/v6.4.3...v6.5.0) (2024-01-04)
 
 
 ### Bug Fixes
