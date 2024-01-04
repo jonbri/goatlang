@@ -29,7 +29,7 @@ async function determineNextVersion(releaseMode) {
       (footer && footer.includes("BREAKING CHANGE:"))
     ) {
       bumpType = "major";
-    } else if (type === "feat") {
+    } else if (type === "feat" || type === "perf") {
       bumpType = "minor";
     } else if (type === "fix") {
       bumpType = "patch";
