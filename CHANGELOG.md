@@ -1,4 +1,17 @@
-# [v6.7.0](https://github.com/jonbri/goatlang/compare/v6.7.0-beta.1...v6.7.0) (2024-01-04)
+## [v6.7.1](https://github.com/jonbri/goatlang/compare/v6.7.1-beta.0...v6.7.1) (2024-01-04)
+
+
+
+## [6.7.1-beta.0](https://github.com/jonbri/goatlang/compare/v6.7.0...v6.7.1-beta.0) (2024-01-04)
+
+
+### Bug Fixes
+
+* uump ([1622779](https://github.com/jonbri/goatlang/commit/16227791bfa77da7a24ae99ccf7f660b35f8af90))
+
+
+
+# [6.7.0](https://github.com/jonbri/goatlang/compare/v6.7.0-beta.1...v6.7.0) (2024-01-04)
 
 
 
