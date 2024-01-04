@@ -11,7 +11,7 @@ async function determineNextVersion(releaseMode) {
   if (!releaseMode) releaseMode = "prerelease";
 
   let baseVersion;
-  let highestBump = "none"; // values: major, minor, patch, none
+  let highestBump = "null"; // values: major, minor, patch, null
   for (const commit of shell("git rev-list HEAD").split("\n")) {
     const shortCommit = commit.slice(0, 7);
 
@@ -23,7 +23,7 @@ async function determineNextVersion(releaseMode) {
       shell(`git log --format=%B -n 1 ${commit} | ${ConventionalCommitsParser}`)
     )[0];
 
-    let bumpType = "none";
+    let bumpType = "null";
     if (
       header.includes("!") ||
       (footer && footer.includes("BREAKING CHANGE:"))
@@ -87,7 +87,8 @@ async function determineNextVersion(releaseMode) {
 
   let nextVersion = nextPrereleaseVersion;
   if (highestBump === "null") {
-    nextVersion = "null";
+    if (debugMode) console.log("new version: null");
+    return "null";
   } else if (releaseMode === "release") {
     nextVersion = nextReleaseVersion;
   } else if (releaseMode === "maintenance") {
