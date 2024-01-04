@@ -1,4 +1,8 @@
-# [v6.7.0](https://github.com/jonbri/goatlang/compare/v6.7.0-beta.1...v6.7.0) (2024-01-04)
+# [null](https://github.com/jonbri/goatlang/compare/v6.7.0...vnull) (2024-01-04)
+
+
+
+# [6.7.0](https://github.com/jonbri/goatlang/compare/v6.7.0-beta.1...v6.7.0) (2024-01-04)
 
 
 
