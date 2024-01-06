@@ -84,7 +84,6 @@ async function main() {
     : git("rev-parse --abbrev-ref HEAD");
 
   const [firstCommit] = commits;
-  const { tag: baseVersion } = commits.slice().reverse()[0];
 
   let releaseType;
   if (firstCommit.header.startsWith("release")) {
@@ -93,6 +92,11 @@ async function main() {
     releaseType = "maintenance";
   } else {
     releaseType = "prerelease";
+  }
+
+  let { tag: baseVersion } = commits.slice().reverse()[0];
+  if (releaseType === "release") {
+    baseVersion = firstCommit.header.split(" ")[1];
   }
 
   let highestBump = null;
@@ -111,12 +115,21 @@ async function main() {
     (v) => "v" + semverInc(v, "prerelease", "maintenance")
   );
 
-  const versions = {
+  let versions = {
     base: baseVersion,
     release: highestBump === null ? null : nextReleaseVersion,
     prerelease: highestBump === null ? null : nextPrereleaseVersion,
     maintenance: highestBump === null ? null : nextMaintenanceVersion,
   };
+
+  if (releaseType === "release") {
+    versions = {
+      base: baseVersion,
+      release: baseVersion,
+      prerelease: null,
+      maintenance: null,
+    };
+  }
 
   const values = {
     commits,
