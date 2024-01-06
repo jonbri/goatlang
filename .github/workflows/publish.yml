@@ -29,19 +29,17 @@ jobs:
       - name: Determine type of release
         id: determine_type_of_release
         run: |
-          RELEASE_TYPE=`./bin/release-type.sh`
+          RELEASE_TYPE=`node ./bin/version.js --value="releaseType"`
           echo "RELEASE_TYPE=$RELEASE_TYPE" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
 
-      - name: Next version logic
-        run: node ./bin/nextVersion.js
+      - name: Version info
+        run: node ./bin/version.js
 
       - name: Determine next version
         id: determine_next_version
-        env:
-          RELEASE_TYPE: ${{ steps.determine_type_of_release.outputs.RELEASE_TYPE }}
         run: |
-          NEW_VERSION=`node ./bin/nextVersion.js ${RELEASE_TYPE}`
+          NEW_VERSION=`node ./bin/nextVersion.js --value="nextVersion"`
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
 

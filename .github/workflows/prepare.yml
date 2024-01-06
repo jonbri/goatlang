@@ -28,13 +28,13 @@ jobs:
           yarn test:node
           yarn start:node
 
-      - name: Next version logic
-        run: node ./bin/nextVersion.js
+      - name: Version info
+        run: node ./bin/version.js
 
       - name: Determine next version
         id: determine_next_version
         run: |
-          NEW_VERSION=`node ./bin/nextVersion.js release`
+          NEW_VERSION=`node ./bin/nextVersion.js --value="nextVersion"`
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
 
