@@ -1,4 +1,13 @@
-# [v6.8.0](https://github.com/jonbri/goatlang/compare/v6.8.0-beta.3...v6.8.0) (2024-01-06)
+# [v6.8.0](https://github.com/jonbri/goatlang/compare/v6.8.0-beta.4...v6.8.0) (2024-01-06)
+
+
+
+# [6.8.0-beta.4](https://github.com/jonbri/goatlang/compare/v6.8.0-beta.3...v6.8.0-beta.4) (2024-01-06)
+
+
+### Bug Fixes
+
+* highest bump ([7475015](https://github.com/jonbri/goatlang/commit/747501555a8280fd3980fdd95000a68d7c8e280b))
 
 
 
