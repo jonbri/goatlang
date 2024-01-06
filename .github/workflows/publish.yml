@@ -26,15 +26,15 @@ jobs:
           yarn test:node
           yarn start:node
 
+      - name: Version info
+        run: node ./bin/version.js --pretty
+
       - name: Determine type of release
         id: determine_type_of_release
         run: |
           RELEASE_TYPE=`node ./bin/version.js --value="releaseType"`
           echo "RELEASE_TYPE=$RELEASE_TYPE" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
-
-      - name: Version info
-        run: node ./bin/version.js
 
       - name: Determine next version
         id: determine_next_version
