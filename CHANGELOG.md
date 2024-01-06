@@ -1,4 +1,24 @@
-## [v6.7.2](https://github.com/jonbri/goatlang/compare/v6.7.2-beta.1...v6.7.2) (2024-01-04)
+# [v6.8.0-beta.1](https://github.com/jonbri/goatlang/compare/v6.8.0-beta.0...v6.8.0-beta.1) (2024-01-06)
+
+
+
+# [6.8.0-beta.0](https://github.com/jonbri/goatlang/compare/v6.7.2...v6.8.0-beta.0) (2024-01-06)
+
+
+### Bug Fixes
+
+* tests pass ([fd0ac02](https://github.com/jonbri/goatlang/commit/fd0ac020f7741ceda6954afc177a795e57377d1e))
+* typo ([3efc9bb](https://github.com/jonbri/goatlang/commit/3efc9bb18c12fa402a14cfd5a13b02efb790de76))
+* update workflows ([d02e13a](https://github.com/jonbri/goatlang/commit/d02e13a2a8e755784f3058e3ab72422114ffc8c1))
+
+
+### Features
+
+* version.js ([03bdd63](https://github.com/jonbri/goatlang/commit/03bdd63f92c4d62a4b11424e00c6a5a738195af8))
+
+
+
+## [6.7.2](https://github.com/jonbri/goatlang/compare/v6.7.2-beta.1...v6.7.2) (2024-01-04)
 
 
 
