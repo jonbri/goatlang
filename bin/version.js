@@ -105,6 +105,15 @@ async function main() {
   else if (bumpTypes.includes("minor")) highestBump = "minor";
   else if (bumpTypes.includes("patch")) highestBump = "patch";
 
+  let highestBumpSinceLastRelease = null;
+  const lastReleaseIndex = TODO;
+  const bumpTypes = commits
+    .slice(0, lastReleaseIndex)
+    .map(({ bumpType }) => bumpType);
+  if (bumpTypes.includes("major")) highestBumpSinceLastRelease = "major";
+  else if (bumpTypes.includes("minor")) highestBumpSinceLastRelease = "minor";
+  else if (bumpTypes.includes("patch")) highestBumpSinceLastRelease = "patch";
+
   const nextReleaseVersion = `v${semverInc(baseVersion, highestBump)}`;
   const nextPrereleaseVersion = await nextTag(
     `${nextReleaseVersion}-beta.0`,
@@ -137,6 +146,7 @@ async function main() {
     highestBump,
     versions,
     nextVersion: versions[releaseType],
+    canPublish: releaseType !== null && highestBumpSinceLastRelease !== null,
   };
 
   let output = JSON.stringify(values);

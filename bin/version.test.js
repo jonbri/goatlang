@@ -238,3 +238,25 @@ test(
     }
   )
 );
+
+test(
+  "Chore after fix",
+  run(
+    {
+      options: {
+        test: prepare([
+          commit(3, "chore: bump"),
+          commit(2, "fix: bump", "v1.0.0-beta.0"),
+          commit(1, "chore: bump"),
+          v100,
+        ]),
+      },
+    },
+    {
+      highestBump: "patch",
+      // nextVersion: "v1.0.1-beta.0",
+      nextVersion: null,
+      releaseType: "prerelease",
+    }
+  )
+);
