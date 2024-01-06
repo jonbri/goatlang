@@ -126,7 +126,13 @@ async function main() {
     nextVersion: versions[releaseType],
   };
 
-  const output = options.value ? values[options.value] : JSON.stringify(values);
+  let output = JSON.stringify(values);
+  if (options.value) {
+    output = values[options.value];
+    if (options.value.startsWith("versions.")) {
+      output = values.versions[options.value.split(".")[1]];
+    }
+  }
   const prettyOutput = options.pretty
     ? JSON.stringify(JSON.parse(output), null, 2)
     : output;

@@ -29,12 +29,12 @@ jobs:
           yarn start:node
 
       - name: Version info
-        run: node ./bin/version.js
+        run: node ./bin/version.js --pretty
 
       - name: Determine next version
         id: determine_next_version
         run: |
-          NEW_VERSION=`node ./bin/version.js --value="nextVersion"`
+          NEW_VERSION=`node ./bin/version.js --value="versions.release"`
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
 
