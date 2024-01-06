@@ -19,7 +19,7 @@ const gits = (cmd) => git(cmd).split("\n");
 
 const shaToTag = (sha) =>
   gits(`tag --points-at ${sha}`).filter((tag) =>
-    /^v[0-9]+\.[0-9]+\.[0-9]+.*/.test(tag),
+    /^v[0-9]+\.[0-9]+\.[0-9]+.*/.test(tag)
   )[0];
 
 const parseCommits = () => {
@@ -104,11 +104,11 @@ async function main() {
   const nextReleaseVersion = `v${semverInc(baseVersion, highestBump)}`;
   const nextPrereleaseVersion = await nextTag(
     `${nextReleaseVersion}-beta.0`,
-    (v) => "v" + semverInc(v, "prerelease", "beta"),
+    (v) => "v" + semverInc(v, "prerelease", "beta")
   );
   const nextMaintenanceVersion = await nextTag(
     `v${branchName}-maintenance.0`,
-    (v) => "v" + semverInc(v, "prerelease", "maintenance"),
+    (v) => "v" + semverInc(v, "prerelease", "maintenance")
   );
 
   const versions = {

@@ -46,8 +46,8 @@ test(
       highestBump: "patch",
       nextVersion: "v1.0.1-beta.1",
       releaseType: "prerelease",
-    },
-  ),
+    }
+  )
 );
 
 test(
@@ -66,8 +66,8 @@ test(
       highestBump: "minor",
       nextVersion: "v1.1.0-beta.0",
       releaseType: "prerelease",
-    },
-  ),
+    }
+  )
 );
 
 test(
@@ -89,8 +89,8 @@ test(
       highestBump: "minor",
       nextVersion: "v1.1.0-beta.1",
       releaseType: "prerelease",
-    },
-  ),
+    }
+  )
 );
 
 test(
@@ -114,8 +114,8 @@ test(
       highestBump: "minor",
       nextVersion: "v1.1.0-beta.1",
       releaseType: "prerelease",
-    },
-  ),
+    }
+  )
 );
 
 test(
@@ -135,8 +135,8 @@ test(
       highestBump: null,
       nextVersion: null,
       releaseType: "prerelease",
-    },
-  ),
+    }
+  )
 );
 
 test(
@@ -156,8 +156,8 @@ test(
       highestBump: "major",
       nextVersion: "v2.0.0-beta.0",
       releaseType: "prerelease",
-    },
-  ),
+    }
+  )
 );
 
 test(
@@ -176,8 +176,8 @@ test(
       highestBump: "major",
       nextVersion: "v2.0.0",
       releaseType: "release",
-    },
-  ),
+    }
+  )
 );
 
 test(
@@ -197,8 +197,8 @@ test(
       highestBump: "patch",
       nextVersion: "v1.0.0-maintenance.0",
       releaseType: "maintenance",
-    },
-  ),
+    }
+  )
 );
 
 test(
@@ -219,6 +219,6 @@ test(
       highestBump: "patch",
       nextVersion: "v1.0.0-maintenance.2",
       releaseType: "maintenance",
-    },
-  ),
+    }
+  )
 );
