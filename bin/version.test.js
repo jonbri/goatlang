@@ -10,7 +10,7 @@ const v100 = commit(0, "release: v1.0.0", "v1.0.0");
 const run =
   ({ options, args }, expected) =>
   (t) => {
-    let fullCommand = "node index.js ";
+    let fullCommand = "node bin/version.js ";
 
     // add options
     for (const [key, value] of Object.entries(options)) {
