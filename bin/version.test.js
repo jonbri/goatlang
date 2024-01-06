@@ -222,3 +222,20 @@ test(
     }
   )
 );
+
+test(
+  "Invalid release",
+  run(
+    {
+      options: {
+        branch: "1.0.0",
+        test: prepare([commit(1, "release: fake"), v100]),
+      },
+    },
+    {
+      highestBump: null,
+      nextVersion: null,
+      releaseType: "release",
+    }
+  )
+);

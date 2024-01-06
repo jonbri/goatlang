@@ -38,17 +38,24 @@ jobs:
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
 
+      - name: Determine highest bump
+        id: determine_highest_bump
+        run: |
+          HIGHEST_BUMP=`node ./bin/version.js --value="highestBump"`
+          echo "HIGHEST_BUMP=$HIGHEST_BUMP" >> $GITHUB_OUTPUT
+          cat $GITHUB_OUTPUT
+
       - name: Changelog
         env:
           NEW_VERSION: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
-        if: ${{ steps.determine_next_version.outputs.NEW_VERSION != 'null' }}
+        if: ${{ steps.determine_next_version.outputs.HIGHEST_BUMP != 'null' }}
         run: yarn changelog $NEW_VERSION
 
       - name: Generate commit message
         id: commit_message
         env:
           NEW_VERSION: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
-        if: ${{ steps.determine_next_version.outputs.NEW_VERSION != 'null' }}
+        if: ${{ steps.determine_next_version.outputs.HIGHEST_BUMP != 'null' }}
         run: |
           COMMIT_MESSAGE="release: ${NEW_VERSION}"
           echo "COMMIT_MESSAGE=$COMMIT_MESSAGE" >> $GITHUB_OUTPUT
@@ -56,7 +63,7 @@ jobs:
 
       - name: PR
         uses: peter-evans/create-pull-request@v5
-        if: ${{ steps.determine_next_version.outputs.NEW_VERSION != 'null' }}
+        if: ${{ steps.determine_next_version.outputs.HIGHEST_BUMP != 'null' }}
         with:
           commit-message: ${{ steps.commit_message.outputs.COMMIT_MESSAGE }}
           title: ${{ steps.commit_message.outputs.COMMIT_MESSAGE }}
