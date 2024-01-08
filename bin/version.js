@@ -8,6 +8,7 @@ const options = program
   .option("-v, --value <value>")
   .option("-g, --git-dir <path>")
   .option("-b, --branch <branch>")
+  .option("-r, --release")
   .option("-p, --pretty")
   .parse()
   .opts();
@@ -134,7 +135,9 @@ const main = () => {
   let nextVersion = null;
 
   // determine the next version
-  if (releaseType === "prerelease") {
+  if (options.release) {
+    nextVersion = nextReleaseVersion;
+  } else if (releaseType === "prerelease") {
     nextVersion =
       largestBumpSincePrerelease === null ? null : nextPrereleaseVersion;
   } else if (releaseType === "release") {
