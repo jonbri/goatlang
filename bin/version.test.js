@@ -241,7 +241,7 @@ test(
 );
 
 test(
-  "Invalid release",
+  "Release",
   run(
     {
       options: {

@@ -98,21 +98,12 @@ const main = () => {
     ? options.branch
     : git("rev-parse --abbrev-ref HEAD");
 
-  const [firstCommit] = commits;
-
-  let releaseType;
-  if (firstCommit.header.startsWith("release")) {
-    releaseType = "release";
-  } else if (/^[0-9]+\.[0-9]+\.[0-9]+$/.test(branchName)) {
-    releaseType = "maintenance";
-  } else {
-    releaseType = "prerelease";
-  }
+  const [headCommit] = commits;
+  const lastCommit = commits.slice().reverse()[0];
 
   // determine the "base version",
   // which is the version of the last release
-  let { tag: baseVersion } = commits.slice().reverse()[0];
-  if (releaseType === "release") baseVersion = firstCommit.header.split(" ")[1];
+  const { tag: baseVersion } = lastCommit;
 
   // used to determine the semver increment type
   const largestBumpSinceRelease = largestBump(commits);
@@ -122,13 +113,17 @@ const main = () => {
   // then a new prerelease publish should not occur
   const largestBumpSincePrerelease = largestBump(commitsSinceLastPrerelease);
 
-  // determine the next version for the tghree release types
-  const nextReleaseVersion = `v${semverInc(
-    baseVersion,
-    largestBumpSinceRelease
-  )}`;
+  let releaseType = "prerelease";
+  if (headCommit.header.startsWith("release")) {
+    releaseType = "release";
+  } else if (/^[0-9]+\.[0-9]+\.[0-9]+$/.test(branchName)) {
+    releaseType = "maintenance";
+  }
+
+  // determine the next version for the three release types
+  const nextReleaseVersion = semverInc(baseVersion, largestBumpSinceRelease);
   const nextPrereleaseVersion = nextTag(
-    `${nextReleaseVersion}-beta.0`,
+    `v${nextReleaseVersion}-beta.0`,
     (v) => "v" + semverInc(v, "prerelease", "beta")
   );
   const nextMaintenanceVersion = nextTag(
@@ -143,7 +138,7 @@ const main = () => {
     nextVersion =
       largestBumpSincePrerelease === null ? null : nextPrereleaseVersion;
   } else if (releaseType === "release") {
-    nextVersion = baseVersion;
+    nextVersion = headCommit.header.split(" ")[1];
   } else if (releaseType === "maintenance") {
     nextVersion = nextMaintenanceVersion;
   }

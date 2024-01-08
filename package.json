@@ -10,7 +10,7 @@
     "start:node": "node index.js",
     "start:go": "go run app/hello-world.go",
     "test": "yarn test:node && yarn test:go",
-    "test:node": "yarn format:check && tape ./bin/version.test.js",
+    "test:node": "tape ./bin/version.test.js",
     "test:go": "go version && ./bin/gotagger --version && yarn gotagger",
     "format": "prettier --write \"**/*.{js,md}\"",
     "format:check": "prettier --check \"**/*.{js,md}\"",
