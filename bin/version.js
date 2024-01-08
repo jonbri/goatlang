@@ -55,6 +55,15 @@ async function nextTag(start, increment) {
   return tag;
 }
 
+const largestBump = (commits) => {
+  let bump = null;
+  const bumpTypes = commits.map(({ bumpType }) => bumpType);
+  if (bumpTypes.includes("major")) bump = "major";
+  else if (bumpTypes.includes("minor")) bump = "minor";
+  else if (bumpTypes.includes("patch")) bump = "patch";
+  return bump;
+};
+
 async function main() {
   const rawCommits = options.test ? JSON.parse(options.test) : parseCommits();
   const commits = rawCommits.map((commit) => {
@@ -105,24 +114,18 @@ async function main() {
     baseVersion = firstCommit.header.split(" ")[1];
   }
 
-  let highestBump = null;
-  const bumpTypes = commits.map(({ bumpType }) => bumpType);
-  if (bumpTypes.includes("major")) highestBump = "major";
-  else if (bumpTypes.includes("minor")) highestBump = "minor";
-  else if (bumpTypes.includes("patch")) highestBump = "patch";
+  // used to determine the semver increment type
+  const largestBumpSinceRelease = largestBump(commits);
 
-  let highestBumpSinceLastPreRelease = null;
-  const bumpTypesSinceLastPreRelease = commitsSinceLastPrerelease.map(
-    ({ bumpType }) => bumpType
-  );
-  if (bumpTypesSinceLastPreRelease.includes("major"))
-    highestBumpSinceLastPreRelease = "major";
-  else if (bumpTypesSinceLastPreRelease.includes("minor"))
-    highestBumpSinceLastPreRelease = "minor";
-  else if (bumpTypesSinceLastPreRelease.includes("patch"))
-    highestBumpSinceLastPreRelease = "patch";
+  // used to determine if a prerelease should be created
+  // i.e., if there were only "chore" commits after the last prerelease
+  // then a new prerelease publish should not occur
+  const largestBumpSincePrerelease = largestBump(commitsSinceLastPrerelease);
 
-  const nextReleaseVersion = `v${semverInc(baseVersion, highestBump)}`;
+  const nextReleaseVersion = `v${semverInc(
+    baseVersion,
+    largestBumpSinceRelease
+  )}`;
   const nextPrereleaseVersion = await nextTag(
     `${nextReleaseVersion}-beta.0`,
     (v) => "v" + semverInc(v, "prerelease", "beta")
@@ -135,9 +138,9 @@ async function main() {
   let nextVersion = null;
   if (releaseType === "prerelease") {
     nextVersion =
-      highestBumpSinceLastPreRelease === null ? null : nextPrereleaseVersion;
+      largestBumpSincePrerelease === null ? null : nextPrereleaseVersion;
   } else if (releaseType === "release") {
-    nextVersion = highestBump === null ? null : baseVersion;
+    nextVersion = largestBumpSinceRelease === null ? null : baseVersion;
   } else if (releaseType === "maintenance") {
     nextVersion = nextMaintenanceVersion;
   }
@@ -145,7 +148,8 @@ async function main() {
   const values = {
     commits,
     releaseType,
-    highestBump,
+    largestBumpSinceRelease,
+    largestBumpSincePrerelease,
     nextVersion,
   };
 

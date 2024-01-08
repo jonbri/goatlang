@@ -43,7 +43,7 @@ test(
       },
     },
     {
-      highestBump: "patch",
+      largestBumpSinceRelease: "patch",
       nextVersion: "v1.0.1-beta.1",
       releaseType: "prerelease",
     }
@@ -63,7 +63,7 @@ test(
       },
     },
     {
-      highestBump: "minor",
+      largestBumpSinceRelease: "minor",
       nextVersion: "v1.1.0-beta.0",
       releaseType: "prerelease",
     }
@@ -86,7 +86,7 @@ test(
       },
     },
     {
-      highestBump: "minor",
+      largestBumpSinceRelease: "minor",
       nextVersion: "v1.1.0-beta.1",
       releaseType: "prerelease",
     }
@@ -111,7 +111,7 @@ test(
       },
     },
     {
-      highestBump: "minor",
+      largestBumpSinceRelease: "minor",
       nextVersion: "v1.1.0-beta.1",
       releaseType: "prerelease",
     }
@@ -132,7 +132,7 @@ test(
       },
     },
     {
-      highestBump: null,
+      largestBumpSinceRelease: null,
       nextVersion: null,
       releaseType: "prerelease",
     }
@@ -153,7 +153,7 @@ test(
       },
     },
     {
-      highestBump: "major",
+      largestBumpSinceRelease: "major",
       nextVersion: "v2.0.0-beta.0",
       releaseType: "prerelease",
     }
@@ -173,7 +173,7 @@ test(
       },
     },
     {
-      highestBump: "major",
+      largestBumpSinceRelease: "major",
       nextVersion: "v2.0.0",
       releaseType: "release",
     }
@@ -194,7 +194,7 @@ test(
       },
     },
     {
-      highestBump: "patch",
+      largestBumpSinceRelease: "patch",
       nextVersion: "v1.0.0-maintenance.0",
       releaseType: "maintenance",
     }
@@ -216,7 +216,7 @@ test(
       },
     },
     {
-      highestBump: "patch",
+      largestBumpSinceRelease: "patch",
       nextVersion: "v1.0.0-maintenance.2",
       releaseType: "maintenance",
     }
@@ -232,7 +232,7 @@ test(
       },
     },
     {
-      highestBump: null,
+      largestBumpSinceRelease: null,
       nextVersion: null,
       releaseType: "release",
     }
@@ -253,7 +253,7 @@ test(
       },
     },
     {
-      highestBump: "patch",
+      largestBumpSinceRelease: "patch",
       nextVersion: null,
       releaseType: "prerelease",
     }
@@ -280,7 +280,7 @@ test(
       },
     },
     {
-      highestBump: "patch",
+      largestBumpSinceRelease: "patch",
       nextVersion: "v1.0.1",
       releaseType: "release",
     }
