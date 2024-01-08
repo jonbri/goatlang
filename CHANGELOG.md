@@ -1,4 +1,34 @@
-## [v7.0.5](https://github.com/jonbri/goatlang/compare/v7.0.5-beta.0...v7.0.5) (2024-01-08)
+# [v8.0.0](https://github.com/jonbri/goatlang/compare/v8.0.0-beta.3...v8.0.0) (2024-01-08)
+
+
+
+# [8.0.0-beta.3](https://github.com/jonbri/goatlang/compare/v8.0.0-beta.2...v8.0.0-beta.3) (2024-01-08)
+
+
+
+# [8.0.0-beta.2](https://github.com/jonbri/goatlang/compare/v8.0.0-beta.1...v8.0.0-beta.2) (2024-01-08)
+
+
+### Features
+
+* feat ([a3bd73e](https://github.com/jonbri/goatlang/commit/a3bd73e2caeab561fcadc962a8524b0dbe284673))
+
+
+
+# [8.0.0-beta.1](https://github.com/jonbri/goatlang/compare/v8.0.0-beta.0...v8.0.0-beta.1) (2024-01-08)
+
+
+### Bug Fixes
+
+* fix ([53659ee](https://github.com/jonbri/goatlang/commit/53659ee0b317fc5edd78cbb9b2a1d629f22221b4))
+
+
+
+# [8.0.0-beta.0](https://github.com/jonbri/goatlang/compare/v7.0.5...v8.0.0-beta.0) (2024-01-08)
+
+
+
+## [7.0.5](https://github.com/jonbri/goatlang/compare/v7.0.5-beta.0...v7.0.5) (2024-01-08)
 
 
 
