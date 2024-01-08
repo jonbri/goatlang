@@ -115,14 +115,17 @@ const main = () => {
   const largestBumpSincePrerelease = largestBump(commitsSinceLastPrerelease);
 
   let releaseType = "prerelease";
-  if (headCommit.header.startsWith("release")) {
+  if (options.release) {
+    releaseType = "cut";
+  } else if (headCommit.header.startsWith("release")) {
     releaseType = "release";
   } else if (/^[0-9]+\.[0-9]+\.[0-9]+$/.test(branchName)) {
     releaseType = "maintenance";
   }
 
   // determine the next version for the three release types
-  const nextReleaseVersion = 'v' + semverInc(baseVersion, largestBumpSinceRelease);
+  const nextReleaseVersion =
+    "v" + semverInc(baseVersion, largestBumpSinceRelease);
   const nextPrereleaseVersion = nextTag(
     `${nextReleaseVersion}-beta.0`,
     (v) => "v" + semverInc(v, "prerelease", "beta")
@@ -135,8 +138,12 @@ const main = () => {
   let nextVersion = null;
 
   // determine the next version
-  if (options.release) {
-    nextVersion = nextReleaseVersion;
+  if (releaseType === "cut") {
+    if (largestBumpSinceRelease === null) {
+      nextVersion = null;
+    } else {
+      nextVersion = nextReleaseVersion;
+    }
   } else if (releaseType === "prerelease") {
     nextVersion =
       largestBumpSincePrerelease === null ? null : nextPrereleaseVersion;
