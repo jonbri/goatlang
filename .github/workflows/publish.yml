@@ -80,7 +80,7 @@ jobs:
       - name: Publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          DIST_TAG: ${{ steps.determine_next_version.outputs.DIST_TAG }}
+          DIST_TAG: ${{ steps.determine_dist_tag.outputs.DIST_TAG }}
         if: ${{ (steps.determine_next_version.outputs.NEW_VERSION != 'null') }}
         run: npm publish ./build --tag=$DIST_TAG
 
