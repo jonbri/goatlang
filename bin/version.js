@@ -79,6 +79,12 @@ async function main() {
     };
   });
 
+  const commitsSinceLastPrerelease = [];
+  for (const commit of commits.slice()) {
+    if (commit.tag && commit.tag.includes("-beta.")) break;
+    commitsSinceLastPrerelease.push(commit);
+  }
+
   const branchName = options.branch
     ? options.branch
     : git("rev-parse --abbrev-ref HEAD");
@@ -105,14 +111,16 @@ async function main() {
   else if (bumpTypes.includes("minor")) highestBump = "minor";
   else if (bumpTypes.includes("patch")) highestBump = "patch";
 
-  let highestBumpSinceLastRelease = null;
-  const lastReleaseIndex = TODO;
-  const bumpTypes = commits
-    .slice(0, lastReleaseIndex)
-    .map(({ bumpType }) => bumpType);
-  if (bumpTypes.includes("major")) highestBumpSinceLastRelease = "major";
-  else if (bumpTypes.includes("minor")) highestBumpSinceLastRelease = "minor";
-  else if (bumpTypes.includes("patch")) highestBumpSinceLastRelease = "patch";
+  let highestBumpSinceLastPreRelease = null;
+  const bumpTypesSinceLastPreRelease = commitsSinceLastPrerelease.map(
+    ({ bumpType }) => bumpType
+  );
+  if (bumpTypesSinceLastPreRelease.includes("major"))
+    highestBumpSinceLastPreRelease = "major";
+  else if (bumpTypesSinceLastPreRelease.includes("minor"))
+    highestBumpSinceLastPreRelease = "minor";
+  else if (bumpTypesSinceLastPreRelease.includes("patch"))
+    highestBumpSinceLastPreRelease = "patch";
 
   const nextReleaseVersion = `v${semverInc(baseVersion, highestBump)}`;
   const nextPrereleaseVersion = await nextTag(
@@ -124,37 +132,26 @@ async function main() {
     (v) => "v" + semverInc(v, "prerelease", "maintenance")
   );
 
-  let versions = {
-    base: baseVersion,
-    release: highestBump === null ? null : nextReleaseVersion,
-    prerelease: highestBump === null ? null : nextPrereleaseVersion,
-    maintenance: highestBump === null ? null : nextMaintenanceVersion,
-  };
-
-  if (releaseType === "release") {
-    versions = {
-      base: baseVersion,
-      release: baseVersion,
-      prerelease: null,
-      maintenance: null,
-    };
+  let nextVersion = null;
+  if (releaseType === "prerelease") {
+    nextVersion =
+      highestBumpSinceLastPreRelease === null ? null : nextPrereleaseVersion;
+  } else if (releaseType === "release") {
+    nextVersion = baseVersion;
+  } else if (releaseType === "maintenance") {
+    nextVersion = nextMaintenanceVersion;
   }
 
   const values = {
     commits,
     releaseType,
     highestBump,
-    versions,
-    nextVersion: versions[releaseType],
-    canPublish: releaseType !== null && highestBumpSinceLastRelease !== null,
+    nextVersion,
   };
 
   let output = JSON.stringify(values);
   if (options.value) {
     output = values[options.value];
-    if (options.value.startsWith("versions.")) {
-      output = values.versions[options.value.split(".")[1]];
-    }
   }
   const prettyOutput = options.pretty
     ? JSON.stringify(JSON.parse(output), null, 2)

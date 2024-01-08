@@ -254,9 +254,35 @@ test(
     },
     {
       highestBump: "patch",
-      // nextVersion: "v1.0.1-beta.0",
       nextVersion: null,
       releaseType: "prerelease",
+    }
+  )
+);
+
+test(
+  "Chore after fix 2",
+  run(
+    {
+      options: {
+        test: prepare([
+          commit(6, "release: v1.0.1"),
+          commit(5, "chore: bump"),
+          commit(5, "chore: bump"),
+          commit(2, "fix: bump", "v1.0.1-beta.1"),
+          commit(5, "chore: bump"),
+          commit(4, "chore: bump"),
+          commit(3, "chore: bump"),
+          commit(2, "fix: bump", "v1.0.1-beta.0"),
+          commit(1, "chore: bump"),
+          v100,
+        ]),
+      },
+    },
+    {
+      highestBump: "patch",
+      nextVersion: "v1.0.1",
+      releaseType: "release",
     }
   )
 );
