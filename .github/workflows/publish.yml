@@ -50,7 +50,7 @@ jobs:
       - name: Determine publishing dist tag
         id: determine_dist_tag
         env:
-          RELEASE_TYPE: ${{ steps.determine_next_version.outputs.RELEASE_TYPE }}
+          RELEASE_TYPE: ${{ steps.determine_type_of_release.outputs.RELEASE_TYPE }}
         if: ${{ (steps.determine_next_version.outputs.NEW_VERSION != 'null') }}
         run: |
           DIST_TAG="latest"
