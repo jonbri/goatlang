@@ -233,7 +233,7 @@ test(
     },
     {
       highestBump: null,
-      nextVersion: "v1.0.1",
+      nextVersion: null,
       releaseType: "release",
     }
   )

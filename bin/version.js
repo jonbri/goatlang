@@ -137,7 +137,7 @@ async function main() {
     nextVersion =
       highestBumpSinceLastPreRelease === null ? null : nextPrereleaseVersion;
   } else if (releaseType === "release") {
-    nextVersion = baseVersion;
+    nextVersion = highestBump === null ? null : baseVersion;
   } else if (releaseType === "maintenance") {
     nextVersion = nextMaintenanceVersion;
   }
