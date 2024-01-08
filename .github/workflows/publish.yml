@@ -36,6 +36,9 @@ jobs:
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
 
+          BASE_VERSION=`node ./bin/version.js --value="baseVersion"`
+          echo "BASE_VERSION=$BASE_VERSION"
+
       - name: Determine type of release
         id: determine_type_of_release
         if: ${{ (steps.determine_next_version.outputs.NEW_VERSION != 'null') }}
