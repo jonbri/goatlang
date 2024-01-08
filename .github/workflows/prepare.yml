@@ -29,7 +29,7 @@ jobs:
           yarn start:node
 
       - name: Version info
-        run: node ./bin/version.js --pretty
+        run: node ./bin/version.js --pretty --release
 
       - name: Determine next version
         id: determine_next_version
