@@ -34,7 +34,7 @@ jobs:
       - name: Determine next version
         id: determine_next_version
         run: |
-          NEW_VERSION=`node ./bin/version.js --value="nextVersion"`
+          NEW_VERSION=`node ./bin/version.js --value="baseVersion"`
           echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
 

@@ -143,7 +143,6 @@ async function main() {
     nextVersion =
       largestBumpSincePrerelease === null ? null : nextPrereleaseVersion;
   } else if (releaseType === "release") {
-    // nextVersion = largestBumpSinceRelease === null ? null : baseVersion;
     nextVersion = baseVersion;
   } else if (releaseType === "maintenance") {
     nextVersion = nextMaintenanceVersion;
@@ -151,6 +150,7 @@ async function main() {
 
   const values = {
     commits,
+    baseVersion,
     releaseType,
     largestBumpSinceRelease,
     largestBumpSincePrerelease,
