@@ -40,20 +40,20 @@ const parseCommits = () => {
   return data;
 };
 
-async function doesTagExist(tag) {
+const doesTagExist = (tag) => {
   const tags = options.test
     ? JSON.parse(options.test).map(({ tag }) => tag)
     : gits("tag");
   return tags.includes(tag);
-}
+};
 
-async function nextTag(start, increment) {
+const nextTag = (start, increment) => {
   let tag = start;
-  while (await doesTagExist(tag)) {
+  while (doesTagExist(tag)) {
     tag = increment(tag);
   }
   return tag;
-}
+};
 
 const largestBump = (commits) => {
   let bump = null;
@@ -64,7 +64,7 @@ const largestBump = (commits) => {
   return bump;
 };
 
-async function main() {
+const main = () => {
   const rawCommits = options.test ? JSON.parse(options.test) : parseCommits();
   const commits = rawCommits.map((commit) => {
     const { type, header, footer } = commitParser.sync(commit.message);
@@ -127,11 +127,11 @@ async function main() {
     baseVersion,
     largestBumpSinceRelease
   )}`;
-  const nextPrereleaseVersion = await nextTag(
+  const nextPrereleaseVersion = nextTag(
     `${nextReleaseVersion}-beta.0`,
     (v) => "v" + semverInc(v, "prerelease", "beta")
   );
-  const nextMaintenanceVersion = await nextTag(
+  const nextMaintenanceVersion = nextTag(
     `v${branchName}-maintenance.0`,
     (v) => "v" + semverInc(v, "prerelease", "maintenance")
   );
@@ -166,5 +166,5 @@ async function main() {
     : output;
 
   console.log(prettyOutput);
-}
+};
 main();
