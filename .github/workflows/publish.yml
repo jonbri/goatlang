@@ -55,7 +55,7 @@ jobs:
             DIST_TAG="latest"
           elif [[ "$RELEASE_TYPE" == "prerelease" ]]; then
             DIST_TAG="beta"
-          else [[ "$RELEASE_TYPE" == "maintenance" ]]; then
+          elif [[ "$RELEASE_TYPE" == "maintenance" ]]; then
             DIST_TAG="maintenance"
           fi
           echo "DIST_TAG=$DIST_TAG" >> $GITHUB_OUTPUT
