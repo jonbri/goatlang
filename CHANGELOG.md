@@ -1,4 +1,26 @@
-## [v6.8.1](https://github.com/jonbri/goatlang/compare/v6.8.1-beta.12...v6.8.1) (2024-01-08)
+## [v6.8.2](https://github.com/jonbri/goatlang/compare/v6.8.2-beta.1...v6.8.2) (2024-01-08)
+
+
+
+## [6.8.2-beta.1](https://github.com/jonbri/goatlang/compare/v6.8.2-beta.0...v6.8.2-beta.1) (2024-01-08)
+
+
+### Bug Fixes
+
+* --release ([4c5cbf1](https://github.com/jonbri/goatlang/commit/4c5cbf1fb52b838e413057c18e0eb1d0dcca8087))
+
+
+
+## [6.8.2-beta.0](https://github.com/jonbri/goatlang/compare/v6.8.1...v6.8.2-beta.0) (2024-01-08)
+
+
+### Bug Fixes
+
+* prepare with nothing to release ([7fb3b7a](https://github.com/jonbri/goatlang/commit/7fb3b7af61826632267f73f1ca700eb4430c1f2d))
+
+
+
+## [6.8.1](https://github.com/jonbri/goatlang/compare/v6.8.1-beta.12...v6.8.1) (2024-01-08)
 
 
 
