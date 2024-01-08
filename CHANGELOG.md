@@ -1,4 +1,127 @@
-# [v6.8.0](https://github.com/jonbri/goatlang/compare/v6.8.0-beta.5...v6.8.0) (2024-01-06)
+## [v6.8.1](https://github.com/jonbri/goatlang/compare/v6.8.1-beta.12...v6.8.1) (2024-01-08)
+
+
+
+## [6.8.1-beta.12](https://github.com/jonbri/goatlang/compare/v6.8.1-beta.11...v6.8.1-beta.12) (2024-01-08)
+
+
+### Bug Fixes
+
+* v ([dab7aac](https://github.com/jonbri/goatlang/commit/dab7aacf824e76b3ca60e1c67ce2e70d832aff12))
+
+
+
+## [6.8.1-beta.11](https://github.com/jonbri/goatlang/compare/v6.8.1-beta.10...v6.8.1-beta.11) (2024-01-08)
+
+
+### Bug Fixes
+
+* --release ([cb498b8](https://github.com/jonbri/goatlang/commit/cb498b8972d0f7217098eb186d3f50ddd8502b3b))
+
+
+
+## [6.8.1-beta.10](https://github.com/jonbri/goatlang/compare/v6.8.1-beta.9...v6.8.1-beta.10) (2024-01-08)
+
+
+### Bug Fixes
+
+* nextVersion ([dcef87a](https://github.com/jonbri/goatlang/commit/dcef87a6c23772511cffe47bb4367e02f1041f09))
+
+
+
+## [6.8.1-beta.9](https://github.com/jonbri/goatlang/compare/v6.8.1-beta.8...v6.8.1-beta.9) (2024-01-08)
+
+
+### Bug Fixes
+
+* refactor ([8f98ae5](https://github.com/jonbri/goatlang/commit/8f98ae5c3945fe72f7d4619b5a08efdc3d58e8c2))
+
+
+
+## [6.8.1-beta.8](https://github.com/jonbri/goatlang/compare/v6.8.1-beta.7...v6.8.1-beta.8) (2024-01-08)
+
+
+### Bug Fixes
+
+* another ([0891e10](https://github.com/jonbri/goatlang/commit/0891e104e6ce6012f70b24441a57c8d9b443bbbd))
+* bump ([a948df4](https://github.com/jonbri/goatlang/commit/a948df435532f9a019e58ad86727cf258d8f226f))
+* bump ([b3f2f87](https://github.com/jonbri/goatlang/commit/b3f2f87716d80432ee8202a78ad129b7f4a7e61a))
+
+
+
+## [6.8.1-beta.7](https://github.com/jonbri/goatlang/compare/v6.8.1-beta.6...v6.8.1-beta.7) (2024-01-08)
+
+
+### Bug Fixes
+
+* base version ([23b2ce5](https://github.com/jonbri/goatlang/commit/23b2ce529aa2b556a81f489c1eebbe315f80c2ae))
+
+
+
+## [6.8.1-beta.6](https://github.com/jonbri/goatlang/compare/v6.8.1-beta.5...v6.8.1-beta.6) (2024-01-08)
+
+
+### Bug Fixes
+
+* bump ([596d487](https://github.com/jonbri/goatlang/commit/596d487825d4fbd9bc4ca176afd46c3b5c4afde8))
+
+
+
+## [6.8.1-beta.5](https://github.com/jonbri/goatlang/compare/v6.8.1-beta.4...v6.8.1-beta.5) (2024-01-08)
+
+
+### Bug Fixes
+
+* debugging ([4e11e6d](https://github.com/jonbri/goatlang/commit/4e11e6dd8c5f69a3bd7f38404cd034af48736dd3))
+* debugging ([8907173](https://github.com/jonbri/goatlang/commit/89071730eee2057e0ab209f0a5ba32b26d015906))
+
+
+
+## [6.8.1-beta.4](https://github.com/jonbri/goatlang/compare/v6.8.1-beta.3...v6.8.1-beta.4) (2024-01-08)
+
+
+### Bug Fixes
+
+* ci ([2892ba5](https://github.com/jonbri/goatlang/commit/2892ba57de5861d6efa93e6e25035c7999d10f10))
+* path ([4cc62f3](https://github.com/jonbri/goatlang/commit/4cc62f3d307def38249902a3e9cfddad6151a078))
+* syntax ([f7c16e7](https://github.com/jonbri/goatlang/commit/f7c16e74026a4b1e84ab1677d8192309d1957a69))
+* syntax again ([88ae619](https://github.com/jonbri/goatlang/commit/88ae619a597c467e30ee7490143ef8d636eda188))
+
+
+
+## [6.8.1-beta.3](https://github.com/jonbri/goatlang/compare/v6.8.1-beta.2...v6.8.1-beta.3) (2024-01-08)
+
+
+### Bug Fixes
+
+* f ([f9edb43](https://github.com/jonbri/goatlang/commit/f9edb438df50e149d91aabd1c7e57b26a0f2905b))
+
+
+
+## [6.8.1-beta.2](https://github.com/jonbri/goatlang/compare/v6.8.1-beta.1...v6.8.1-beta.2) (2024-01-08)
+
+
+### Bug Fixes
+
+* failure ([b2de05a](https://github.com/jonbri/goatlang/commit/b2de05a369970be03212acd0494c4fca6868087f))
+* logic working ([0b550f0](https://github.com/jonbri/goatlang/commit/0b550f00de606b1833bfff4317bfb233982f6472))
+
+
+
+## [6.8.1-beta.1](https://github.com/jonbri/goatlang/compare/v6.8.1-beta.0...v6.8.1-beta.1) (2024-01-06)
+
+
+
+## [6.8.1-beta.0](https://github.com/jonbri/goatlang/compare/v6.8.0...v6.8.1-beta.0) (2024-01-06)
+
+
+### Bug Fixes
+
+* bump ([7989293](https://github.com/jonbri/goatlang/commit/7989293702802485f93d724dc735dfc1ee5d9567))
+
+
+
+# [6.8.0](https://github.com/jonbri/goatlang/compare/v6.8.0-beta.5...v6.8.0) (2024-01-06)
 
 
 
