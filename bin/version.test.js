@@ -303,3 +303,59 @@ test(
     }
   )
 );
+
+test(
+  "--release",
+  run(
+    {
+      args: ["release"],
+      options: {
+        test: prepare([
+          commit(3, "chore: bump"),
+          commit(2, "fix: bump", "v1.0.1-beta.0"),
+          commit(1, "chore: bump"),
+          v100,
+        ]),
+      },
+    },
+    {
+      largestBumpSinceRelease: "patch",
+      nextVersion: "v1.0.1",
+      releaseType: "cut",
+    }
+  )
+);
+
+test(
+  "--release",
+  run(
+    {
+      args: ["release"],
+      options: {
+        test: prepare([commit(1, "chore: bump"), v100]),
+      },
+    },
+    {
+      largestBumpSinceRelease: null,
+      nextVersion: null,
+      releaseType: "cut",
+    }
+  )
+);
+
+test(
+  "--release",
+  run(
+    {
+      args: ["release"],
+      options: {
+        test: prepare([commit(1, "release: v1.0.1"), v100]),
+      },
+    },
+    {
+      largestBumpSinceRelease: null,
+      nextVersion: null,
+      releaseType: "cut",
+    }
+  )
+);
