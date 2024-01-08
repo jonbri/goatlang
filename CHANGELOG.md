@@ -1,4 +1,17 @@
-## [v7.0.2](https://github.com/jonbri/goatlang/compare/v7.0.2-beta.0...v7.0.2) (2024-01-08)
+## [v7.0.3](https://github.com/jonbri/goatlang/compare/v7.0.3-beta.0...v7.0.3) (2024-01-08)
+
+
+
+## [7.0.3-beta.0](https://github.com/jonbri/goatlang/compare/v7.0.2...v7.0.3-beta.0) (2024-01-08)
+
+
+### Bug Fixes
+
+* bump ([dfa0129](https://github.com/jonbri/goatlang/commit/dfa01290e79b9d1548ab0b80d73a23c08575b7ef))
+
+
+
+## [7.0.2](https://github.com/jonbri/goatlang/compare/v7.0.2-beta.0...v7.0.2) (2024-01-08)
 
 
 
