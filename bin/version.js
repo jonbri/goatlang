@@ -122,9 +122,9 @@ const main = () => {
   }
 
   // determine the next version for the three release types
-  const nextReleaseVersion = semverInc(baseVersion, largestBumpSinceRelease);
+  const nextReleaseVersion = 'v' + semverInc(baseVersion, largestBumpSinceRelease);
   const nextPrereleaseVersion = nextTag(
-    `v${nextReleaseVersion}-beta.0`,
+    `${nextReleaseVersion}-beta.0`,
     (v) => "v" + semverInc(v, "prerelease", "beta")
   );
   const nextMaintenanceVersion = nextTag(
