@@ -181,6 +181,23 @@ test(
 );
 
 test(
+  "Release 2",
+  run(
+    {
+      options: {
+        test: prepare([commit(0, "release: v1.0.1"), v100]),
+      },
+    },
+    {
+      largestBumpSinceRelease: null,
+      largestBumpSincePrerelease: null,
+      nextVersion: "v1.0.1",
+      releaseType: "release",
+    }
+  )
+);
+
+test(
   "Maintenance branch",
   run(
     {
@@ -228,12 +245,12 @@ test(
   run(
     {
       options: {
-        test: prepare([commit(1, "release: v1.0.1"), v100]),
+        test: prepare([commit(1, "release: v1.0.1")]),
       },
     },
     {
       largestBumpSinceRelease: null,
-      nextVersion: null,
+      nextVersion: "v1.0.1",
       releaseType: "release",
     }
   )
