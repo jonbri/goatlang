@@ -35,6 +35,7 @@ test(
   run(
     {
       options: {
+        branch: "main",
         test: prepare([
           commit(2, "fix: bug fix"),
           commit(1, "fix: bug fix", "v1.0.1-beta.0"),
@@ -55,6 +56,7 @@ test(
   run(
     {
       options: {
+        branch: "main",
         test: prepare([
           commit(2, "feat: new feature"),
           commit(1, "fix: bug fix", "v1.0.1-beta.0"),
@@ -75,6 +77,7 @@ test(
   run(
     {
       options: {
+        branch: "main",
         test: prepare([
           commit(5, "fix: bug fix"),
           commit(4, "feat: new feature"),
@@ -98,6 +101,7 @@ test(
   run(
     {
       options: {
+        branch: "main",
         test: prepare([
           commit(7, "chore: doc"),
           commit(6, "chore: doc"),
@@ -123,6 +127,7 @@ test(
   run(
     {
       options: {
+        branch: "main",
         test: prepare([
           commit(3, "chore: doc"),
           commit(2, "chore: doc"),
@@ -144,6 +149,7 @@ test(
   run(
     {
       options: {
+        branch: "main",
         test: prepare([
           commit(3, "feat!: major feature"),
           commit(2, "chore: doc"),
@@ -165,6 +171,7 @@ test(
   run(
     {
       options: {
+        branch: "main",
         test: prepare([
           commit(2, "release: v2.0.0"),
           commit(1, "feat!: new feature", "v2.0.0-beta.0"),
@@ -185,6 +192,7 @@ test(
   run(
     {
       options: {
+        branch: "main",
         test: prepare([commit(0, "release: v1.0.1"), v100]),
       },
     },
@@ -245,6 +253,7 @@ test(
   run(
     {
       options: {
+        branch: "main",
         test: prepare([commit(1, "release: v1.0.1")]),
       },
     },
@@ -261,6 +270,7 @@ test(
   run(
     {
       options: {
+        branch: "main",
         test: prepare([
           commit(3, "chore: bump"),
           commit(2, "fix: bump", "v1.0.0-beta.0"),
@@ -282,6 +292,7 @@ test(
   run(
     {
       options: {
+        branch: "main",
         test: prepare([
           commit(6, "release: v1.0.1"),
           commit(5, "chore: bump"),
@@ -310,6 +321,7 @@ test(
     {
       args: ["release"],
       options: {
+        branch: "main",
         test: prepare([
           commit(3, "chore: bump"),
           commit(2, "fix: bump", "v1.0.1-beta.0"),
@@ -332,6 +344,7 @@ test(
     {
       args: ["release"],
       options: {
+        branch: "main",
         test: prepare([commit(1, "chore: bump"), v100]),
       },
     },
@@ -349,6 +362,7 @@ test(
     {
       args: ["release"],
       options: {
+        branch: "main",
         test: prepare([commit(1, "release: v1.0.1"), v100]),
       },
     },
