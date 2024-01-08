@@ -1,4 +1,17 @@
-## [v7.0.3](https://github.com/jonbri/goatlang/compare/v7.0.3-beta.0...v7.0.3) (2024-01-08)
+## [v7.0.4](https://github.com/jonbri/goatlang/compare/v7.0.4-beta.0...v7.0.4) (2024-01-08)
+
+
+
+## [7.0.4-beta.0](https://github.com/jonbri/goatlang/compare/v7.0.3...v7.0.4-beta.0) (2024-01-08)
+
+
+### Bug Fixes
+
+* path ([3ab5dc8](https://github.com/jonbri/goatlang/commit/3ab5dc88efa8fba9a09108d2422ab21a6096df3d))
+
+
+
+## [7.0.3](https://github.com/jonbri/goatlang/compare/v7.0.3-beta.0...v7.0.3) (2024-01-08)
 
 
 
