@@ -1,4 +1,17 @@
-## [v6.8.2](https://github.com/jonbri/goatlang/compare/v6.8.2-beta.1...v6.8.2) (2024-01-08)
+# [v6.9.0](https://github.com/jonbri/goatlang/compare/v6.9.0-beta.0...v6.9.0) (2024-01-08)
+
+
+
+# [6.9.0-beta.0](https://github.com/jonbri/goatlang/compare/v6.8.2...v6.9.0-beta.0) (2024-01-08)
+
+
+### Features
+
+* more tests ([d877e0b](https://github.com/jonbri/goatlang/commit/d877e0bd50b257620900d988f9b935735d678268))
+
+
+
+## [6.8.2](https://github.com/jonbri/goatlang/compare/v6.8.2-beta.1...v6.8.2) (2024-01-08)
 
 
 
