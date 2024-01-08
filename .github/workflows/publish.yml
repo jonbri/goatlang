@@ -50,13 +50,13 @@ jobs:
           RELEASE_TYPE: ${{ steps.determine_next_version.outputs.RELEASE_TYPE }}
         if: ${{ (steps.determine_next_version.outputs.NEW_VERSION != 'null') }}
         run: |
-          DIST_TAG=latest
+          DIST_TAG="latest"
           if [[ "$RELEASE_TYPE" == "release" ]]; then
-            DIST_TAG=latest
-          elsif [[ "$RELEASE_TYPE" == "prerelease" ]]; then
-            DIST_TAG=beta
+            DIST_TAG="latest"
+          elif [[ "$RELEASE_TYPE" == "prerelease" ]]; then
+            DIST_TAG="beta"
           else [[ "$RELEASE_TYPE" == "maintenance" ]]; then
-            DIST_TAG=maintenance
+            DIST_TAG="maintenance"
           fi
           echo "DIST_TAG=$DIST_TAG" >> $GITHUB_OUTPUT
           cat $GITHUB_OUTPUT
