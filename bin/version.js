@@ -109,10 +109,10 @@ async function main() {
     releaseType = "prerelease";
   }
 
+  // determine the "base version",
+  // which is the version of the last release
   let { tag: baseVersion } = commits.slice().reverse()[0];
-  if (releaseType === "release") {
-    baseVersion = firstCommit.header.split(" ")[1];
-  }
+  if (releaseType === "release") baseVersion = firstCommit.header.split(" ")[1];
 
   // used to determine the semver increment type
   const largestBumpSinceRelease = largestBump(commits);
@@ -122,6 +122,7 @@ async function main() {
   // then a new prerelease publish should not occur
   const largestBumpSincePrerelease = largestBump(commitsSinceLastPrerelease);
 
+  // determine the next version for the tghree release types
   const nextReleaseVersion = `v${semverInc(
     baseVersion,
     largestBumpSinceRelease
@@ -136,6 +137,8 @@ async function main() {
   );
 
   let nextVersion = null;
+
+  // determine the next version
   if (releaseType === "prerelease") {
     nextVersion =
       largestBumpSincePrerelease === null ? null : nextPrereleaseVersion;
