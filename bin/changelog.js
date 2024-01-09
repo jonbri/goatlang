@@ -39,6 +39,19 @@ async function main() {
     // context: {
     //   version: 'foo',
     // },
+    transform: (commit, cb) => {
+      return {
+        ...commit,
+        subject: "the subject",
+        type: "foo",
+        // references: commit.references.map((reference) => ({
+        //   ...reference,
+        //   issue: "blah"
+        // }))
+        references: [],
+      };
+    },
+    groupBy: "subject",
   });
 
   const markdown = await streamToString(stream);

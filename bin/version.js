@@ -1,7 +1,7 @@
 const { execSync } = require("child_process");
 const { program } = require("commander");
 const semverInc = require("semver/functions/inc");
-const { sync:parse } = require("conventional-commits-parser");
+const { sync: parse } = require("conventional-commits-parser");
 
 const options = program
   .option("-t, --test <object>")
