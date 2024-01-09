@@ -1,7 +1,7 @@
 const { execSync } = require("child_process");
 const { program } = require("commander");
 const semverInc = require("semver/functions/inc");
-const commitParser = require("conventional-commits-parser");
+const { sync:parse } = require("conventional-commits-parser");
 
 const options = program
   .option("-t, --test <object>")
@@ -35,7 +35,7 @@ const parseCommits = () => {
     });
 
     // stop when the first release commit is encountered
-    const { type } = commitParser.sync(message);
+    const { type } = parse(message);
     if (type === "release") break;
   }
   return data;
@@ -68,7 +68,7 @@ const largestBump = (commits) => {
 const main = () => {
   const rawCommits = options.test ? JSON.parse(options.test) : parseCommits();
   const commits = rawCommits.map((commit) => {
-    const { type, header, footer } = commitParser.sync(commit.message);
+    const { type, header, footer } = parse(commit.message);
     let bumpType = null;
     if (
       header.includes("!") ||
