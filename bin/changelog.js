@@ -21,40 +21,64 @@ async function main() {
     : shell('node ./bin/version --value="baseVersion"').replace(/^v/, "");
   console.log(`version: ${version}`);
 
-  const stream = conventionalChangelog({
-    preset: "angular",
+  const changelogOpts = {
     releaseCount: 0,
-    // outputUnreleased: true,
-    skipUnstable: true,
     pkg: {
       transform: (pkg) => ({
         ...pkg,
         version,
       }),
     },
-    // transform: (commit, cb) => {
-    //   // console.log(commit);
-    //   cb();
-    // }
-    // context: {
-    //   version: 'foo',
-    // },
-    transform: (commit, cb) => {
-      return {
-        ...commit,
-        subject: "the subject",
-        type: "foo",
-        // references: commit.references.map((reference) => ({
-        //   ...reference,
-        //   issue: "blah"
-        // }))
-        references: [],
-      };
-    },
-    groupBy: "subject",
-  });
+  };
 
-  const markdown = await streamToString(stream);
+  const context = {};
+  const gitRawCommitsOpts = {};
+  const parserOpts = {};
+  const writerOpts = {};
+
+  // import config from '@org/conventional-changelog-custom-preset';
+  // conventionalChangelog({config}).pipe(process.stdout); // or any writable stream
+
+  const markdown = await streamToString(conventionalChangelog(changelogOpts, context, gitRawCommitsOpts, parserOpts, writerOpts));
   fs.writeFileSync("CHANGELOG.md", markdown);
 }
 main();
+
+// {
+// preset: "angular",
+// releaseCount: 0,
+// // outputUnreleased: true,
+// skipUnstable: true,
+// pkg: {
+//   transform: (pkg) => ({
+//     ...pkg,
+//     version,
+//   }),
+// },
+// transform: (commit, cb) => {
+//   // console.log(commit);
+//   cb();
+// }
+// context: {
+//   version: 'foo',
+// },
+
+// transform: (commit, cb) => {
+//   const result = {
+//     ...commit,
+//     // subject: "the subject",
+//     // type: "foo",
+//     // references: commit.references.map((reference) => ({
+//     //   ...reference,
+//     //   issue: "blah"
+//     // }))
+//     // references: [],
+//   };
+//   // return result;
+//   // cb(result);
+//   // cb(result);
+//   return {};
+// },
+
+// groupBy: "type",
+// }
