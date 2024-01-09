@@ -16,7 +16,9 @@ function streamToString(stream) {
 }
 
 async function main() {
-  const version = tag ? tag : shell("./bin/gotagger").replace(/^v/, "");
+  const version = tag
+    ? tag
+    : shell('node ./bin/version --value="baseVersion"').replace(/^v/, "");
   console.log(`version: ${version}`);
 
   const stream = ConventionalChangelog({
