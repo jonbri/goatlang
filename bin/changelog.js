@@ -35,14 +35,16 @@ async function main() {
   const context = {};
   const gitRawCommitsOpts = {};
 
-  const parserOpts = {
-    headerPattern: /^(\w*)(?:\((.*)\))?: (.*)$/,
-    headerCorrespondence: ["type", "scope", "subject"],
-    noteKeywords: ["BREAKING CHANGE"],
-    revertPattern:
-      /^(?:Revert|revert:)\s"?([\s\S]+?)"?\s*This reverts commit (\w*)\./i,
-    revertCorrespondence: ["header", "hash"],
-  };
+  // const parserOpts = {
+  //   headerPattern: /^(\w*)(?:\((.*)\))?: (.*)$/,
+  //   headerCorrespondence: ["type", "scope", "subject"],
+  //   noteKeywords: ["BREAKING CHANGE"],
+  //   revertPattern:
+  //     /^(?:Revert|revert:)\s"?([\s\S]+?)"?\s*This reverts commit (\w*)\./i,
+  //   revertCorrespondence: ["header", "hash"],
+  // };
+  //
+  const parserOpts = {};
 
   // console.log(templates.mainTemplate);
   // process.exit(0);
@@ -52,13 +54,13 @@ async function main() {
     //   return false;
     // }
     transform: (commit, cb) => {
-      if (commit.type === "chore") return false;
-      if (commit.type === "release") return false;
-      return {
-        ...commit,
-      };
+      const excludedTypes = ["chore", "release"];
+      if (excludedTypes.includes(commit.type)) {
+        return false;
+      }
+      return commit;
     },
-    groupBy: "type",
+    // groupBy: "type",
     // ...templates,
   };
 
