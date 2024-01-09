@@ -1,21 +1,17 @@
 // const mainTemplate = "nothing";
 const mainTemplate = `{{> header}}
 
-START: GROUP
 {{#each commitGroups}}
 
 {{#if title}}
 ### {{title}}
 
 {{/if}}
-START: COMMITS
 {{#each commits}}
 {{> commit root=@root}}
 {{/each}}
-END: COMMITS
 
 {{/each}}
-END: GROUP
 {{> footer}}`;
 
 const headerPartial = `{{#if isPatch~}}
