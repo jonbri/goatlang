@@ -24,6 +24,7 @@ async function main() {
   const stream = conventionalChangelog({
     preset: "angular",
     releaseCount: 0,
+    // outputUnreleased: true,
     skipUnstable: true,
     pkg: {
       transform: (pkg) => ({
@@ -31,6 +32,13 @@ async function main() {
         version,
       }),
     },
+    // transform: (commit, cb) => {
+    //   // console.log(commit);
+    //   cb();
+    // }
+    // context: {
+    //   version: 'foo',
+    // },
   });
 
   const markdown = await streamToString(stream);
