@@ -52,6 +52,8 @@ async function main() {
     //   return false;
     // }
     transform: (commit, cb) => {
+      if (commit.type === "chore") return false;
+      if (commit.type === "release") return false;
       return {
         ...commit,
       };
