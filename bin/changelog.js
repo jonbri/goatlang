@@ -1,6 +1,7 @@
 const fs = require("fs");
 const { execSync } = require("child_process");
 const conventionalChangelog = require("conventional-changelog");
+const { templates } = require("./templates");
 
 const shell = (cmd) => execSync(cmd).toString().trim();
 const tag = process.argv[2];
@@ -33,13 +34,44 @@ async function main() {
 
   const context = {};
   const gitRawCommitsOpts = {};
-  const parserOpts = {};
-  const writerOpts = {};
+
+  const parserOpts = {
+    headerPattern: /^(\w*)(?:\((.*)\))?: (.*)$/,
+    headerCorrespondence: ["type", "scope", "subject"],
+    noteKeywords: ["BREAKING CHANGE"],
+    revertPattern:
+      /^(?:Revert|revert:)\s"?([\s\S]+?)"?\s*This reverts commit (\w*)\./i,
+    revertCorrespondence: ["header", "hash"],
+  };
+
+  // console.log(templates.mainTemplate);
+  // process.exit(0);
+
+  const writerOpts = {
+    // transform: (commit, cb) => {
+    //   return false;
+    // }
+    transform: (commit, cb) => {
+      return {
+        ...commit,
+      };
+    },
+    groupBy: "type",
+    ...templates,
+  };
 
   // import config from '@org/conventional-changelog-custom-preset';
   // conventionalChangelog({config}).pipe(process.stdout); // or any writable stream
 
-  const markdown = await streamToString(conventionalChangelog(changelogOpts, context, gitRawCommitsOpts, parserOpts, writerOpts));
+  const markdown = await streamToString(
+    conventionalChangelog(
+      changelogOpts,
+      context,
+      gitRawCommitsOpts,
+      parserOpts,
+      writerOpts
+    )
+  );
   fs.writeFileSync("CHANGELOG.md", markdown);
 }
 main();
