@@ -59,7 +59,7 @@ async function main() {
       };
     },
     groupBy: "type",
-    ...templates,
+    // ...templates,
   };
 
   // import config from '@org/conventional-changelog-custom-preset';
