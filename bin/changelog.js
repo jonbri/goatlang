@@ -3,7 +3,6 @@ const { execSync } = require("child_process");
 const conventionalChangelog = require("conventional-changelog");
 
 const shell = (cmd) => execSync(cmd).toString().trim();
-const tag = process.argv[2];
 
 // https://stackoverflow.com/a/49428486/2295034
 const streamToString = (stream) => {
@@ -16,9 +15,10 @@ const streamToString = (stream) => {
 };
 
 async function main() {
-  const version = tag
-    ? tag
-    : shell('node ./bin/version --value="baseVersion"').replace(/^v/, "");
+  const version = shell('node ./bin/version --value="baseVersion"').replace(
+    /^v/,
+    ""
+  );
   console.log(`version: ${version}`);
 
   const changelogOpts = {

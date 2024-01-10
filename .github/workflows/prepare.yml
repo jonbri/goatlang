@@ -39,10 +39,8 @@ jobs:
           cat $GITHUB_OUTPUT
 
       - name: Changelog
-        env:
-          NEW_VERSION: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
         if: ${{ steps.determine_next_version.outputs.NEW_VERSION != 'null' }}
-        run: yarn changelog $NEW_VERSION
+        run: yarn changelog
 
       - name: Generate commit message
         id: commit_message
