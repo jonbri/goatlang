@@ -1,4 +1,12 @@
-## <small>v8.0.2 (2024-01-10)</small>
+## <small>v8.0.3 (2024-01-10)</small>
+
+* fix: one ([2c65a5e521a6ba7c2a12683dd14b0bd6f3f06c81](https://github.com/jonbri/goatlang/commit/2c65a5e521a6ba7c2a12683dd14b0bd6f3f06c81))
+* fix: three ([3e0ffba452f6cf4e5863bd35bd018024902d8a15](https://github.com/jonbri/goatlang/commit/3e0ffba452f6cf4e5863bd35bd018024902d8a15))
+* fix: two ([994eaeb4c86b280c2cdc21d3af7029bed9dfc583](https://github.com/jonbri/goatlang/commit/994eaeb4c86b280c2cdc21d3af7029bed9dfc583))
+
+
+
+## <small>8.0.2 (2024-01-10)</small>
 
 * fix: changelog task ([fe20ae47f722c6e0f805da5cfa1974f916b6d7fc](https://github.com/jonbri/goatlang/commit/fe20ae47f722c6e0f805da5cfa1974f916b6d7fc))
 * fix: cleanup ([e428b8e2bbda1dd7ff81b5914dbb9684aafbe1d6](https://github.com/jonbri/goatlang/commit/e428b8e2bbda1dd7ff81b5914dbb9684aafbe1d6))
