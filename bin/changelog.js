@@ -15,10 +15,9 @@ const streamToString = (stream) => {
 };
 
 async function main() {
-  const version = shell('node ./bin/version --value="baseVersion"').replace(
-    /^v/,
-    ""
-  );
+  const version = shell(
+    'node ./bin/version --value="nextVersion" --release'
+  ).replace(/^v/, "");
   console.log(`version: ${version}`);
 
   const changelogOpts = {
