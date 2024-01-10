@@ -1,3 +1,15 @@
+## <small>8.0.5 (2024-01-10)</small>
+
+* fix: changelog --release ([77e837378fe48179caf321124081a7d0d8804182](https://github.com/jonbri/goatlang/commit/77e837378fe48179caf321124081a7d0d8804182))
+
+
+
+## <small>8.0.4 (2024-01-10)</small>
+
+* fix: no arg to changelog ([3dfb3c279dc3cb8e107ada176e38e0a864d99e76](https://github.com/jonbri/goatlang/commit/3dfb3c279dc3cb8e107ada176e38e0a864d99e76))
+
+
+
 ## <small>8.0.3 (2024-01-10)</small>
 
 * fix: one ([2c65a5e521a6ba7c2a12683dd14b0bd6f3f06c81](https://github.com/jonbri/goatlang/commit/2c65a5e521a6ba7c2a12683dd14b0bd6f3f06c81))
