@@ -1,4 +1,4 @@
-## <small>v8.0.3 (2024-01-10)</small>
+## <small>8.0.3 (2024-01-10)</small>
 
 * fix: one ([2c65a5e521a6ba7c2a12683dd14b0bd6f3f06c81](https://github.com/jonbri/goatlang/commit/2c65a5e521a6ba7c2a12683dd14b0bd6f3f06c81))
 * fix: three ([3e0ffba452f6cf4e5863bd35bd018024902d8a15](https://github.com/jonbri/goatlang/commit/3e0ffba452f6cf4e5863bd35bd018024902d8a15))
