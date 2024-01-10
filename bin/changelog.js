@@ -1,7 +1,6 @@
 const fs = require("fs");
 const { execSync } = require("child_process");
 const conventionalChangelog = require("conventional-changelog");
-const { templates } = require("./templates");
 
 const shell = (cmd) => execSync(cmd).toString().trim();
 const tag = process.argv[2];
@@ -32,89 +31,17 @@ async function main() {
     },
   };
 
-  const context = {};
-  const gitRawCommitsOpts = {};
-
-  // const parserOpts = {
-  //   headerPattern: /^(\w*)(?:\((.*)\))?: (.*)$/,
-  //   headerCorrespondence: ["type", "scope", "subject"],
-  //   noteKeywords: ["BREAKING CHANGE"],
-  //   revertPattern:
-  //     /^(?:Revert|revert:)\s"?([\s\S]+?)"?\s*This reverts commit (\w*)\./i,
-  //   revertCorrespondence: ["header", "hash"],
-  // };
-  //
-  const parserOpts = {};
-
-  // console.log(templates.mainTemplate);
-  // process.exit(0);
-
   const writerOpts = {
-    // transform: (commit, cb) => {
-    //   return false;
-    // }
     transform: (commit, cb) => {
       const excludedTypes = ["chore", "release"];
-      if (excludedTypes.includes(commit.type)) {
-        return false;
-      }
+      if (excludedTypes.includes(commit.type)) return false;
       return commit;
     },
-    // groupBy: "type",
-    // ...templates,
   };
 
-  // import config from '@org/conventional-changelog-custom-preset';
-  // conventionalChangelog({config}).pipe(process.stdout); // or any writable stream
-
   const markdown = await streamToString(
-    conventionalChangelog(
-      changelogOpts,
-      context,
-      gitRawCommitsOpts,
-      parserOpts,
-      writerOpts
-    )
+    conventionalChangelog(changelogOpts, {}, {}, {}, writerOpts)
   );
   fs.writeFileSync("CHANGELOG.md", markdown);
 }
 main();
-
-// {
-// preset: "angular",
-// releaseCount: 0,
-// // outputUnreleased: true,
-// skipUnstable: true,
-// pkg: {
-//   transform: (pkg) => ({
-//     ...pkg,
-//     version,
-//   }),
-// },
-// transform: (commit, cb) => {
-//   // console.log(commit);
-//   cb();
-// }
-// context: {
-//   version: 'foo',
-// },
-
-// transform: (commit, cb) => {
-//   const result = {
-//     ...commit,
-//     // subject: "the subject",
-//     // type: "foo",
-//     // references: commit.references.map((reference) => ({
-//     //   ...reference,
-//     //   issue: "blah"
-//     // }))
-//     // references: [],
-//   };
-//   // return result;
-//   // cb(result);
-//   // cb(result);
-//   return {};
-// },
-
-// groupBy: "type",
-// }
