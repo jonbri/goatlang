@@ -30,12 +30,26 @@ async function main() {
     },
   };
 
+  const mainTemplate = `{{> header}}
+
+{{#each commitGroups}}
+{{#each commits}}
+{{> commit root=@root}}
+{{/each}}
+{{/each}}
+
+{{> footer}}
+
+
+`;
+
   const writerOpts = {
     transform: (commit, cb) => {
-      const excludedTypes = ["chore", "release"];
+      const excludedTypes = ["chore", "release", "test"];
       if (excludedTypes.includes(commit.type)) return false;
       return commit;
     },
+    mainTemplate,
   };
 
   const markdown = await streamToString(

@@ -1,3 +1,9 @@
+## 8.1.0 (2024-01-10)
+
+* feat: stuff in body ([c866b7b69e3902a0e99933bf5b1598623b4de3b2](https://github.com/jonbri/goatlang/commit/c866b7b69e3902a0e99933bf5b1598623b4de3b2))
+
+
+
 ## <small>8.0.5 (2024-01-10)</small>
 
 * fix: changelog --release ([77e837378fe48179caf321124081a7d0d8804182](https://github.com/jonbri/goatlang/commit/77e837378fe48179caf321124081a7d0d8804182))
