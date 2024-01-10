@@ -16,7 +16,7 @@
     "format:check": "prettier --check \"**/*.{js,md}\"",
     "build": "cp index.js build",
     "gotagger": "./bin/gotagger",
-    "changelog": "./bin/delete-local-prerelease-tags.sh && touch ./CHANGELOG.md && rm ./CHANGELOG.md && node ./bin/changelog.js && git fetch origin --tags"
+    "changelog": "./bin/delete-local-prerelease-tags.sh && touch ./CHANGELOG.md && rm ./CHANGELOG.md && node ./bin/changelog.js"
   },
   "license": "MIT",
   "bin": {

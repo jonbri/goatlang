@@ -43,5 +43,7 @@ async function main() {
     conventionalChangelog(changelogOpts, {}, {}, {}, writerOpts)
   );
   fs.writeFileSync("CHANGELOG.md", markdown);
+
+  console.log("CHANGELOG.md updated");
 }
 main();
