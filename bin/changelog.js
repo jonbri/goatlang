@@ -30,6 +30,7 @@ async function main() {
     },
   };
 
+  // const mainTemplate = '{{> header}}{{> commit}}{{> footer}}';
   const mainTemplate = `{{> header}}
 
 {{#each commitGroups}}
@@ -43,6 +44,16 @@ async function main() {
 
 `;
 
+  const headerPartial = `{{#if isPatch~}} <small>
+  {{~/if~}} {{version}}
+  {{~#if title}} "{{title}}"
+  {{~/if~}}
+  {{~#if date}} ({{date}})
+  {{~/if~}}
+  {{~#if isPatch~}} </small>
+  {{~/if}}
+`;
+
   const writerOpts = {
     transform: (commit, cb) => {
       const excludedTypes = ["chore", "release", "test"];
@@ -50,6 +61,9 @@ async function main() {
       return commit;
     },
     mainTemplate,
+    headerPartial,
+    // commitPartial: "",
+    // footerPartial: "",
   };
 
   const markdown = await streamToString(
