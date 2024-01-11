@@ -40,7 +40,11 @@ jobs:
 
       - name: Changelog
         if: ${{ steps.determine_next_version.outputs.NEW_VERSION != 'null' }}
-        run: yarn changelog
+        env:
+          NEW_VERSION: ${{ steps.determine_next_version.outputs.NEW_VERSION }}
+        run: |
+          git tag $NEW_VERSION
+          yarn changelog
 
       - name: Generate commit message
         id: commit_message

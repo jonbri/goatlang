@@ -53,15 +53,30 @@ async function main() {
   // };
 
   const writerOpts = {
-    headerPartial: readFileSync("./bin/templates/header.hbs"),
+    // headerPartial: readFileSync("./bin/templates/header.hbs"),
+    commitPartial: readFileSync("./bin/templates/commit.hbs"),
     transform: (commit, { bob }) => {
       // const excludedTypes = ["chore", "release", "test"];
       // if (excludedTypes.includes(commit.type)) return false;
 
-      const { hash } = commit;
+      let type = commit.type;
+      if (commit.type === "chore") {
+        type = "CCCCHORE";
+      }
+
+      if (commit.type === "fix") {
+        type = "FIX";
+      } else if (commit.type === "feat") {
+        type = "FEAT";
+      } else {
+        type = "OTHER";
+      }
+
       return {
         ...commit,
-        jira: `http://jira.com/${bob}/${hash}`,
+        type,
+        jira: `http://jira.com/${bob}/${commit.hash}`,
+        shortHash: commit.hash.substring(0, 7),
         // header: "da header"
       };
     },
