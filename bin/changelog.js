@@ -23,29 +23,29 @@ async function main() {
   ).replace(/^v/, "");
   console.log(`version: ${version}`);
 
+  const writerTransform = (commit, { bob }) => {
+    const excludedTypes = ["chore", "release", "test"];
+    if (excludedTypes.includes(commit.type)) return false;
+
+    const { hash, header, committerDate } = commit;
+    return {
+      ...commit,
+      jira: `http://jira.com/${bob}/${hash}`,
+    };
+  };
+
   const writerOpts = {
-    transform: (commit, { bob }) => {
-      const excludedTypes = ["chore", "release", "test"];
-      if (excludedTypes.includes(commit.type)) return false;
-
-      const { hash, header, committerDate } = commit;
-      return {
-        ...commit,
-        jira: `http://jira.com/${bob}/${hash}`,
-      };
-    },
-
+    transform: writerTransform,
+    mainTemplate: readFileSync("./bin/templates/template.hbs"),
+    headerPartial: readFileSync("./bin/templates/header.hbs"),
+    commitPartial: readFileSync("./bin/templates/commit.hbs"),
+    footerPartial: readFileSync("./bin/templates/footer.hbs"),
     // TODO: is this useful?
     // generateOn: (commit) => {
     //   const excludedTypes = ["chore", "release", "test"];
     //   if (excludedTypes.includes(commit.type)) return false;
     //   return true;
     // },
-
-    mainTemplate: readFileSync("./bin/templates/template.hbs"),
-    headerPartial: readFileSync("./bin/templates/header.hbs"),
-    commitPartial: readFileSync("./bin/templates/commit.hbs"),
-    footerPartial: readFileSync("./bin/templates/footer.hbs"),
   };
 
   const stream = conventionalChangelog(
