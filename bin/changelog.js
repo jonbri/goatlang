@@ -24,25 +24,16 @@ async function main() {
   console.log(`version: ${version}`);
 
   const writerOpts = {
-    transform: (commit) => {
+    transform: (commit, { bob }) => {
       const excludedTypes = ["chore", "release", "test"];
       if (excludedTypes.includes(commit.type)) return false;
 
       const { hash, header, committerDate } = commit;
       return {
-        hash,
-        header,
-        committerDate,
-        notes: [],
-        jira: `http://jira.com/${hash}`,
+        ...commit,
+        jira: `http://jira.com/${bob}/${hash}`,
       };
     },
-
-    // for global variables
-    // finalizeContext: (context, o, commits) => {
-    //   context.jon = "JON1";
-    //   return context;
-    // },
 
     // TODO: is this useful?
     // generateOn: (commit) => {
@@ -67,7 +58,9 @@ async function main() {
         }),
       },
     },
-    {},
+    {
+      bob: "bill",
+    },
     {},
     {},
     writerOpts
