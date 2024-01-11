@@ -31,25 +31,33 @@ async function main() {
     return {
       ...commit,
       jira: `http://jira.com/${bob}/${hash}`,
+      // header: "da header"
     };
   };
 
+  // const writerOpts = {
+  //   groupBy: "type",
+  //   commitsSort: ["subject", "scope"],
+  //   commitGroupsSort: "title",
+  //   transform: writerTransform,
+  //   mainTemplate: readFileSync("./bin/templates/template.hbs"),
+  //   headerPartial: readFileSync("./bin/templates/header.hbs"),
+  //   commitPartial: readFileSync("./bin/templates/commit.hbs"),
+  //   footerPartial: readFileSync("./bin/templates/footer.hbs"),
+  //   // TODO: is this useful?
+  //   // generateOn: (commit) => {
+  //   //   const excludedTypes = ["chore", "release", "test"];
+  //   //   if (excludedTypes.includes(commit.type)) return false;
+  //   //   return true;
+  //   // },
+  // };
+
   const writerOpts = {
-    transform: writerTransform,
-    mainTemplate: readFileSync("./bin/templates/template.hbs"),
-    headerPartial: readFileSync("./bin/templates/header.hbs"),
-    commitPartial: readFileSync("./bin/templates/commit.hbs"),
-    footerPartial: readFileSync("./bin/templates/footer.hbs"),
-    // TODO: is this useful?
-    // generateOn: (commit) => {
-    //   const excludedTypes = ["chore", "release", "test"];
-    //   if (excludedTypes.includes(commit.type)) return false;
-    //   return true;
-    // },
   };
 
   const stream = conventionalChangelog(
     {
+      preset: "angular",
       releaseCount: 0,
       pkg: {
         transform: (pkg) => ({
