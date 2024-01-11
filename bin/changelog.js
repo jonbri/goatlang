@@ -3,6 +3,9 @@ const { execSync } = require("child_process");
 const conventionalChangelog = require("conventional-changelog");
 
 const shell = (cmd) => execSync(cmd).toString().trim();
+const readFileSync = (path) =>
+  fs.readFileSync(path, { encoding: "utf8", flag: "r" });
+const CHANGELOG_FILE = "CHANGELOG.md";
 
 // https://stackoverflow.com/a/49428486/2295034
 const streamToString = (stream) => {
@@ -20,57 +23,58 @@ async function main() {
   ).replace(/^v/, "");
   console.log(`version: ${version}`);
 
-  const changelogOpts = {
-    releaseCount: 0,
-    pkg: {
-      transform: (pkg) => ({
-        ...pkg,
-        version,
-      }),
-    },
-  };
-
-  // const mainTemplate = '{{> header}}{{> commit}}{{> footer}}';
-  const mainTemplate = `{{> header}}
-
-{{#each commitGroups}}
-{{#each commits}}
-{{> commit root=@root}}
-{{/each}}
-{{/each}}
-
-{{> footer}}
-
-
-`;
-
-  const headerPartial = `{{#if isPatch~}} <small>
-  {{~/if~}} {{version}}
-  {{~#if title}} "{{title}}"
-  {{~/if~}}
-  {{~#if date}} ({{date}})
-  {{~/if~}}
-  {{~#if isPatch~}} </small>
-  {{~/if}}
-`;
-
   const writerOpts = {
-    transform: (commit, cb) => {
+    transform: (commit) => {
       const excludedTypes = ["chore", "release", "test"];
       if (excludedTypes.includes(commit.type)) return false;
-      return commit;
+
+      const { hash, header, committerDate } = commit;
+      return {
+        hash,
+        header,
+        committerDate,
+        notes: [],
+        jira: `http://jira.com/${hash}`,
+      };
     },
-    mainTemplate,
-    headerPartial,
-    // commitPartial: "",
-    // footerPartial: "",
+
+    // for global variables
+    // finalizeContext: (context, o, commits) => {
+    //   context.jon = "JON1";
+    //   return context;
+    // },
+
+    // TODO: is this useful?
+    // generateOn: (commit) => {
+    //   const excludedTypes = ["chore", "release", "test"];
+    //   if (excludedTypes.includes(commit.type)) return false;
+    //   return true;
+    // },
+
+    mainTemplate: readFileSync("./bin/templates/template.hbs"),
+    headerPartial: readFileSync("./bin/templates/header.hbs"),
+    commitPartial: readFileSync("./bin/templates/commit.hbs"),
+    footerPartial: readFileSync("./bin/templates/footer.hbs"),
   };
 
-  const markdown = await streamToString(
-    conventionalChangelog(changelogOpts, {}, {}, {}, writerOpts)
+  const stream = conventionalChangelog(
+    {
+      releaseCount: 0,
+      pkg: {
+        transform: (pkg) => ({
+          ...pkg,
+          version,
+        }),
+      },
+    },
+    {},
+    {},
+    {},
+    writerOpts
   );
-  fs.writeFileSync("CHANGELOG.md", markdown);
+  const markdown = await streamToString(stream);
+  fs.writeFileSync(CHANGELOG_FILE, markdown);
 
-  console.log("CHANGELOG.md updated");
+  console.log(`${CHANGELOG_FILE} updated`);
 }
 main();
