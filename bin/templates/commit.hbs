@@ -1,9 +1,5 @@
-*{{#if scope}} **{{scope}}:**
-{{~/if}} {{#if subject}}
-  {{~subject}}
-{{~else}}
-  {{~header}}
-{{~/if}}
+*{{#if scope}} **{{scope}}:** {{~/if}}
+{{~header}}
 
 {{~!-- commit link --}} {{#if @root.linkReferences~}}
   ([{{shortHash}}](

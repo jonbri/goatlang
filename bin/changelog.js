@@ -6,6 +6,7 @@ const shell = (cmd) => execSync(cmd).toString().trim();
 const readFileSync = (path) =>
   fs.readFileSync(path, { encoding: "utf8", flag: "r" });
 const CHANGELOG_FILE = "CHANGELOG.md";
+const jiraRegex = /\(([\w]+[-][\d]+)\)/;
 
 // https://stackoverflow.com/a/49428486/2295034
 const streamToString = (stream) => {
@@ -22,18 +23,6 @@ async function main() {
     'node ./bin/version --value="nextVersion" --release'
   ).replace(/^v/, "");
   console.log(`version: ${version}`);
-
-  // const writerTransform = (commit, { bob }) => {
-  //   const excludedTypes = ["chore", "release", "test"];
-  //   if (excludedTypes.includes(commit.type)) return false;
-  //
-  //   const { hash, header, committerDate } = commit;
-  //   return {
-  //     ...commit,
-  //     jira: `http://jira.com/${bob}/${hash}`,
-  //     // header: "da header"
-  //   };
-  // };
 
   // const writerOpts = {
   //   groupBy: "type",
@@ -55,7 +44,7 @@ async function main() {
   const writerOpts = {
     // headerPartial: readFileSync("./bin/templates/header.hbs"),
     commitPartial: readFileSync("./bin/templates/commit.hbs"),
-    transform: (commit, { bob }) => {
+    transform: (commit, { jiraUrl }) => {
       // const excludedTypes = ["chore", "release", "test"];
       // if (excludedTypes.includes(commit.type)) return false;
 
@@ -72,12 +61,19 @@ async function main() {
         type = "OTHER";
       }
 
+      let header = commit.header;
+      const jiraMatch = header.match(jiraRegex);
+      if (jiraMatch) {
+        const jiraId = jiraMatch[1];
+        const jiraFullUrl = `${jiraUrl}/${jiraId}`;
+        header = header.replace(jiraRegex, `([${jiraId}](${jiraFullUrl}))`);
+      }
+
       return {
         ...commit,
         type,
-        jira: `http://jira.com/${bob}/${commit.hash}`,
         shortHash: commit.hash.substring(0, 7),
-        // header: "da header"
+        header,
       };
     },
   };
@@ -94,7 +90,7 @@ async function main() {
       },
     },
     {
-      bob: "bill",
+      jiraUrl: "http://example.org/browse",
     },
     {},
     {},
