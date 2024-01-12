@@ -18,10 +18,8 @@
 *chore: bob ([223ee44](https://github.com/jonbri/goatlang/commit/223ee44f41b4122e9ea4f979d8d26cac748f4463))
 *wip: hello ([925a28a](https://github.com/jonbri/goatlang/commit/925a28a958fca33808854cc7fcef55f344473ec5))
 *chore: template ([d874448](https://github.com/jonbri/goatlang/commit/d8744483b7b5dcc85964ec7cd6212a51887b7b7a))
-*chore: wip ([75d4770](https://github.com/jonbri/goatlang/commit/75d4770fb382757e149ab9d8a80a9a4c555e56da))
-*chore: wip ([cf64305](https://github.com/jonbri/goatlang/commit/cf6430510189b812477dfc84c58f5f2c2bded3c3))
 *chore: wip ([FOO-123](http://example.org/browse/FOO-123)) (#1) (#2) ([0f9483c](https://github.com/jonbri/goatlang/commit/0f9483cfedaca288fc4e0db3a7144ba7274f01ba)), closes [#1](https://github.com/jonbri/goatlang/issues/1) [#2](https://github.com/jonbri/goatlang/issues/2)
-*chore: working ([50c3ace](https://github.com/jonbri/goatlang/commit/50c3acefe0894fb9e8a277b235d2da282c51f3a5))
+*chore: working ([2f3ec4e](https://github.com/jonbri/goatlang/commit/2f3ec4e658c3d4198ee21096023e69a9f5b816a9))
 
 
 
