@@ -3,7 +3,7 @@
 
 ### FIX
 
-* **scope:** fix(scope): space ([4b098de](https://github.com/jonbri/goatlang/commit/4b098de750e308609f854ed87973f6090c022ccd))
+* **myscope:** fix(myscope): space ([FOO-99](http://example.org/browse/FOO-99)) ([65a6003](https://github.com/jonbri/goatlang/commit/65a6003797d57d916062898103ba4f40afe4430a))
 
 
 
