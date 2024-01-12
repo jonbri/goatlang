@@ -24,25 +24,10 @@ async function main() {
   ).replace(/^v/, "");
   console.log(`version: ${version}`);
 
-  // const writerOpts = {
-  //   groupBy: "type",
-  //   commitsSort: ["subject", "scope"],
-  //   commitGroupsSort: "title",
-  //   transform: writerTransform,
-  //   mainTemplate: readFileSync("./bin/templates/template.hbs"),
-  //   headerPartial: readFileSync("./bin/templates/header.hbs"),
-  //   commitPartial: readFileSync("./bin/templates/commit.hbs"),
-  //   footerPartial: readFileSync("./bin/templates/footer.hbs"),
-  //   // TODO: is this useful?
-  //   // generateOn: (commit) => {
-  //   //   const excludedTypes = ["chore", "release", "test"];
-  //   //   if (excludedTypes.includes(commit.type)) return false;
-  //   //   return true;
-  //   // },
-  // };
-
   const writerOpts = {
-    // headerPartial: readFileSync("./bin/templates/header.hbs"),
+    //   mainTemplate: readFileSync("./bin/templates/template.hbs"),
+    //   headerPartial: readFileSync("./bin/templates/header.hbs"),
+    //   footerPartial: readFileSync("./bin/templates/footer.hbs"),
     commitPartial: readFileSync("./bin/templates/commit.hbs"),
     transform: (commit, { jiraUrl }) => {
       // const excludedTypes = ["chore", "release", "test"];
@@ -74,6 +59,7 @@ async function main() {
         type,
         shortHash: commit.hash.substring(0, 7),
         header,
+        subject: header,
       };
     },
   };
@@ -102,3 +88,16 @@ async function main() {
   console.log(`${CHANGELOG_FILE} updated`);
 }
 main();
+
+// const writerOpts = {
+//   groupBy: "type",
+//   commitsSort: ["subject", "scope"],
+//   commitGroupsSort: "title",
+//   transform: writerTransform,
+//   // TODO: is this useful?
+//   // generateOn: (commit) => {
+//   //   const excludedTypes = ["chore", "release", "test"];
+//   //   if (excludedTypes.includes(commit.type)) return false;
+//   //   return true;
+//   // },
+// };
