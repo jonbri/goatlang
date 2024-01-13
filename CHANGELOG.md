@@ -1,4 +1,4 @@
-## [8.1.1](https://github.com/jonbri/goatlang/compare/v8.1.0...v8.1.1) (2024-01-13)
+# [9.0.0](https://github.com/jonbri/goatlang/compare/v8.1.0...v9.0.0) (2024-01-13)
 
 
 ### FIX
@@ -9,7 +9,7 @@ more info
 
 ### OTHER
 
-* chore: wip ([52caf4e](https://github.com/jonbri/goatlang/commit/52caf4e998db4f6de1282e846c7ad43c15181f33))
+* chore: wip ([091fa5a](https://github.com/jonbri/goatlang/commit/091fa5a95e4a2a426b64ff5d697b2a8b33319e40))
 This is the first line
 Second line
 
@@ -18,7 +18,7 @@ Third line
 * and
 * *some*
 * **markdown**
-
+* feat!: bump ([88266c4](https://github.com/jonbri/goatlang/commit/88266c44bf8424b23754540071fa5351c2ad5a2a))
 
 
 # [8.1.0](https://github.com/jonbri/goatlang/compare/v8.0.5...v8.1.0) (2024-01-12)
