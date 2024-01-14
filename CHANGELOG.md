@@ -3,7 +3,7 @@
 
 ### FIX
 
-* fix: patch ([6449b5f](https://github.com/jonbri/goatlang/commit/6449b5f2168bf3dc83224e4225a691a815ca5877))
+* fix: patch ([6449b5f](https://github.com/jonbri/goatlang/commit/6449b5f2168bf3dc83224e4225a691a815ca5877))* fix: space ([664aa48](https://github.com/jonbri/goatlang/commit/664aa48f85a4a6ec672ce18930acf65957aca0ff))
 
 
 # [9.0.0](https://github.com/jonbri/goatlang/compare/v8.1.0...v9.0.0) (2024-01-13)
