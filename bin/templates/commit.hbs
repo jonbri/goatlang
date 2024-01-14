@@ -1,8 +1,4 @@
-* {{#if subject}}
-  {{~subject}}
-{{~else}}
-  {{~header}}
-{{~/if}}
+* {{~header}}
 
 {{~!-- commit link --}} {{#if @root.linkReferences~}}
   ([{{shortHash}}](
@@ -57,3 +53,4 @@
     {{~this.repository}}#{{this.issue}}
   {{~/if}}{{/each}}
 {{~/if}}
+
