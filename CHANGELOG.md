@@ -1,9 +1,13 @@
+# [null](https://github.com/jonbri/goatlang/compare/v9.0.0...vnull) (2024-01-13)
+
+
+
 # [9.0.0](https://github.com/jonbri/goatlang/compare/v8.1.0...v9.0.0) (2024-01-13)
 
 
 ### FIX
 
-* **myscope:** fix(myscope): space ([FOO-99](http://example.org/browse/FOO-99)) ([65a6003](https://github.com/jonbri/goatlang/commit/65a6003797d57d916062898103ba4f40afe4430a))
+* fix(myscope): space ([FOO-99](http://example.org/browse/FOO-99)) ([65a6003](https://github.com/jonbri/goatlang/commit/65a6003797d57d916062898103ba4f40afe4430a))
 more info
 
 
@@ -18,7 +22,9 @@ Third line
 * and
 * *some*
 * **markdown**
-* feat!: bump ([88266c4](https://github.com/jonbri/goatlang/commit/88266c44bf8424b23754540071fa5351c2ad5a2a))
+* feat!: bump ([88266c4](https://github.com/jonbri/goatlang/commit/88266c44bf8424b23754540071fa5351c2ad5a2a))* release: v9.0.0 (#99) ([1f448d3](https://github.com/jonbri/goatlang/commit/1f448d3e11b7652e0c47702ecb6eed85b513ec98)), closes [#99](https://github.com/jonbri/goatlang/issues/99)
+Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
 
 
 # [8.1.0](https://github.com/jonbri/goatlang/compare/v8.0.5...v8.1.0) (2024-01-12)
@@ -93,7 +99,7 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 ### FIX
 
-* **changelog:** fix(changelog): remove chore and release ([87f342c](https://github.com/jonbri/goatlang/commit/87f342c1d1917992fd86a935a3d054f2e171bd58))* fix: changelog task ([fe20ae4](https://github.com/jonbri/goatlang/commit/fe20ae47f722c6e0f805da5cfa1974f916b6d7fc))* fix: cleanup ([e428b8e](https://github.com/jonbri/goatlang/commit/e428b8e2bbda1dd7ff81b5914dbb9684aafbe1d6))* fix: delete local prerelease tags ([9b2943c](https://github.com/jonbri/goatlang/commit/9b2943c7b223deaeca04a16f2e957cd9eefe98d2))* fix: most basic and correct ([c819212](https://github.com/jonbri/goatlang/commit/c8192121d258832b5560905c7272fa7b60675d7d))* fix: no template ([6e44735](https://github.com/jonbri/goatlang/commit/6e447358c37a71e14c0da18d0907bb46c26657f4))* fix: pack ([8e7c946](https://github.com/jonbri/goatlang/commit/8e7c9463ee9f1915ab4fc798ffe41d82291bfc1d))* fix: update template ([c8b885c](https://github.com/jonbri/goatlang/commit/c8b885c5142b1d43e6bf1faf47630de997ca8e19))
+* fix(changelog): remove chore and release ([87f342c](https://github.com/jonbri/goatlang/commit/87f342c1d1917992fd86a935a3d054f2e171bd58))* fix: changelog task ([fe20ae4](https://github.com/jonbri/goatlang/commit/fe20ae47f722c6e0f805da5cfa1974f916b6d7fc))* fix: cleanup ([e428b8e](https://github.com/jonbri/goatlang/commit/e428b8e2bbda1dd7ff81b5914dbb9684aafbe1d6))* fix: delete local prerelease tags ([9b2943c](https://github.com/jonbri/goatlang/commit/9b2943c7b223deaeca04a16f2e957cd9eefe98d2))* fix: most basic and correct ([c819212](https://github.com/jonbri/goatlang/commit/c8192121d258832b5560905c7272fa7b60675d7d))* fix: no template ([6e44735](https://github.com/jonbri/goatlang/commit/6e447358c37a71e14c0da18d0907bb46c26657f4))* fix: pack ([8e7c946](https://github.com/jonbri/goatlang/commit/8e7c9463ee9f1915ab4fc798ffe41d82291bfc1d))* fix: update template ([c8b885c](https://github.com/jonbri/goatlang/commit/c8b885c5142b1d43e6bf1faf47630de997ca8e19))
 
 ### OTHER
 
@@ -739,7 +745,7 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 ### OTHER
 
-* **prerelease:** chore(prerelease): wip ([5804c3b](https://github.com/jonbri/goatlang/commit/5804c3b8ed3b64c10e11be45780f239e90f75be8))
+* chore(prerelease): wip ([5804c3b](https://github.com/jonbri/goatlang/commit/5804c3b8ed3b64c10e11be45780f239e90f75be8))
 
 
 ## [0.2.12](https://github.com/jonbri/goatlang/compare/v0.2.11...v0.2.12) (2023-12-18)
