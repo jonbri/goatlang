@@ -1,5 +1,9 @@
-# [null](https://github.com/jonbri/goatlang/compare/v9.0.0...vnull) (2024-01-13)
+## [9.0.1](https://github.com/jonbri/goatlang/compare/v9.0.0...v9.0.1) (2024-01-14)
 
+
+### FIX
+
+* fix: patch ([6449b5f](https://github.com/jonbri/goatlang/commit/6449b5f2168bf3dc83224e4225a691a815ca5877))
 
 
 # [9.0.0](https://github.com/jonbri/goatlang/compare/v8.1.0...v9.0.0) (2024-01-13)
@@ -9,6 +13,8 @@
 
 * fix(myscope): space ([FOO-99](http://example.org/browse/FOO-99)) ([65a6003](https://github.com/jonbri/goatlang/commit/65a6003797d57d916062898103ba4f40afe4430a))
 more info
+
+
 
 
 ### OTHER
@@ -22,8 +28,12 @@ Third line
 * and
 * *some*
 * **markdown**
+
+
 * feat!: bump ([88266c4](https://github.com/jonbri/goatlang/commit/88266c44bf8424b23754540071fa5351c2ad5a2a))* release: v9.0.0 (#99) ([1f448d3](https://github.com/jonbri/goatlang/commit/1f448d3e11b7652e0c47702ecb6eed85b513ec98)), closes [#99](https://github.com/jonbri/goatlang/issues/99)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -34,6 +44,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * feat: stuff in body ([c866b7b](https://github.com/jonbri/goatlang/commit/c866b7b69e3902a0e99933bf5b1598623b4de3b2))
 this is a comment in the body
+
+
 * feat: wip ([2ff4e64](https://github.com/jonbri/goatlang/commit/2ff4e64f0cfa0fa10eb1406e8e69db407ca3157b))
 
 ### FIX
@@ -44,11 +56,17 @@ this is a comment in the body
 
 * chore: bob ([223ee44](https://github.com/jonbri/goatlang/commit/223ee44f41b4122e9ea4f979d8d26cac748f4463))* chore: template ([d874448](https://github.com/jonbri/goatlang/commit/d8744483b7b5dcc85964ec7cd6212a51887b7b7a))* chore: wip ([FOO-123](http://example.org/browse/FOO-123)) (#1) (#2) ([0f9483c](https://github.com/jonbri/goatlang/commit/0f9483cfedaca288fc4e0db3a7144ba7274f01ba)), closes [#1](https://github.com/jonbri/goatlang/issues/1) [#2](https://github.com/jonbri/goatlang/issues/2)* chore: working ([2f3ec4e](https://github.com/jonbri/goatlang/commit/2f3ec4e658c3d4198ee21096023e69a9f5b816a9))
 there is more here
+
+
 * release: v8.1.0 (#97) ([04743fa](https://github.com/jonbri/goatlang/commit/04743faac423a522c88437825b5fd1dab57e9fa3)), closes [#97](https://github.com/jonbri/goatlang/issues/97)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 * wip: hello ([925a28a](https://github.com/jonbri/goatlang/commit/925a28a958fca33808854cc7fcef55f344473ec5))
 title: 'one'
 Title: 'two'
+
+
 
 
 
@@ -66,6 +84,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 ## [8.0.4](https://github.com/jonbri/goatlang/compare/v8.0.3...v8.0.4) (2024-01-10)
 
 
@@ -77,6 +97,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * release: v8.0.4 (#95) ([447c41f](https://github.com/jonbri/goatlang/commit/447c41f7d4ffcd562ddd9ac181e1af28771031bc)), closes [#95](https://github.com/jonbri/goatlang/issues/95)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -94,6 +116,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 ## [8.0.2](https://github.com/jonbri/goatlang/compare/v8.0.1...v8.0.2) (2024-01-10)
 
 
@@ -105,6 +129,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * chore: c ([b5f4bac](https://github.com/jonbri/goatlang/commit/b5f4baccc5b3ffc4212b7ec121d09dbd7b1449c8))* chore: changelog cont ([2e25018](https://github.com/jonbri/goatlang/commit/2e25018bb118d01729b0edd43b31c66893a62e18))* chore: cont ([c128115](https://github.com/jonbri/goatlang/commit/c12811596ad4e57f1097ef0904851cf05f18d81d))* chore: messing with changelog config ([507e925](https://github.com/jonbri/goatlang/commit/507e9252f7e1dc6fa61d331206a3858490deb1bb))* chore: parse ([4162d3e](https://github.com/jonbri/goatlang/commit/4162d3e2bf9208f2e1af0e1e4f5116aad73a9622))* chore: wip ([65749dc](https://github.com/jonbri/goatlang/commit/65749dc2a35b2c16c43a6ee42a591da799257423))* release: v8.0.2 (#93) ([43b4cbb](https://github.com/jonbri/goatlang/commit/43b4cbb13996389ce83ce2e48b474096ceae816f)), closes [#93](https://github.com/jonbri/goatlang/issues/93)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 * templates ([70aa9fb](https://github.com/jonbri/goatlang/commit/70aa9fbc70714f1583d6ec79e7a84f2aa7eeb9b4))
 
 
@@ -119,6 +145,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * release: v8.0.1 (#92) ([0dac317](https://github.com/jonbri/goatlang/commit/0dac317889f05b6077727278f0d0dea37e9d29e5)), closes [#92](https://github.com/jonbri/goatlang/issues/92)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -140,6 +168,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 ## [7.0.5](https://github.com/jonbri/goatlang/compare/v7.0.4...v7.0.5) (2024-01-08)
 
 
@@ -151,6 +181,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * release: v7.0.5 (#90) ([46ca24f](https://github.com/jonbri/goatlang/commit/46ca24f980aba7311c3ea37e7f253267c6766ea7)), closes [#90](https://github.com/jonbri/goatlang/issues/90)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -168,6 +200,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 ## [7.0.3](https://github.com/jonbri/goatlang/compare/v7.0.2...v7.0.3) (2024-01-08)
 
 
@@ -179,6 +213,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * release: v7.0.3 (#88) ([d244a26](https://github.com/jonbri/goatlang/commit/d244a263b300a80fc6fb064c3d760f4d2af68e4f)), closes [#88](https://github.com/jonbri/goatlang/issues/88)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -196,6 +232,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 ## [7.0.1](https://github.com/jonbri/goatlang/compare/v7.0.0...v7.0.1) (2024-01-08)
 
 
@@ -207,6 +245,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * release: v7.0.1 (#86) ([7ed5d97](https://github.com/jonbri/goatlang/commit/7ed5d97b4ba35239b5a81e1ee573a209f2c6d0cd)), closes [#86](https://github.com/jonbri/goatlang/issues/86)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -224,6 +264,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 # [6.9.0](https://github.com/jonbri/goatlang/compare/v6.8.2...v6.9.0) (2024-01-08)
 
 
@@ -235,6 +277,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * release: v6.9.0 (#84) ([2239a15](https://github.com/jonbri/goatlang/commit/2239a15f140c3e92a7b3565c4e71df6ef503596c)), closes [#84](https://github.com/jonbri/goatlang/issues/84)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -252,6 +296,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 ## [6.8.1](https://github.com/jonbri/goatlang/compare/v6.8.0...v6.8.1) (2024-01-08)
 
 
@@ -263,6 +309,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * chore: bump ([fdddcd7](https://github.com/jonbri/goatlang/commit/fdddcd7144fd2d8ceae0821384d1888fbc373f9a))* chore: bump ([fd4b5bb](https://github.com/jonbri/goatlang/commit/fd4b5bbd1f541fb8d4b2627c9a171d1747a32452))* chore: chore ([40cee9e](https://github.com/jonbri/goatlang/commit/40cee9e54cd328a68bb8247296ff9bfce58c2913))* release: v6.8.1 (#80) ([97729a6](https://github.com/jonbri/goatlang/commit/97729a628866263362dc72a5ed3f9de0b8435153)), closes [#80](https://github.com/jonbri/goatlang/issues/80)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 * wip ([b27351d](https://github.com/jonbri/goatlang/commit/b27351dad81ff6e74650beeae2cbe3259625dbf9))* wip ([3b9abe1](https://github.com/jonbri/goatlang/commit/3b9abe1a9f5462902a30b1023c7662ad246cf709))* wip ([de13c25](https://github.com/jonbri/goatlang/commit/de13c25e7dd1d9252fd2dadab64de1e55eb1ad86))
 
 
@@ -281,8 +329,12 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * chore: formatting ([de4e16d](https://github.com/jonbri/goatlang/commit/de4e16db2589818ba32e54732c950125ae501c20))* chore: nothing ([3c7eb40](https://github.com/jonbri/goatlang/commit/3c7eb4035f7d197f4495270763eececbd95849fe))
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 * chore: pretty output ([2704e1f](https://github.com/jonbri/goatlang/commit/2704e1ffb11a2d56a41560818a543b1080a95027))* chore: update ([1d8b3d7](https://github.com/jonbri/goatlang/commit/1d8b3d743b962b95281708084fb0baf74c8aae64))* release: v6.8.0 (#75) ([cce59d1](https://github.com/jonbri/goatlang/commit/cce59d15fe77330cc773cb34e51ac6a6f15c5bb0)), closes [#75](https://github.com/jonbri/goatlang/issues/75)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -300,6 +352,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 ## [6.7.1](https://github.com/jonbri/goatlang/compare/v6.7.0...v6.7.1) (2024-01-04)
 
 
@@ -314,6 +368,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 # [6.7.0](https://github.com/jonbri/goatlang/compare/v6.6.1...v6.7.0) (2024-01-04)
 
 
@@ -321,6 +377,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * chore: little tweak ([b6227c7](https://github.com/jonbri/goatlang/commit/b6227c7c3ce14df1c25a8b799cc57b26c374be75))* chore: null ([d896e3f](https://github.com/jonbri/goatlang/commit/d896e3f64f95b1eb3a91e4ea224416ba92b623c7))* chore: perf ([e949f35](https://github.com/jonbri/goatlang/commit/e949f35984864634b798b1b8bd076ba6e60892ff))* perf: p bump ([167ae51](https://github.com/jonbri/goatlang/commit/167ae5101cdb614e2644d8bc1b5d677c5dc3b2eb))* release: v6.7.0 (#66) ([5cf6164](https://github.com/jonbri/goatlang/commit/5cf616479e5e96fa983ff1bda5ad8da5ec1de8dd)), closes [#66](https://github.com/jonbri/goatlang/issues/66)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -335,6 +393,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * release: v6.6.1 (#65) ([19f96d7](https://github.com/jonbri/goatlang/commit/19f96d783435c720c7e0453383a02727adbe94c0)), closes [#65](https://github.com/jonbri/goatlang/issues/65)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -356,6 +416,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 # [6.5.0](https://github.com/jonbri/goatlang/compare/v6.4.3...v6.5.0) (2024-01-04)
 
 
@@ -374,6 +436,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 ## [6.4.3](https://github.com/jonbri/goatlang/compare/v6.4.2...v6.4.3) (2024-01-03)
 
 
@@ -385,6 +449,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * release: v6.4.3 (#61) ([3cb1167](https://github.com/jonbri/goatlang/commit/3cb116774f4f664f8c4ec9bbeddb6ac7e854c705)), closes [#61](https://github.com/jonbri/goatlang/issues/61)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -402,6 +468,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 ## [6.4.1](https://github.com/jonbri/goatlang/compare/v6.4.0...v6.4.1) (2024-01-03)
 
 
@@ -413,6 +481,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * release: v6.4.1 (#59) ([6db53e1](https://github.com/jonbri/goatlang/commit/6db53e10ebf0bbeb11868b6bb225d70c6361eafb)), closes [#59](https://github.com/jonbri/goatlang/issues/59)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -430,6 +500,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 # [6.3.0](https://github.com/jonbri/goatlang/compare/v6.2.0...v6.3.0) (2024-01-03)
 
 
@@ -441,6 +513,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * release: v6.3.0 (#57) ([66783dc](https://github.com/jonbri/goatlang/commit/66783dcfccb3e76353c1b81114b7296b34c315a9)), closes [#57](https://github.com/jonbri/goatlang/issues/57)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -458,6 +532,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 # [6.1.0](https://github.com/jonbri/goatlang/compare/v6.0.1...v6.1.0) (2024-01-03)
 
 
@@ -469,6 +545,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * release: v6.1.0 (#55) ([f875ea9](https://github.com/jonbri/goatlang/commit/f875ea9b7872fff048ef554bfa8afa77950e5eaf)), closes [#55](https://github.com/jonbri/goatlang/issues/55)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -486,6 +564,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 # [6.0.0](https://github.com/jonbri/goatlang/compare/v5.0.0...v6.0.0) (2024-01-03)
 
 
@@ -500,6 +580,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 # [5.0.0](https://github.com/jonbri/goatlang/compare/v4.0.1...v5.0.0) (2024-01-03)
 
 
@@ -507,6 +589,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * feat!: major ([278b5f9](https://github.com/jonbri/goatlang/commit/278b5f9738d40d1926be098b0ece754e6eb71881))* release: v5.0.0 (#50) ([4daca52](https://github.com/jonbri/goatlang/commit/4daca5208d1d22d82a9cc0aa62ab0f3f4a251f78)), closes [#50](https://github.com/jonbri/goatlang/issues/50)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -524,6 +608,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 # [4.0.0](https://github.com/jonbri/goatlang/compare/v3.0.0...v4.0.0) (2024-01-03)
 
 
@@ -535,6 +621,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * fix!: major ([b245931](https://github.com/jonbri/goatlang/commit/b245931310f6bbef36e9f388e1544d2597db387b))* release: v4.0.0 (#48) ([1d4278f](https://github.com/jonbri/goatlang/commit/1d4278ffa8f829f9bdcd8108ea5b13187efebae4)), closes [#48](https://github.com/jonbri/goatlang/issues/48)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -552,6 +640,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 # [2.0.0](https://github.com/jonbri/goatlang/compare/v1.1.0...v2.0.0) (2023-12-21)
 
 
@@ -563,6 +653,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * feat!: bump ([4ed4760](https://github.com/jonbri/goatlang/commit/4ed4760b17f063614353480e248fa002e062fc5b))* release: v2.0.0 (#46) ([88818e2](https://github.com/jonbri/goatlang/commit/88818e2c6db56cded3e725529bf3bc108298eee3)), closes [#46](https://github.com/jonbri/goatlang/issues/46)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -584,6 +676,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 # [1.0.0](https://github.com/jonbri/goatlang/compare/v0.13.0...v1.0.0) (2023-12-20)
 
 
@@ -591,6 +685,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * fix!: go to 1.0.0 ([49a6462](https://github.com/jonbri/goatlang/commit/49a64627a5ba509acc54dbd11660c89740d5c944))* release: v1.0.0 (#43) ([dcf9716](https://github.com/jonbri/goatlang/commit/dcf97165a983b486e3fafc81be067c604dbc8054)), closes [#43](https://github.com/jonbri/goatlang/issues/43)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -612,6 +708,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 # [0.12.0](https://github.com/jonbri/goatlang/compare/v0.11.0...v0.12.0) (2023-12-20)
 
 
@@ -626,6 +724,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 # [0.11.0](https://github.com/jonbri/goatlang/compare/v0.10.0...v0.11.0) (2023-12-20)
 
 
@@ -637,6 +737,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * release: v0.11.0 (#40) ([9fea0f3](https://github.com/jonbri/goatlang/commit/9fea0f3637b6b42d5cd771725c4c14055c4ed1ec)), closes [#40](https://github.com/jonbri/goatlang/issues/40)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -658,6 +760,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 # [0.9.0](https://github.com/jonbri/goatlang/compare/v0.7.0...v0.9.0) (2023-12-20)
 
 
@@ -676,6 +780,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 # [0.7.0](https://github.com/jonbri/goatlang/compare/v0.6.2...v0.7.0) (2023-12-19)
 
 
@@ -687,6 +793,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * release: v0.7.0 (#36) ([712ce46](https://github.com/jonbri/goatlang/commit/712ce46bc129a59b8719512d477dab5018e654e8)), closes [#36](https://github.com/jonbri/goatlang/issues/36)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -704,6 +812,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 ## [0.6.1](https://github.com/jonbri/goatlang/compare/v0.6.0...v0.6.1) (2023-12-19)
 
 
@@ -715,6 +825,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * release: v0.6.1 (#34) ([dfb94e4](https://github.com/jonbri/goatlang/commit/dfb94e40d86ec6ccc65bdc8cc8104df0095a862e)), closes [#34](https://github.com/jonbri/goatlang/issues/34)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -733,6 +845,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * chore: debug ([603f5bc](https://github.com/jonbri/goatlang/commit/603f5bcfc94ed870d5c50835a6ff1e83f4e1ce10))* chore: remove dry-run ([bbcec97](https://github.com/jonbri/goatlang/commit/bbcec97b6fae2812677391d6543b15c25740f1b7))* chore: remove prelease.sh ([1118857](https://github.com/jonbri/goatlang/commit/11188579183170acb7a91c5d3ee2e654bd63e3c5))* chore: wip ([a32add7](https://github.com/jonbri/goatlang/commit/a32add7f152265340a49e01ba66343bbc2d00eed))* release: v0.6.0 (#33) ([591afe5](https://github.com/jonbri/goatlang/commit/591afe57631455bcf4e6569e63a6f23329437f84)), closes [#33](https://github.com/jonbri/goatlang/issues/33)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -774,6 +888,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 ## [0.2.9](https://github.com/jonbri/goatlang/compare/v0.2.8...v0.2.9) (2023-12-18)
 
 
@@ -785,6 +901,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * chore: cleanup ([9a00b97](https://github.com/jonbri/goatlang/commit/9a00b97a0ad0fdabe0a1d7d2ded35146146727c2))* chore: comment ([6c02ddb](https://github.com/jonbri/goatlang/commit/6c02ddb38f2587c425753c4d6b88430fd48a174c))* chore: doc ([026d833](https://github.com/jonbri/goatlang/commit/026d8337dae5deb82a26207d3553cdae8ce9b7e9))* chore: wip ([f40ee02](https://github.com/jonbri/goatlang/commit/f40ee02c3e5434fdbba53da10ab7a16630564913))* release: v0.2.9 (#26) ([9bce99b](https://github.com/jonbri/goatlang/commit/9bce99b4063330f1efa3328b57d742076b792815)), closes [#26](https://github.com/jonbri/goatlang/issues/26)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 
 
 
@@ -802,6 +920,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 ## [0.2.7](https://github.com/jonbri/goatlang/compare/v0.2.6...v0.2.7) (2023-12-18)
 
 
@@ -813,6 +933,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * chore: broken ([7d7bdd5](https://github.com/jonbri/goatlang/commit/7d7bdd5c1c2b65b353d5a2eea930e992857c779e))* chore: cleanup ([525f211](https://github.com/jonbri/goatlang/commit/525f211e7bb478428a02d980ccec557f38059804))* chore: formatting ([c5e0747](https://github.com/jonbri/goatlang/commit/c5e07474295171a4e728a33e73931bd5ce3ceb63))* chore: generate-changelog ([86e78ee](https://github.com/jonbri/goatlang/commit/86e78eeee88bd99175a959446a33e2b292adeb07))* release: v0.2.7 (#23) ([49c81ee](https://github.com/jonbri/goatlang/commit/49c81ee6d3c3a875b8ae3803966ea066709f4013)), closes [#23](https://github.com/jonbri/goatlang/issues/23)
 Co-authored-by: jonbri <jonbri@users.noreply.github.com>
+
+
 * wip ([fb59d08](https://github.com/jonbri/goatlang/commit/fb59d0877ca8934a20510c0cc5eabf87bca282f4))
 
 
@@ -830,6 +952,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 ## [0.2.5](https://github.com/jonbri/goatlang/compare/v0.2.4...v0.2.5) (2023-12-18)
 
 
@@ -844,6 +968,8 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 
 
+
+
 ## [0.2.4](https://github.com/jonbri/goatlang/compare/v0.2.3...v0.2.4) (2023-12-18)
 
 
@@ -855,8 +981,12 @@ Co-authored-by: jonbri <jonbri@users.noreply.github.com>
 
 * release: v0.2.4 (#12) ([5920faa](https://github.com/jonbri/goatlang/commit/5920faaee28b6ba6b0b145c4f49b055af9c7e90e)), closes [#12](https://github.com/jonbri/goatlang/issues/12)
 Co-authored-by: goatlang <goatlang@users.noreply.github.com>
+
+
 * release: v0.2.4 (#13) ([b253922](https://github.com/jonbri/goatlang/commit/b253922f6078ccaa2b604aa96f1c82e9d65f62a3)), closes [#13](https://github.com/jonbri/goatlang/issues/13)
 Co-authored-by: goatlang <goatlang@users.noreply.github.com>
+
+
 
 
 
@@ -883,12 +1013,18 @@ Co-authored-by: goatlang <goatlang@users.noreply.github.com>
 
 * Changes by create-pull-request action (#11) ([1edcad2](https://github.com/jonbri/goatlang/commit/1edcad2825bf37f32756e8eb8651703ef2e6a24a)), closes [#11](https://github.com/jonbri/goatlang/issues/11)
 Co-authored-by: goatlang <goatlang@users.noreply.github.com>
+
+
 * Changes by create-pull-request action (#5) ([b645d10](https://github.com/jonbri/goatlang/commit/b645d10f575bf88c2529d0e95997e66094bdcd82)), closes [#5](https://github.com/jonbri/goatlang/issues/5)
 * release: v0.2.1
 
 * [create-pull-request] automated change
+
+
 * Changes by create-pull-request action (#9) ([0e0ed8f](https://github.com/jonbri/goatlang/commit/0e0ed8f2212e199fd6ace85b4b002392a6e4c5b7)), closes [#9](https://github.com/jonbri/goatlang/issues/9)
 Co-authored-by: goatlang <goatlang@users.noreply.github.com>
+
+
 * chore: another token ([1240ed0](https://github.com/jonbri/goatlang/commit/1240ed02fc1855ab04d1ab9cb6a0eb990124b281))* chore: cat ([b04dce9](https://github.com/jonbri/goatlang/commit/b04dce954c38bc689cb6cfcc0a7023e985838c08))* chore: cd build ([5af598c](https://github.com/jonbri/goatlang/commit/5af598c2a0b5466aa561973d8978490e959da444))* chore: config ([ae058f6](https://github.com/jonbri/goatlang/commit/ae058f6e9500518fc366f4612444fa3e51c306f8))* chore: do not update version ([21be0a1](https://github.com/jonbri/goatlang/commit/21be0a1c5b6394fd461133ce9c62b1ffecb7cdda))* chore: fix changelog ([a9bd7f0](https://github.com/jonbri/goatlang/commit/a9bd7f01f5c1a982e5bc5ed25de13ee84143d1a6))* chore: gh token ([6b1c0e6](https://github.com/jonbri/goatlang/commit/6b1c0e648c819a86b9c186089f60b2c45a6d6873))* chore: logging ([1720700](https://github.com/jonbri/goatlang/commit/1720700b950bef2d936d64ed079dc905b5f90306))* chore: no pkg ([08fb269](https://github.com/jonbri/goatlang/commit/08fb2693b5cfd9267e2a8ec37005b0c8955839fb))* chore: registry-url ([822ae4c](https://github.com/jonbri/goatlang/commit/822ae4c070cafb9e2c1903a098a7e9ce9f3305d7))* chore: release ([e88132d](https://github.com/jonbri/goatlang/commit/e88132d7ba5f7a95320d0d5dec730a6ea31baa8b))* chore: remove gh token ([82d31aa](https://github.com/jonbri/goatlang/commit/82d31aa1feca82ac56e2b2b42069f0e7d969e07f))* chore: remove npm token ([06e1605](https://github.com/jonbri/goatlang/commit/06e1605f146a191c6de53c235e7edcfafb34daff))* chore: review -> on-main ([3984fd0](https://github.com/jonbri/goatlang/commit/3984fd0ec52b872912d5261f58d8faea731b2597))* chore: shebang ([2a881e2](https://github.com/jonbri/goatlang/commit/2a881e2df4551a885bac591220c0986734cf1af2))* chore: syntax ([b375b20](https://github.com/jonbri/goatlang/commit/b375b200a5d7a430810ef4b346dcacfdcbd45990))* chore: token ([162aa7d](https://github.com/jonbri/goatlang/commit/162aa7db1b8ae518f6e665d667ee5c80f104f776))* chore: transform ([d6abdd5](https://github.com/jonbri/goatlang/commit/d6abdd57eb2bfb5fffef8ad3f7004b5befddfa19))* chore: wip ([b97f4f6](https://github.com/jonbri/goatlang/commit/b97f4f61e53a1dcf9d71ca5fffb062f588d6d99d))* chore: wip ([7dfa495](https://github.com/jonbri/goatlang/commit/7dfa495c814892bb998a25b7f1970860405fa307))* chore: wip ([b309ad9](https://github.com/jonbri/goatlang/commit/b309ad9ec37d03797638492f0ddc93f20301154f))* chore: wip ([fd84835](https://github.com/jonbri/goatlang/commit/fd848352950d8f1e25e37d0e078dec737700af11))* chore: wip ([b0aaa11](https://github.com/jonbri/goatlang/commit/b0aaa11d209a5583219e3e272e88b668493e04f1))* chore: wip ([26c6dcb](https://github.com/jonbri/goatlang/commit/26c6dcb61bd79bdf2eabd595311311edaf0fb171))* chore: wip ([1aa89c2](https://github.com/jonbri/goatlang/commit/1aa89c2573df4c752b59dbdb1a79a225787f4512))* chore: yml ([a3e0123](https://github.com/jonbri/goatlang/commit/a3e012326fb38a627b0e5a168fe7aa0f78efe01c))* release: v0.2.2 ([a500fdc](https://github.com/jonbri/goatlang/commit/a500fdcfe0a743fcf1fead8bfc2c053a4f86632d))* wip ([1425570](https://github.com/jonbri/goatlang/commit/142557007a60c836fcc5a66e6fa0a81a7073c955))
 
 
