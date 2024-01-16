@@ -4,7 +4,7 @@
 ### Bug Fixes
 
 * patch ([6449b5f](https://github.com/jonbri/goatlang/commit/6449b5f2168bf3dc83224e4225a691a815ca5877))
-* simplify ([26ecb7f](https://github.com/jonbri/goatlang/commit/26ecb7fc164011f14b640fe7f635951a99c6c422))
+* simplify ([272db10](https://github.com/jonbri/goatlang/commit/272db103b41839f37a33c8c1766c85363ba00e35))
 * space ([664aa48](https://github.com/jonbri/goatlang/commit/664aa48f85a4a6ec672ce18930acf65957aca0ff))
 * tweak ([d7fa13d](https://github.com/jonbri/goatlang/commit/d7fa13d8c9da6c66ca35f6dffa2259e837f4eafe))
 * tweak 2 ([6eaf834](https://github.com/jonbri/goatlang/commit/6eaf8349530773c8b814b8f4aab9e221a39eeb25))
