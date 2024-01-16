@@ -6,7 +6,18 @@ const shell = (cmd) => execSync(cmd).toString().trim();
 const readFileSync = (path) =>
   fs.readFileSync(path, { encoding: "utf8", flag: "r" });
 const CHANGELOG_FILE = "CHANGELOG.md";
+const excludedTypes = ["release"];
+
 const jiraRegex = /\(([\w]+[-][\d]+)\)/;
+const jiraUrl = "http://example.org/browse";
+const embedJiraUrl = (s) => {
+  if (s === null) return null;
+  const jiraMatch = s.match(jiraRegex);
+  if (!jiraMatch) return s;
+  const jiraId = jiraMatch[1];
+  const jiraFullUrl = `${jiraUrl}/${jiraId}`;
+  return s.replace(jiraRegex, `([${jiraId}](${jiraFullUrl}))`);
+};
 
 // https://stackoverflow.com/a/49428486/2295034
 const streamToString = (stream) => {
@@ -25,41 +36,33 @@ async function main() {
   console.log(`version: ${version}`);
 
   const writerOpts = {
-    //   mainTemplate: readFileSync("./bin/templates/template.hbs"),
-    //   headerPartial: readFileSync("./bin/templates/header.hbs"),
-    //   footerPartial: readFileSync("./bin/templates/footer.hbs"),
-    commitPartial: readFileSync("./bin/templates/commit.hbs"),
-    transform: (commit, { jiraUrl }) => {
-      // const excludedTypes = ["chore", "release", "test"];
-      // if (excludedTypes.includes(commit.type)) return false;
+    transform: (commit) => {
+      if (excludedTypes.includes(commit.type)) return false;
 
       let type = commit.type;
-      if (commit.type === "chore") {
-        type = "CCCCHORE";
+      switch (commit.type) {
+        case "feat":
+          type = "Features";
+          break;
+        case "fix":
+          type = "Bug Fixes";
+          break;
+        case "perf":
+          type = "Performance";
+          break;
+        default:
+          type = "Other";
       }
 
-      if (commit.type === "fix") {
-        type = "FIX";
-      } else if (commit.type === "feat") {
-        type = "FEAT";
-      } else {
-        type = "OTHER";
-      }
-
-      let header = commit.header;
-      const jiraMatch = header.match(jiraRegex);
-      if (jiraMatch) {
-        const jiraId = jiraMatch[1];
-        const jiraFullUrl = `${jiraUrl}/${jiraId}`;
-        header = header.replace(jiraRegex, `([${jiraId}](${jiraFullUrl}))`);
-      }
+      const header = embedJiraUrl(commit.header);
+      const subject = embedJiraUrl(commit.subject);
 
       return {
         ...commit,
         type,
-        shortHash: commit.hash.substring(0, 7),
         header,
-        subject: header,
+        subject,
+        shortHash: commit.hash.substring(0, 7),
       };
     },
   };
@@ -75,9 +78,7 @@ async function main() {
         }),
       },
     },
-    {
-      jiraUrl: "http://example.org/browse",
-    },
+    {},
     {},
     {},
     writerOpts
@@ -88,16 +89,3 @@ async function main() {
   console.log(`${CHANGELOG_FILE} updated`);
 }
 main();
-
-// const writerOpts = {
-//   groupBy: "type",
-//   commitsSort: ["subject", "scope"],
-//   commitGroupsSort: "title",
-//   transform: writerTransform,
-//   // TODO: is this useful?
-//   // generateOn: (commit) => {
-//   //   const excludedTypes = ["chore", "release", "test"];
-//   //   if (excludedTypes.includes(commit.type)) return false;
-//   //   return true;
-//   // },
-// };
